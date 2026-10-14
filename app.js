@@ -4,6 +4,7 @@ let activeCategory = "all";
 let cart = JSON.parse(localStorage.getItem("camera-matrix-cart") || "{}");
 let availabilityById = {};
 let inventoryReady = false;
+let availabilityPeriod = "";
 const grid = document.querySelector("#product-grid");
 const searchInput = document.querySelector("#search");
 function initHeroSlider() {
@@ -67,9 +68,18 @@ function renderCart() {
   const days = start && end && end > start ? Math.round((Date.parse(`${end}T00:00:00`) - Date.parse(`${start}T00:00:00`)) / 86400000) : 0;
   const dailyTotal = entries.reduce((sum, [id, qty]) => sum + (gear.find((item) => item.id === id)?.price || 0) * qty, 0);
   document.querySelector("#rental-summary").textContent = days ? `${start} → ${end} · ${days} ${days === 1 ? "day" : "days"}` : "Choose pickup and return dates to price your rental.";
+  const period = start && end ? `${start}/${end}` : "";
+  const availabilitySummary = document.querySelector("#availability-summary");
+  if (!period) availabilitySummary.textContent = "Choose dates to check availability.";
+  else if (availabilityPeriod !== period) availabilitySummary.textContent = "Availability has not been checked for these dates.";
+  else {
+    const unavailable = entries.filter(([id, qty]) => (availabilityById[id]?.available ?? 0) < qty);
+    availabilitySummary.textContent = unavailable.length ? "Some selected quantities are unavailable for these dates." : "Selected gear is available for these dates.";
+  }
   document.querySelector("#cart-total-label").textContent = days ? `Estimated total · ${days} ${days === 1 ? "day" : "days"}` : "Daily estimate";
   document.querySelector("#cart-total").textContent = formatUGX(dailyTotal * (days || 1));
   document.querySelector("#cart-count").textContent = entries.reduce((sum, [, qty]) => sum + qty, 0);
+  document.querySelector("#gear-count").textContent = String(gear.length);
   if (!gear.length) {
     document.querySelector("#cart-items").innerHTML = `<p class="empty-state">Loading your saved kit…</p>`;
     return;
@@ -98,6 +108,7 @@ const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
 pickupInput.min = localToday;
 returnInput.min = localToday;
 pickupInput.addEventListener("change", () => {
+  availabilityPeriod = "";
   if (pickupInput.value) {
     const nextDay = new Date(`${pickupInput.value}T00:00:00`);
     nextDay.setDate(nextDay.getDate() + 1);
@@ -106,7 +117,7 @@ pickupInput.addEventListener("change", () => {
   }
   renderCart();
 });
-returnInput.addEventListener("change", renderCart);
+returnInput.addEventListener("change", () => { availabilityPeriod = ""; renderCart(); });
 document.querySelector("#apply-dates").addEventListener("click", () => {
   const start = document.querySelector("#rental-dates").value;
   const end = document.querySelector("#return-date").value;
@@ -122,27 +133,40 @@ async function checkAvailability() {
     const response = await fetch(`/api/availability?${params}`);
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "Could not check availability.");
+    availabilityPeriod = `${start}/${end}`;
     availabilityById = Object.fromEntries(Object.entries(data.availability).map(([id, result]) => [id, result]));
     renderProducts();
     const missing = Object.entries(cart).filter(([id, qty]) => (availabilityById[id]?.available ?? 0) < qty);
+    renderCart();
     if (missing.length) toast("Some kit quantities are not available for those dates.");
     else toast("Availability checked for your rental dates.");
+    return missing.length === 0;
   } catch (error) {
     toast(`Availability check failed: ${error.message}`);
+    return false;
   }
 }
 document.querySelector("#checkout").addEventListener("click", async () => {
   if (!Object.keys(cart).length) return toast("Add some gear to your booking first.");
+  const privacyConsent = document.querySelector("#privacy-consent");
+  if (!privacyConsent.checked) return toast("Please acknowledge the Privacy Policy and Terms before submitting.");
   const start = document.querySelector("#rental-dates").value;
   const end = document.querySelector("#return-date").value;
   if (!start || !end || end <= start) return toast("Choose a pickup date and a later return date before continuing.");
+  for (const field of ["#customer-name", "#customer-email", "#customer-phone"]) {
+    if (!document.querySelector(field).reportValidity()) return;
+  }
   const button = document.querySelector("#checkout");
   const status = document.querySelector("#booking-status");
   button.disabled = true;
   button.firstChild.textContent = "Submitting… ";
   status.textContent = "";
   try {
-    const response = await fetch("/api/bookings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pickupDate: start, returnDate: end, collection: document.querySelector("#location").value, items: cart, customer: { name: document.querySelector("#customer-name").value, email: document.querySelector("#customer-email").value } }) });
+    if (!await checkAvailability()) {
+      status.textContent = "Check the selected gear and dates, then update your kit before sending the request.";
+      return;
+    }
+    const response = await fetch("/api/bookings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pickupDate: start, returnDate: end, collection: document.querySelector("#location").value, items: cart, privacyAcknowledged: privacyConsent.checked, customer: { name: document.querySelector("#customer-name").value, email: document.querySelector("#customer-email").value, phone: document.querySelector("#customer-phone").value } }) });
     const data = await response.json();
     if (!response.ok) {
       if (data.availability) {
@@ -153,7 +177,29 @@ document.querySelector("#checkout").addEventListener("click", async () => {
     }
     cart = {};
     renderCart();
-    status.textContent = `Request ${data.booking.id} received. We’ll confirm availability and payment with you.`;
+    const notices = data.booking.notifications || {};
+    const emailOk = notices.email?.status === "sent";
+    const whatsappOk = notices.whatsapp?.status === "accepted";
+    if (whatsappOk) {
+      status.textContent = emailOk
+        ? `Request ${data.booking.id} received. The team was notified by email and WhatsApp; they’ll confirm availability and payment with you.`
+        : `Request ${data.booking.id} received and sent to the team by WhatsApp. Email notification needs attention.`;
+    } else {
+      const booking = data.booking;
+      const whatsappMessage = [
+        `Camera Matrix booking request ${booking.id}`,
+        `Name: ${booking.customer.name}`,
+        `Email: ${booking.customer.email}`,
+        `Phone/WhatsApp: ${booking.customer.phone}`,
+        `Dates: ${booking.pickupDate} to ${booking.returnDate} (${booking.rentalDays} days)`,
+        `Collection: ${booking.collection}`,
+        "Equipment:",
+        ...booking.items.map((item) => `${item.name} × ${item.quantity}`),
+        `Estimated total: UGX ${new Intl.NumberFormat("en-UG").format(booking.estimatedTotal)}`,
+      ].join("\n");
+      const whatsappUrl = `https://wa.me/256704738156?${new URLSearchParams({ text: whatsappMessage })}`;
+      status.innerHTML = `Request ${booking.id} is saved (email: ${notices.email?.status || "not sent"}). <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">Send the booking details to Camera Matrix on WhatsApp</a>.`;
+    }
     toast(`Booking request ${data.booking.id} received`);
     await checkAvailability();
   } catch (error) {
@@ -163,7 +209,7 @@ document.querySelector("#checkout").addEventListener("click", async () => {
     button.firstChild.textContent = "Request this booking ";
   }
 });
-fetch("/api/gear").then((response) => response.json()).then((data) => { if (data.products) { gear = data.products; inventoryReady = true; renderProducts(); renderCart(); } }).catch(() => {});
+fetch("/api/gear").then((response) => response.json()).then((data) => { if (data.products) { gear = data.products; inventoryReady = true; renderProducts(); renderCart(); } }).catch((error) => { console.error("Could not load rental catalog", error); toast("The rental catalog could not load. Refresh the page to try again."); });
 initHeroSlider();
 renderProducts();
 renderCart();

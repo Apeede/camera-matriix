@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+  <title>Booking management | Camera Matrix</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body{background:#f6f5f2;color:#101f33}.admin{width:min(1100px,92%);margin:45px auto 80px}.admin h1{font:500 clamp(36px,6vw,58px)/1.05 Georgia,serif}.admin-tools{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.admin-tools input{flex:1;min-width:230px;padding:13px;border:1px solid #dfe2e5;background:#fff}.admin-tools button,.status-select{padding:11px 14px;border:1px solid #dfe2e5;background:#fff;color:#101f33}.booking{background:#fff;border:1px solid #e5e6e8;padding:20px;margin:14px 0;display:grid;grid-template-columns:1fr auto;gap:18px}.booking h2{font:600 18px Manrope,sans-serif;margin:0 0 8px}.booking p{margin:5px 0;color:#687487;font-size:13px}.booking-items{font-size:12px}.admin-error{color:#a31f2b}.admin-help{color:#687487;line-height:1.7}@media(max-width:650px){.booking{grid-template-columns:1fr}.status-select{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="Camera Matrix home"><img src="/assets/logo-01.png" alt="Camera Matrix"></a><a class="cart-button" href="/">View storefront →</a></header>
+  <main class="admin">
+    <p class="eyebrow"><span></span> PRIVATE OPERATIONS</p>
+    <h1>Booking requests</h1>
+    <p class="admin-help">Enter the ADMIN_TOKEN configured on the server to load booking details. Use HTTPS when accessing this page remotely.</p>
+    <form class="admin-tools" id="admin-login"><input id="admin-token" type="password" autocomplete="current-password" placeholder="Admin token" required><button type="submit">Load bookings</button></form>
+    <p id="admin-message" class="admin-help" aria-live="polite"></p>
+    <section id="bookings" aria-live="polite"></section>
+  </main>
+  <script src="/admin.js"></script>
+</body>
+</html>
