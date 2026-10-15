@@ -1,7 +1,22 @@
 let gear = [];
 const formatUGX = (value) => `UGX ${new Intl.NumberFormat("en-UG").format(value)}`;
+const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+const CART_KEY = "camera-matrix-cart";
+function readCart() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(CART_KEY) || "{}");
+    if (!stored || typeof stored !== "object" || Array.isArray(stored)) return {};
+    return Object.fromEntries(Object.entries(stored).filter(([, quantity]) => Number.isSafeInteger(quantity) && quantity > 0));
+  } catch { return {}; }
+}
+function writeCart() {
+  try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch { /* Booking remains usable when browser storage is unavailable. */ }
+}
+function localDateString(value) {
+  return `${value.getFullYear()}-${String(value.getMonth() + 1).padStart(2, "0")}-${String(value.getDate()).padStart(2, "0")}`;
+}
 let activeCategory = "all";
-let cart = JSON.parse(localStorage.getItem("camera-matrix-cart") || "{}");
+let cart = readCart();
 let availabilityById = {};
 let inventoryReady = false;
 let availabilityPeriod = "";
@@ -51,13 +66,16 @@ function initHeroSlider() {
 }
 function renderProducts() {
   const query = searchInput.value.trim().toLowerCase();
+  const start = document.querySelector("#rental-dates").value;
+  const end = document.querySelector("#return-date").value;
+  const currentPeriod = start && end ? `${start}/${end}` : "";
   const visible = gear.filter((item) => (activeCategory === "all" || item.category === activeCategory) && `${item.name} ${item.type} ${item.desc} ${item.specs || ""} ${item.tag}`.toLowerCase().includes(query));
   grid.innerHTML = visible.map((item) => {
-    const stock = availabilityById[item.id];
-    const label = stock ? `${stock.available} available` : inventoryReady ? "● In stock" : "● Available";
-    const disabled = stock && stock.available < 1;
-    const photo = item.image ? `<img class="product-photo" src="${item.image}" alt="${item.imageAlt || `${item.name} product photo`}" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true" />` : "";
-    return `<article class="product-card"><div class="product-visual" data-tone="${item.tone}"><span class="card-badge">${item.tag}</span>${photo}</div><div class="card-body"><div class="card-meta"><span>${item.type}</span><span class="available ${disabled ? "out-of-stock" : ""}">${label}</span></div><h3>${item.name}</h3><p class="product-desc">${item.desc}</p><p class="product-specs"><strong>Specs</strong> · ${item.specs || "See product details"}</p><div class="card-bottom"><span class="price"><strong>${formatUGX(item.price)}</strong> <small>/ day</small></span><button class="add-button" data-add="${item.id}" ${disabled ? "disabled" : ""}>${disabled ? "Unavailable" : "+ Add to kit"}</button></div><a class="product-link" href="/gear/${encodeURIComponent(item.id)}">Learn more <span aria-hidden="true">→</span></a></div></article>`;
+    const stock = currentPeriod && availabilityPeriod === currentPeriod ? availabilityById[item.id] : null;
+    const label = stock ? "Available for request" : inventoryReady ? "Select dates to check" : "Loading availability";
+    const disabled = false;
+    const photo = item.image ? `<img class="product-photo" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || `${item.name} product photo`)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true" />` : "";
+    return `<article class="product-card"><div class="product-visual" data-tone="${escapeHtml(item.tone)}"><span class="card-badge">${escapeHtml(item.tag)}</span>${photo}</div><div class="card-body"><div class="card-meta"><span>${escapeHtml(item.type)}</span><span class="available ${disabled ? "out-of-stock" : ""}">${escapeHtml(label)}</span></div><h3>${escapeHtml(item.name)}</h3><p class="product-desc">${escapeHtml(item.desc)}</p><p class="product-specs"><strong>Specs</strong> · ${escapeHtml(item.specs || "See product details")}</p><div class="card-bottom"><span class="price"><strong>${formatUGX(item.price)}</strong> <small>/ day</small></span><button class="add-button" data-add="${escapeHtml(item.id)}" ${disabled ? "disabled" : ""}>${disabled ? "Unavailable" : "+ Add to kit"}</button></div><a class="product-link" href="/gear/${encodeURIComponent(item.id)}">Learn more <span aria-hidden="true">→</span></a></div></article>`;
   }).join("");
   document.querySelector("#empty-state").hidden = visible.length > 0;
 }
@@ -73,8 +91,7 @@ function renderCart() {
   if (!period) availabilitySummary.textContent = "Choose dates to check availability.";
   else if (availabilityPeriod !== period) availabilitySummary.textContent = "Availability has not been checked for these dates.";
   else {
-    const unavailable = entries.filter(([id, qty]) => (availabilityById[id]?.available ?? 0) < qty);
-    availabilitySummary.textContent = unavailable.length ? "Some selected quantities are unavailable for these dates." : "Selected gear is available for these dates.";
+    availabilitySummary.textContent = "Request any quantity. The team will confirm your booking.";
   }
   document.querySelector("#cart-total-label").textContent = days ? `Estimated total · ${days} ${days === 1 ? "day" : "days"}` : "Daily estimate";
   document.querySelector("#cart-total").textContent = formatUGX(dailyTotal * (days || 1));
@@ -86,9 +103,9 @@ function renderCart() {
   }
   document.querySelector("#cart-items").innerHTML = entries.length ? entries.map(([id, qty]) => {
     const item = gear.find((product) => product.id === id);
-    return `<div class="cart-line"><div><h3>${item.name}</h3><p>${formatUGX(item.price)} / day${days ? ` · ${days} ${days === 1 ? "day" : "days"}` : ""}</p><div class="qty-controls"><button data-qty="${id}" data-delta="-1" aria-label="Remove one ${item.name}">−</button><span>${qty}</span><button data-qty="${id}" data-delta="1" aria-label="Add one ${item.name}">+</button></div></div><span class="line-price">${formatUGX(item.price * qty * (days || 1))}</span></div>`;
+    return `<div class="cart-line"><div><h3>${escapeHtml(item.name)}</h3><p>${formatUGX(item.price)} / day${days ? ` · ${days} ${days === 1 ? "day" : "days"}` : ""}</p><div class="qty-controls"><button data-qty="${escapeHtml(id)}" data-delta="-1" aria-label="Remove one ${escapeHtml(item.name)}">−</button><span>${qty}</span><button data-qty="${escapeHtml(id)}" data-delta="1" aria-label="Add one ${escapeHtml(item.name)}">+</button></div></div><span class="line-price">${formatUGX(item.price * qty * (days || 1))}</span></div>`;
   }).join("") : `<p class="empty-state">Your kit is empty for now.<br />Add gear from the rental shelf.</p>`;
-  localStorage.setItem("camera-matrix-cart", JSON.stringify(cart));
+  writeCart();
 }
 function openCart() { document.querySelector("#drawer-backdrop").hidden = false; document.querySelector("#cart-drawer").classList.add("open"); document.querySelector("#cart-drawer").setAttribute("aria-hidden", "false"); }
 function closeCart() { document.querySelector("#drawer-backdrop").hidden = true; document.querySelector("#cart-drawer").classList.remove("open"); document.querySelector("#cart-drawer").setAttribute("aria-hidden", "true"); }
@@ -96,28 +113,30 @@ let toastTimer;
 function toast(message) { const el = document.querySelector("#toast"); el.textContent = message; el.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2300); }
 document.querySelectorAll(".filter").forEach((button) => button.addEventListener("click", () => { document.querySelector(".filter.active").classList.remove("active"); button.classList.add("active"); activeCategory = button.dataset.category; renderProducts(); }));
 searchInput.addEventListener("input", renderProducts);
-grid.addEventListener("click", (event) => { const button = event.target.closest("[data-add]"); if (!button) return; const id = button.dataset.add; cart[id] = (cart[id] || 0) + 1; renderCart(); toast(`${gear.find((item) => item.id === id).name} added to your kit`); });
-document.querySelector("#cart-items").addEventListener("click", (event) => { const button = event.target.closest("[data-qty]"); if (!button) return; const id = button.dataset.qty; cart[id] = (cart[id] || 0) + Number(button.dataset.delta); if (cart[id] <= 0) delete cart[id]; renderCart(); });
+grid.addEventListener("click", (event) => { const button = event.target.closest("[data-add]"); if (!button) return; const id = button.dataset.add; cart[id] = (cart[id] || 0) + 1; renderCart(); renderProducts(); toast(`${gear.find((item) => item.id === id).name} added to your kit`); });
+document.querySelector("#cart-items").addEventListener("click", (event) => { const button = event.target.closest("[data-qty]"); if (!button) return; const id = button.dataset.qty; const quantity = (cart[id] || 0) + Number(button.dataset.delta); cart[id] = quantity; if (cart[id] <= 0) delete cart[id]; renderCart(); renderProducts(); });
 document.querySelector("#cart-open").addEventListener("click", openCart);
 document.querySelector("#cart-close").addEventListener("click", closeCart);
 document.querySelector("#drawer-backdrop").addEventListener("click", closeCart);
 const pickupInput = document.querySelector("#rental-dates");
 const returnInput = document.querySelector("#return-date");
 const today = new Date();
-const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+const localToday = localDateString(today);
 pickupInput.min = localToday;
 returnInput.min = localToday;
 pickupInput.addEventListener("change", () => {
   availabilityPeriod = "";
+  availabilityById = {};
   if (pickupInput.value) {
     const nextDay = new Date(`${pickupInput.value}T00:00:00`);
     nextDay.setDate(nextDay.getDate() + 1);
-    returnInput.min = nextDay.toISOString().slice(0, 10);
+    returnInput.min = localDateString(nextDay);
     if (returnInput.value && returnInput.value <= pickupInput.value) returnInput.value = "";
   }
+  renderProducts();
   renderCart();
 });
-returnInput.addEventListener("change", () => { availabilityPeriod = ""; renderCart(); });
+returnInput.addEventListener("change", () => { availabilityPeriod = ""; availabilityById = {}; renderProducts(); renderCart(); });
 document.querySelector("#apply-dates").addEventListener("click", () => {
   const start = document.querySelector("#rental-dates").value;
   const end = document.querySelector("#return-date").value;
@@ -136,11 +155,9 @@ async function checkAvailability() {
     availabilityPeriod = `${start}/${end}`;
     availabilityById = Object.fromEntries(Object.entries(data.availability).map(([id, result]) => [id, result]));
     renderProducts();
-    const missing = Object.entries(cart).filter(([id, qty]) => (availabilityById[id]?.available ?? 0) < qty);
     renderCart();
-    if (missing.length) toast("Some kit quantities are not available for those dates.");
-    else toast("Availability checked for your rental dates.");
-    return missing.length === 0;
+    toast("Dates checked. The team will confirm your booking.");
+    return true;
   } catch (error) {
     toast(`Availability check failed: ${error.message}`);
     return false;
@@ -182,7 +199,7 @@ document.querySelector("#checkout").addEventListener("click", async () => {
     const whatsappOk = notices.whatsapp?.status === "accepted";
     if (whatsappOk) {
       status.textContent = emailOk
-        ? `Request ${data.booking.id} received. The team was notified by email and WhatsApp; they’ll confirm availability and payment with you.`
+        ? `Request ${data.booking.id} received. The team was notified by email and WhatsApp; they’ll confirm your booking and payment with you.`
         : `Request ${data.booking.id} received and sent to the team by WhatsApp. Email notification needs attention.`;
     } else {
       const booking = data.booking;
@@ -209,7 +226,15 @@ document.querySelector("#checkout").addEventListener("click", async () => {
     button.firstChild.textContent = "Request this booking ";
   }
 });
-fetch("/api/gear").then((response) => response.json()).then((data) => { if (data.products) { gear = data.products; inventoryReady = true; renderProducts(); renderCart(); } }).catch((error) => { console.error("Could not load rental catalog", error); toast("The rental catalog could not load. Refresh the page to try again."); });
+fetch("/api/gear").then((response) => response.json()).then((data) => {
+  if (!Array.isArray(data.products)) throw new Error("The rental catalog response is invalid.");
+  gear = data.products;
+  const validIds = new Set(gear.map((item) => item.id));
+  cart = Object.fromEntries(Object.entries(cart).filter(([id]) => validIds.has(id)));
+  inventoryReady = true;
+  renderProducts();
+  renderCart();
+}).catch((error) => { console.error("Could not load rental catalog", error); toast("The rental catalog could not load. Refresh the page to try again."); });
 initHeroSlider();
 renderProducts();
 renderCart();

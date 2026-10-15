@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+"""Build the public files from the existing local Python-rendered pages."""
+
+from __future__ import annotations
+
+import json
+import os
+from pathlib import Path
+import shutil
+import socket
+import subprocess
+import sys
+import time
+from urllib.error import URLError
+from urllib.request import urlopen
+
+
+ROOT = Path(__file__).resolve().parent
+PUBLIC = ROOT / "public"
+STATIC_FILES = (
+    "index.html",
+    "product.html",
+    "admin.html",
+    "styles.css",
+    "app.js",
+    "product.js",
+    "admin.js",
+    "catalog.json",
+)
+SEO_PATHS = (
+    "/rentals.html",
+    "/camera-rentals-kampala.html",
+    "/lens-rentals-kampala.html",
+    "/lighting-audio-rentals.html",
+    "/how-to-rent.html",
+    "/about.html",
+    "/contact.html",
+    "/privacy-policy.html",
+    "/cookie-policy.html",
+    "/terms.html",
+    "/refund-policy.html",
+)
+
+
+def fetch_page(base_url: str, path: str) -> bytes:
+    with urlopen(base_url + path, timeout=15) as response:
+        return response.read()
+
+
+def main() -> int:
+    if PUBLIC.exists():
+        shutil.rmtree(PUBLIC)
+    PUBLIC.mkdir(parents=True)
+
+    for filename in STATIC_FILES:
+        shutil.copy2(ROOT / filename, PUBLIC / filename)
+    shutil.copytree(ROOT / "assets", PUBLIC / "assets")
+
+    with socket.socket() as probe:
+        probe.bind(("127.0.0.1", 0))
+        port = probe.getsockname()[1]
+    base_url = f"http://127.0.0.1:{port}"
+    process_env = os.environ.copy()
+    process_env["PUBLIC_BASE_URL"] = process_env.get("PUBLIC_BASE_URL", "").strip() or "https://www.cinematrix.store"
+    server = subprocess.Popen(
+        [sys.executable, str(ROOT / "server.py"), "--host", "127.0.0.1", "--port", str(port)],
+        cwd=ROOT,
+        env=process_env,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    try:
+        for _ in range(100):
+            if server.poll() is not None:
+                raise RuntimeError("The local page renderer stopped before the static build completed.")
+            try:
+                fetch_page(base_url, "/")
+                break
+            except (URLError, TimeoutError):
+                time.sleep(0.1)
+        else:
+            raise RuntimeError("The local page renderer did not start in time.")
+
+        for path in SEO_PATHS:
+            (PUBLIC / path.lstrip("/")).write_bytes(fetch_page(base_url, path))
+
+        products = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
+        for product in products:
+            path = f"/gear/{product['id']}"
+            output = PUBLIC / "gear" / product["id"] / "index.html"
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_bytes(fetch_page(base_url, path))
+    finally:
+        server.terminate()
+        try:
+            server.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            server.kill()
+            server.wait()
+
+    print(f"Built {PUBLIC.relative_to(ROOT)} for Cloudflare Workers.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

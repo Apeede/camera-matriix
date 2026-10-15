@@ -1,0 +1,12 @@
+{
+  "name": "camera-matrix-rentals",
+  "private": true,
+  "scripts": {
+    "build": "python3 build_cloudflare.py",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.43.0"
+  }
+}

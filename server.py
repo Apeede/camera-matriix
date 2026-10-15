@@ -117,6 +117,19 @@ def booking_is_expired(booking, now=None):
         return False
 
 
+def parse_rental_date(value):
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise ValueError("Enter valid pickup and return dates.")
+    try:
+        return date.fromisoformat(value)
+    except ValueError as error:
+        raise ValueError("Enter valid pickup and return dates.") from error
+
+
+def kampala_today():
+    return datetime.now(timezone(timedelta(hours=3))).date()
+
+
 def write_booking_file(path, bookings):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
@@ -173,31 +186,17 @@ def save_bookings(bookings):
 
 
 def day_count(start, end):
-    return max(1, (date.fromisoformat(end) - date.fromisoformat(start)).days)
-
-
-def quantities_for_period(start, end):
-    used = {item["id"]: 0 for item in PRODUCTS}
-    for booking in load_bookings():
-        if booking.get("status") not in {"requested", "confirmed"}:
-            continue
-        overlaps = start < booking["returnDate"] and end > booking["pickupDate"]
-        if overlaps:
-            for line in booking["items"]:
-                used[line["id"]] = used.get(line["id"], 0) + line["quantity"]
-    return used
+    return max(1, (parse_rental_date(end) - parse_rental_date(start)).days)
 
 
 def availability(start, end, requested):
-    date.fromisoformat(start)
-    date.fromisoformat(end)
+    parse_rental_date(start)
+    parse_rental_date(end)
     if end <= start:
         raise ValueError("Return date must be after pickup date.")
-    used = quantities_for_period(start, end)
     results = {}
     for product in PRODUCTS:
-        available = max(0, product["quantity"] - used[product["id"]])
-        results[product["id"]] = {"available": available, "requested": requested.get(product["id"], 0), "inStock": available >= requested.get(product["id"], 0)}
+        results[product["id"]] = {"available": 9007199254740991, "requested": requested.get(product["id"], 0), "inStock": True, "unlimited": True}
     return results
 
 
@@ -401,7 +400,10 @@ class Handler(SimpleHTTPRequestHandler):
         length = int(self.headers.get("Content-Length", "0"))
         if length > 32_000:
             raise ValueError("Request is too large.")
-        return json.loads(self.rfile.read(length) or b"{}")
+        value = json.loads(self.rfile.read(length) or b"{}")
+        if not isinstance(value, dict):
+            raise ValueError("Request body must be a JSON object.")
+        return value
 
     def do_GET(self):
         run_retention_sweep()
@@ -448,7 +450,7 @@ class Handler(SimpleHTTPRequestHandler):
             try:
                 start, end = query["pickup"][0], query["return"][0]
                 requested = json.loads(query.get("items", ["{}"])[0])
-                if not isinstance(requested, dict) or any(not isinstance(q, int) or q < 0 for q in requested.values()):
+                if not isinstance(requested, dict) or any(type(q) is not int or q < 0 for q in requested.values()):
                     raise ValueError("Item quantities must be positive whole numbers.")
                 result = availability(start, end, requested)
                 return self.send_json(200, {"pickupDate": start, "returnDate": end, "availability": result})
@@ -517,13 +519,19 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             payload = self.read_json()
             pickup, return_date = payload["pickupDate"], payload["returnDate"]
-            date.fromisoformat(pickup)
-            date.fromisoformat(return_date)
+            parse_rental_date(pickup)
+            parse_rental_date(return_date)
+            if pickup < kampala_today().isoformat():
+                raise ValueError("Pickup date cannot be in the past.")
             if return_date <= pickup:
                 raise ValueError("Return date must be after pickup date.")
             customer = payload.get("customer", {})
-            name, email = customer.get("name", "").strip(), customer.get("email", "").strip()
-            phone = customer.get("phone", "").strip()
+            if not isinstance(customer, dict):
+                raise ValueError("Enter a name and valid email address.")
+            raw_name, raw_email, raw_phone = customer.get("name", ""), customer.get("email", ""), customer.get("phone", "")
+            if not all(isinstance(value, str) for value in (raw_name, raw_email, raw_phone)):
+                raise ValueError("Enter a name, valid email address, and phone number.")
+            name, email, phone = raw_name.strip(), raw_email.strip(), raw_phone.strip()
             if not name or "@" not in email or len(name) > 100 or len(email) > 200:
                 raise ValueError("Enter a name and valid email address.")
             if not re.fullmatch(r"\+?[0-9][0-9 ()-]{6,20}", phone) or len(re.sub(r"\D", "", phone)) < 7:
@@ -538,18 +546,14 @@ class Handler(SimpleHTTPRequestHandler):
                 raise ValueError("Add at least one item to your booking.")
             items = []
             for product_id, quantity in raw_items.items():
-                if product_id not in PRODUCT_BY_ID or not isinstance(quantity, int) or quantity < 1 or quantity > 10:
+                if product_id not in PRODUCT_BY_ID or type(quantity) is not int or quantity < 1:
                     raise ValueError("One or more item quantities are invalid.")
                 product = PRODUCT_BY_ID[product_id]
                 items.append({"id": product_id, "name": product["name"], "quantity": quantity, "dailyRate": product["price"]})
             with LOCK:
-                stock = availability(pickup, return_date, raw_items)
-                unavailable = [PRODUCT_BY_ID[key]["name"] for key, result in stock.items() if result["requested"] and not result["inStock"]]
-                if unavailable:
-                    return self.send_json(409, {"error": "Not enough stock for: " + ", ".join(unavailable), "availability": stock})
                 days = day_count(pickup, return_date)
                 total = sum(line["dailyRate"] * line["quantity"] for line in items) * days
-                booking = {"id": uuid.uuid4().hex[:10].upper(), "createdAt": datetime.now(timezone.utc).isoformat(), "privacyAcknowledgedAt": datetime.now(timezone.utc).isoformat(), "privacyPolicyVersion": "2026-10-13.1", "status": "requested", "paymentStatus": "not_started", "customer": {"name": name, "email": email, "phone": phone}, "pickupDate": pickup, "returnDate": return_date, "rentalDays": days, "collection": collection, "items": items, "estimatedTotal": total, "currency": "UGX", "notifications": {"email": {"status": "sending"}, "whatsapp": {"status": "sending"}}}
+                booking = {"id": uuid.uuid4().hex.upper(), "createdAt": datetime.now(timezone.utc).isoformat(), "privacyAcknowledgedAt": datetime.now(timezone.utc).isoformat(), "privacyPolicyVersion": "2026-10-13.1", "status": "requested", "paymentStatus": "not_started", "customer": {"name": name, "email": email, "phone": phone}, "pickupDate": pickup, "returnDate": return_date, "rentalDays": days, "collection": collection, "items": items, "estimatedTotal": total, "currency": "UGX", "notifications": {"email": {"status": "sending"}, "whatsapp": {"status": "sending"}}}
                 all_bookings = load_bookings()
                 all_bookings.append(booking)
                 save_bookings(all_bookings)

@@ -13,7 +13,7 @@
   <main class="admin">
     <p class="eyebrow"><span></span> PRIVATE OPERATIONS</p>
     <h1>Booking requests</h1>
-    <p class="admin-help">Enter the ADMIN_TOKEN configured on the server to load booking details. Use HTTPS when accessing this page remotely.</p>
+    <p class="admin-help">Enter the private admin token configured for the Cloudflare Worker to load booking details. This page requires HTTPS when accessed remotely.</p>
     <form class="admin-tools" id="admin-login"><input id="admin-token" type="password" autocomplete="current-password" placeholder="Admin token" required><button type="submit">Load bookings</button></form>
     <p id="admin-message" class="admin-help" aria-live="polite"></p>
     <section id="bookings" aria-live="polite"></section>

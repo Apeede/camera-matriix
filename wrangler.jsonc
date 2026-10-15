@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "camera-matrix-rentals",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-14",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/robots.txt", "/sitemap.xml", "/", "/index.html"]
+  },
+  "vars": {
+    "PUBLIC_BASE_URL": "https://www.cinematrix.store"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "camera-matrix-bookings",
+      "database_id": "b3b71b50-9daa-4b46-9f29-3eb0690820d4",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "triggers": {
+    "crons": ["17 2 * * *"]
+  }
+}

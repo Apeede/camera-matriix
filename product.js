@@ -1,6 +1,7 @@
 const root = document.querySelector("#product-detail");
 const id = new URLSearchParams(location.search).get("id");
 const formatUGX = (value) => `UGX ${new Intl.NumberFormat("en-UG").format(value)}`;
+const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 fetch("/api/gear").then((response) => response.json()).then(({ products }) => {
   const item = products.find((product) => product.id === id);
   if (!item) {
@@ -8,17 +9,17 @@ fetch("/api/gear").then((response) => response.json()).then(({ products }) => {
     return;
   }
   document.title = `${item.name} | Camera Matrix`;
-  const photo = item.image ? `<img class="detail-photo" src="${item.image}" alt="${item.name}" onerror="this.hidden=true;this.parentElement.classList.add('detail-photo-unavailable')" />` : `<div class="detail-photo-unavailable" role="img" aria-label="Product photo unavailable"></div>`;
-  const specs = (item.specs || "Details available on request").split(" · ").map((spec) => `<li>${spec}</li>`).join("");
+  const photo = item.image ? `<img class="detail-photo" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.name)}" onerror="this.hidden=true;this.parentElement.classList.add('detail-photo-unavailable')" />` : `<div class="detail-photo-unavailable" role="img" aria-label="Product photo unavailable"></div>`;
+  const specs = (item.specs || "Details available on request").split(" · ").map((spec) => `<li>${escapeHtml(spec)}</li>`).join("");
   root.innerHTML = `
     <a class="detail-back" href="index.html#catalog">← Back to all gear</a>
     <section class="detail-layout">
       <div class="detail-gallery"><div class="detail-photo-frame" data-tone="${item.tone}">${photo}</div><p class="detail-image-caption">${item.name}</p></div>
       <div class="detail-copy">
-        <p class="eyebrow"><span></span> ${item.tag.toUpperCase()}</p>
-        <p class="detail-type">${item.type}</p>
-        <h1>${item.name}</h1>
-        <p class="detail-description">${item.desc}</p>
+        <p class="eyebrow"><span></span> ${escapeHtml(item.tag.toUpperCase())}</p>
+        <p class="detail-type">${escapeHtml(item.type)}</p>
+        <h1>${escapeHtml(item.name)}</h1>
+        <p class="detail-description">${escapeHtml(item.desc)}</p>
         <div class="detail-price"><strong>${formatUGX(item.price)}</strong><span>per day</span></div>
         <a class="detail-cta" href="index.html#top">Choose rental dates <span>→</span></a>
         <div class="detail-spec-block"><h2>Key specifications</h2><ul>${specs}</ul></div>

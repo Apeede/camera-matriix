@@ -10,7 +10,6 @@
     "tone": "sand",
     "tag": "FE 70–200mm GM",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.sony.com/electronics/camera-lenses/sel70200gm",
     "image": "https://www.sony.jp/ichigan/lens/G-Master/img/pdct_SEL70200GM%402x.jpg",
     "brand": "Sony"
@@ -26,7 +25,6 @@
     "tone": "rose",
     "tag": "FE 35mm GM",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.sony.com/electronics/camera-lenses/sel35f14gm",
     "image": "https://dc.watch.impress.co.jp/img/dcw/list/1311/547/01.jpg",
     "brand": "Sony"
@@ -42,7 +40,6 @@
     "tone": "blue",
     "tag": "FE 200–600mm G",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.sony.com/electronics/camera-lenses/sel200600g",
     "image": "https://sonyimages.blob.core.windows.net/productr/large/sel200600_g-allsel200600_g_ps_04_en_gb.png",
     "brand": "Sony"
@@ -58,7 +55,6 @@
     "tone": "dark",
     "tag": "85mm DG DN Art",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.sigma-global.com/en/lenses/a020_85_14/",
     "image": "https://www.fujiya-camera.co.jp/img/goods/1/C0085126322656_1.jpg",
     "brand": "Sigma"
@@ -74,7 +70,6 @@
     "tone": "sand",
     "tag": "α7 IV",
     "art": "camera",
-    "quantity": 1,
     "specUrl": "https://www.sony.com/electronics/support/e-mount-body-ilce-7-series/ilce-7m4/specifications",
     "image": "/assets/hero/Sony%20camera%20cgI.jpeg",
     "imageAlt": "Sony α7 IV mirrorless camera body photographed at an angle",
@@ -91,7 +86,6 @@
     "tone": "dark",
     "tag": "FX3 Cinema Line",
     "art": "camera",
-    "quantity": 1,
     "specUrl": "https://www.sony.com/electronics/support/camcorders-interchangeable-lens-cameras/ilme-fx3/specifications",
     "image": "https://store.sony.com.tw/resource/file/product_files/ILME-FX3/01_800e83033.jpg",
     "brand": "Sony"
@@ -107,7 +101,6 @@
     "tone": "blue",
     "tag": "EOS R6 Mark II",
     "art": "camera",
-    "quantity": 1,
     "specUrl": "https://www.canon-europe.com/cameras/eos-r6-mark-ii/specifications/",
     "image": "https://theflashcentre.com/cdn/shop/products/CANN021_1_1024x1024.png?v=1667385289",
     "brand": "Canon"
@@ -123,7 +116,6 @@
     "tone": "mint",
     "tag": "RF 24–105mm STM",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://harrisoncameras.co.uk/cdn/shop/files/4111C005AA_grande.jpg?v=1720775322",
     "brand": "Canon"
@@ -139,7 +131,6 @@
     "tone": "sand",
     "tag": "RF 24–105mm L",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://lenz.pe/cdn/shop/files/O6137_1.png?v=1761153678&width=1500",
     "brand": "Canon"
@@ -155,7 +146,6 @@
     "tone": "rose",
     "tag": "RF 50mm STM",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://tokiwa-camera.co.jp/cdn/shop/files/IMG_3098.jpg?v=1781253751&width=1946",
     "brand": "Canon"
@@ -171,7 +161,6 @@
     "tone": "warm",
     "tag": "RF 85mm Macro",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://www.toneart-shop.de/media/catalog/product/c/a/canon-rf-85mm-f2-macro-is-stm_kaufen_toneart-shop.jpg",
     "brand": "Canon"
@@ -187,7 +176,6 @@
     "tone": "sand",
     "tag": "EF 24–105mm L",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.usa.canon.com/support/p/ef-24-105mm-f-4l-is-usm",
     "image": "https://shashinki.com/shop/getimage/products/CN-24105L.jpg",
     "brand": "Canon"
@@ -203,7 +191,6 @@
     "tone": "dark",
     "tag": "EF 24–70mm L",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.usa.canon.com/support/p/ef-24-70mm-f-2-8l-usm",
     "image": "https://img-estoquenow.s3.amazonaws.com/items/10905/lente-canon-ef-24-70mm-f2.8l-usm_f1d669e4561bcb788c9dd7c854bded7b.jpeg",
     "brand": "Canon"
@@ -219,7 +206,6 @@
     "tone": "rose",
     "tag": "EF 85mm USM",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.usa.canon.com/shop/p/ef-85mm-f-1-8-usm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Canon_85mm_f1.8.jpg",
     "brand": "Canon"
@@ -235,7 +221,6 @@
     "tone": "mint",
     "tag": "EF 50mm STM",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.usa.canon.com/support/p/ef-50mm-f-1-8-stm",
     "image": "https://bizweb.dktcdn.net/100/378/894/files/minhquangcamera-2-canon-ef-50mm-stm-copy.jpg?v=1732520335870",
     "brand": "Canon"
@@ -251,7 +236,6 @@
     "tone": "blue",
     "tag": "EF 70–200mm L III",
     "art": "lens",
-    "quantity": 1,
     "specUrl": "https://www.usa.canon.com/shop/p/ef-70-200mm-f-2-8l-is-iii-usm",
     "image": "https://s7d1.scene7.com/is/image/canon/3044C002_ef-70-200mm-f-2.8l-is-iii-usm_primary?fmt=webp-alpha",
     "brand": "Canon"
@@ -267,7 +251,6 @@
     "tone": "dark",
     "tag": "DJI Mic 3",
     "art": "audio",
-    "quantity": 1,
     "specUrl": "https://www.dji.com/mic-3/specs",
     "image": "https://www.system5.jp/cdn/shop/files/N_1210302p1_3fdf13ef-c974-4a31-9a86-3a53cd2f6b37_2100x2100.jpg?v=1756278410",
     "brand": "DJI"
@@ -283,7 +266,6 @@
     "tone": "warm",
     "tag": "Wireless GO II",
     "art": "audio",
-    "quantity": 1,
     "specUrl": "https://rode.com/en/microphones/wireless/wirelessgoii",
     "image": "https://www.maddogs.tv/wp-content/uploads/Rode-Wireless-Go-2-II-Dual-Channel-Radio-Mic-Kit-800x800.png",
     "brand": "RØDE"
@@ -299,7 +281,6 @@
     "tone": "sand",
     "tag": "Godox AD600BM",
     "art": "light",
-    "quantity": 1,
     "specUrl": "https://godox.com/product-d/AD600M-AD600BM.html",
     "image": "https://godox.com/static/upload/image/20220117/1642418923197509.jpg",
     "imageAlt": "Godox AD600BM flash head; kit contents are not shown",
@@ -316,7 +297,6 @@
     "tone": "blue",
     "tag": "Godox TT600",
     "art": "light",
-    "quantity": 1,
     "specUrl": "https://godox.com/product-d/TT600.html",
     "image": "https://www.retinadigicam.com/wp-content/uploads/2018/02/TT600.jpg",
     "brand": "Godox"
@@ -332,7 +312,6 @@
     "tone": "mint",
     "tag": "Zoom H5",
     "art": "audio",
-    "quantity": 1,
     "specUrl": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h5/",
     "image": "https://soundselect.co.za/cdn/shop/files/h5_front.jpg?v=1764677294",
     "brand": "Zoom"
@@ -348,7 +327,6 @@
     "tone": "rose",
     "tag": "Zoom H6",
     "art": "audio",
-    "quantity": 1,
     "specUrl": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h6/",
     "image": "https://www.scmusic.com.au/content/uploads/2013/11/p-19155-zoomh6.jpg",
     "brand": "Zoom"
@@ -364,7 +342,6 @@
     "tone": "dark",
     "tag": "amaran 300c",
     "art": "light",
-    "quantity": 1,
     "specUrl": "https://amarancreators.com/pages/amaran-300c",
     "image": "https://www.kamera-express.nl/media/2fa90bbc-84ce-4b39-a79c-a14e1a7294d9/amaran-300c-grey-eu-version-.jpg",
     "brand": "amaran"
@@ -380,7 +357,6 @@
     "tone": "dark",
     "tag": "DJI RS 4",
     "art": "accessory",
-    "quantity": 1,
     "specUrl": "https://www.dji.com/rs-4/specs",
     "image": "https://www.ec-mall.com/media/catalog/product/cache/55b8d9149c90ec27221b7d1ab8c3d7ed/D/J/DJI-RS-4-Gimbal-Stabilizer-2.webp",
     "brand": "DJI"
