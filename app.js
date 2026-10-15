@@ -109,6 +109,19 @@ function renderCart() {
 }
 function openCart() { document.querySelector("#drawer-backdrop").hidden = false; document.querySelector("#cart-drawer").classList.add("open"); document.querySelector("#cart-drawer").setAttribute("aria-hidden", "false"); }
 function closeCart() { document.querySelector("#drawer-backdrop").hidden = true; document.querySelector("#cart-drawer").classList.remove("open"); document.querySelector("#cart-drawer").setAttribute("aria-hidden", "true"); }
+const menuToggle = document.querySelector(".menu-toggle");
+menuToggle?.addEventListener("click", () => {
+  const open = menuToggle.getAttribute("aria-expanded") !== "true";
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  document.querySelector("#primary-navigation")?.classList.toggle("is-open", open);
+});
+document.querySelector("#primary-navigation")?.addEventListener("click", (event) => {
+  if (!event.target.closest("a")) return;
+  menuToggle?.setAttribute("aria-expanded", "false");
+  menuToggle?.setAttribute("aria-label", "Open navigation");
+  event.currentTarget.classList.remove("is-open");
+});
 let toastTimer;
 function toast(message) { const el = document.querySelector("#toast"); el.textContent = message; el.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2300); }
 document.querySelectorAll(".filter").forEach((button) => button.addEventListener("click", () => { document.querySelector(".filter.active").classList.remove("active"); button.classList.add("active"); activeCategory = button.dataset.category; renderProducts(); }));

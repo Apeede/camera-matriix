@@ -1,5 +1,18 @@
 const root = document.querySelector("#product-detail");
 const id = new URLSearchParams(location.search).get("id");
+const menuToggle = document.querySelector(".menu-toggle");
+menuToggle?.addEventListener("click", () => {
+  const open = menuToggle.getAttribute("aria-expanded") !== "true";
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  document.querySelector("#primary-navigation")?.classList.toggle("is-open", open);
+});
+document.querySelector("#primary-navigation")?.addEventListener("click", (event) => {
+  if (!event.target.closest("a")) return;
+  menuToggle?.setAttribute("aria-expanded", "false");
+  menuToggle?.setAttribute("aria-label", "Open navigation");
+  event.currentTarget.classList.remove("is-open");
+});
 const formatUGX = (value) => `UGX ${new Intl.NumberFormat("en-UG").format(value)}`;
 const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 fetch("/api/gear").then((response) => response.json()).then(({ products }) => {

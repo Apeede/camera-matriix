@@ -410,7 +410,7 @@ class Handler(SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         origin = safe_origin(self)
         if parsed.path == "/robots.txt":
-            body = f"User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: {origin}/sitemap.xml\n"
+            body = f"User-agent: Google-Extended\nAllow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\nSitemap: {origin}/sitemap.xml\n"
             data = body.encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/plain; charset=utf-8")

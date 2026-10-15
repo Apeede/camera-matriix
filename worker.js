@@ -320,7 +320,7 @@ async function apiFetch(request, env) {
   const url = new URL(request.url);
   const canonicalOrigin = (env.PUBLIC_BASE_URL || url.origin).replace(/\/+$/, "");
   if (url.pathname.startsWith("/api/")) return bookingApi(request, env, url);
-  if (url.pathname === "/robots.txt") return new Response(`User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${canonicalOrigin}/sitemap.xml\n`, { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
+  if (url.pathname === "/robots.txt") return new Response(`User-agent: Google-Extended\nAllow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${canonicalOrigin}/sitemap.xml\n`, { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
   if (url.pathname === "/sitemap.xml") {
     const products = await productsFor(env);
     const paths = ["/", "/rentals.html", "/camera-rentals-kampala.html", "/lens-rentals-kampala.html", "/lighting-audio-rentals.html", "/how-to-rent.html", "/about.html", "/contact.html", "/privacy-policy.html", "/cookie-policy.html", "/terms.html", "/refund-policy.html", ...products.map((product) => `/gear/${product.id}`)];
