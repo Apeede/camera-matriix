@@ -2,6 +2,8 @@
 
 Responsive camera and production gear rentals storefront. The catalog and rental rates are in `catalog.json`. Product details are server-rendered at clean `/gear/{product-id}` URLs.
 
+The top navigation switches between rentals and the camera sales catalog at `/buy.html`. Sale listings, UGX prices, and product photo galleries are maintained in `buy-catalog.json`; each listing links to `/buy-item.html?id={product-id}` for additional photos. Buyers can filter, search, sort by price or model, save multiple items and quantities to a browser-stored enquiry list, then send one WhatsApp request to confirm stock and package details.
+
 ## Run locally
 
 ```bash

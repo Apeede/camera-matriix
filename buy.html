@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Buy cameras and production gear from Camera Matrix in Kampala, Uganda. Browse Sony, Canon and Nikon cameras for sale." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cameras for Sale in Kampala | Camera Matrix" />
+    <meta property="og:description" content="Browse cameras and production gear for sale from Camera Matrix." />
+    <title>Cameras for Sale in Kampala | Camera Matrix</title>
+    <link rel="icon" type="image/png" href="assets/favicon-01.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="buy-page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Camera Matrix home"><img src="assets/logo-01.png" alt="Camera Matrix" /></a>
+      <div class="mode-switch" aria-label="Choose a service"><a class="mode-option" href="/">Rent</a><a class="mode-option is-active" href="/buy.html" aria-current="page">Buy</a><span class="mode-liquid" aria-hidden="true"></span></div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <nav id="primary-navigation" aria-label="Main navigation"><a href="/#catalog">Rent gear</a><a class="active" href="/buy.html">For sale</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></nav>
+      <button class="cart-button buy-contact" id="sale-enquiry-open" type="button">Enquiry list <span class="sale-enquiry-count" id="sale-enquiry-count">0</span> <span aria-hidden="true">↗</span></button>
+    </header>
+    <main id="top">
+      <section class="buy-hero hero-video-hero buy-video-hero" aria-labelledby="buy-hero-title" data-video-hero data-video-sources="/assets/hero-videos/rent-01.mp4|/assets/hero-videos/rent-02.mp4|/assets/hero-videos/buy-01.mp4|/assets/hero-videos/buy-02.mp4">
+        <video class="hero-background-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        <div class="hero-video-shade" aria-hidden="true"></div>
+        <div class="hero-video-copy">
+          <p class="hero-kicker"><span></span> CAMERA MATRIX <span class="hero-kicker-line"></span> KAMPALA, UGANDA</p>
+          <p class="hero-overline" data-video-kicker>CAMERA MATRIX · GEAR FOR SALE</p>
+          <h1 id="buy-hero-title"><span data-video-title-first>Camera gear for</span><br /><em data-video-title-second>your next story.</em></h1>
+          <p class="hero-lead" data-video-subtitle aria-live="off">Explore cameras and production equipment selected for creators in Kampala.</p>
+          <div class="hero-video-actions"><a class="hero-link" href="#sale-catalog">Explore gear for sale <span>↘</span></a><a class="hero-video-secondary" href="/#catalog">Explore rental gear <span>↗</span></a></div>
+        </div>
+      </section>
+      <section class="sale-catalog" id="sale-catalog">
+        <div class="catalog-heading"><div><p class="eyebrow"><span></span> EQUIPMENT FOR SALE</p><h2>Find your next <em>camera.</em></h2></div><p class="stock-note"><span class="live-dot"></span> Ask our team about availability</p></div>
+        <div class="catalog-controls sale-controls"><div class="filters" role="group" aria-label="Filter by camera brand"><button class="filter active" data-brand="all" aria-pressed="true">All brands <span id="sale-count">20</span></button><button class="filter" data-brand="Sony" aria-pressed="false">Sony</button><button class="filter" data-brand="Canon" aria-pressed="false">Canon</button><button class="filter" data-brand="Nikon" aria-pressed="false">Nikon</button></div><div class="sale-tools"><label class="search"><span>⌕</span><input id="sale-search" type="search" placeholder="Search cameras" aria-label="Search cameras for sale" /></label><label class="sale-sort-label">SORT BY<select id="sale-sort" aria-label="Sort cameras"><option value="featured">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name">Model name</option></select></label></div></div>
+        <div class="sale-grid" id="sale-grid" aria-live="polite"></div>
+        <section class="sale-compare-results" id="sale-compare-results" aria-live="polite" hidden></section>
+        <p class="empty-state" id="sale-empty" hidden>No cameras match that search. Try another model or brand.</p>
+        <p class="sale-note">Prices are shown in UGX. Contact Camera Matrix to confirm stock, package contents and payment details.</p>
+      </section>
+    </main>
+    <div class="sale-compare-bar" id="sale-compare-bar" hidden><span id="sale-compare-status">0 cameras selected</span><button type="button" id="sale-compare-open">Compare cameras</button><button class="sale-compare-clear" type="button" id="sale-compare-clear">Clear</button></div>
+    <footer id="footer"><img src="assets/logo-01.png" alt="Camera Matrix" /><p>Good gear. Great stories. Yours next.</p><div class="footer-links"><a href="/">Rent gear</a><a href="/how-to-rent.html">How it works</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy</a><a href="/terms.html">Terms</a></div><a href="mailto:Cameramatrixrentals@gmail.com">Sales &amp; enquiries: Cameramatrixrentals@gmail.com ↗</a></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="scroll-effects.js"></script>
+    <script src="buy.js"></script>
+    <script src="hero-videos.js"></script>
+  </body>
+</html>

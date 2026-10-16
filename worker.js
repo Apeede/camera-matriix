@@ -323,7 +323,7 @@ async function apiFetch(request, env) {
   if (url.pathname === "/robots.txt") return new Response(`User-agent: Google-Extended\nAllow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${canonicalOrigin}/sitemap.xml\n`, { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
   if (url.pathname === "/sitemap.xml") {
     const products = await productsFor(env);
-    const paths = ["/", "/rentals.html", "/camera-rentals-kampala.html", "/lens-rentals-kampala.html", "/lighting-audio-rentals.html", "/how-to-rent.html", "/about.html", "/contact.html", "/privacy-policy.html", "/cookie-policy.html", "/terms.html", "/refund-policy.html", ...products.map((product) => `/gear/${product.id}`)];
+    const paths = ["/", "/buy.html", "/faq.html", "/rentals.html", "/camera-rentals-kampala.html", "/lens-rentals-kampala.html", "/lighting-audio-rentals.html", "/how-to-rent.html", "/about.html", "/contact.html", "/privacy-policy.html", "/cookie-policy.html", "/terms.html", "/refund-policy.html", ...products.map((product) => `/gear/${product.id}`)];
     const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((path) => `<url><loc>${escapeXml(canonicalOrigin + path)}</loc></url>`).join("")}</urlset>`;
     return new Response(body, { headers: { "Content-Type": "application/xml; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
   }

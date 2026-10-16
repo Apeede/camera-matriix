@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View product photos and sale details from Camera Matrix in Kampala." />
+    <title>Camera for Sale | Camera Matrix</title>
+    <link rel="icon" type="image/png" href="assets/favicon-01.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="buy-page buy-item-page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Camera Matrix home"><img src="assets/logo-01.png" alt="Camera Matrix" /></a>
+      <div class="mode-switch" aria-label="Choose a service"><a class="mode-option" href="/">Rent</a><a class="mode-option is-active" href="/buy.html" aria-current="page">Buy</a><span class="mode-liquid" aria-hidden="true"></span></div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <nav id="primary-navigation" aria-label="Main navigation"><a href="/#catalog">Rent gear</a><a class="active" href="/buy.html">For sale</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></nav>
+      <button class="cart-button buy-contact" id="sale-enquiry-open" type="button">Enquiry list <span class="sale-enquiry-count" id="sale-enquiry-count">0</span> <span aria-hidden="true">↗</span></button>
+    </header>
+    <main class="sale-detail" id="sale-detail"><p class="detail-loading">Loading product details…</p></main>
+    <footer id="footer"><img src="assets/logo-01.png" alt="Camera Matrix" /><p>Good gear. Great stories. Yours next.</p><div class="footer-links"><a href="/buy.html">All gear for sale</a><a href="/">Rent gear</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a><a href="/terms.html">Terms</a></div><a href="mailto:Cameramatrixrentals@gmail.com">Sales &amp; enquiries: Cameramatrixrentals@gmail.com ↗</a></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="scroll-effects.js"></script>
+    <script src="buy-item.js"></script>
+  </body>
+</html>

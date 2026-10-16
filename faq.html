@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Answers about renting camera gear, booking requests, pickup and delivery, payment, cancellations, and cameras for sale from Camera Matrix." />
+    <link rel="canonical" href="https://www.cinematrix.store/faq.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Frequently Asked Questions | Camera Matrix" />
+    <meta property="og:description" content="Find answers about renting gear and buying cameras from Camera Matrix in Kampala." />
+    <meta property="og:url" content="https://www.cinematrix.store/faq.html" />
+    <title>Frequently Asked Questions | Camera Matrix</title>
+    <link rel="icon" type="image/png" href="assets/favicon-01.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="faq-page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Camera Matrix home"><img src="assets/logo-01.png" alt="Camera Matrix" /></a>
+      <div class="mode-switch" aria-label="Choose a service"><a class="mode-option" href="/">Rent</a><a class="mode-option" href="/buy.html">Buy</a><span class="mode-liquid" aria-hidden="true"></span></div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <nav id="primary-navigation" aria-label="Main navigation"><a href="/#catalog">Rent gear</a><a href="/how-to-rent.html">How it works</a><a class="active" href="/faq.html" aria-current="page">FAQ</a><a href="/contact.html">Contact</a></nav>
+      <a class="cart-button" href="/contact.html">Contact us <span aria-hidden="true">→</span></a>
+    </header>
+    <main class="faq-main">
+      <p class="hero-overline">CAMERA MATRIX · KAMPALA, UGANDA</p>
+      <h1>Frequently asked<br /><em>questions.</em></h1>
+      <p class="faq-intro">Quick answers about renting gear and buying cameras. Need help with a specific model or date? <a href="/contact.html">Talk to our team.</a></p>
+
+      <section class="faq-group" aria-labelledby="faq-rent-heading">
+        <h2 id="faq-rent-heading">Renting equipment</h2>
+        <details><summary>How do I request a rental?</summary><p>Choose your gear, select pickup and return dates, add items to your kit, then submit your contact details. The Camera Matrix team will follow up about availability and confirmation.</p></details>
+        <details><summary>Is my rental confirmed when I submit the form?</summary><p>No. Submitting the form sends a request; it does not reserve equipment or confirm a booking. Wait for written confirmation from Camera Matrix before travelling to collect gear.</p></details>
+        <details><summary>How do I check availability for my dates?</summary><p>Enter your pickup and return dates on the <a href="/#catalog">rental page</a> and choose “Find available gear.” The team will review your requested items and confirm availability.</p></details>
+        <details><summary>Where can I collect the equipment?</summary><p>The booking form offers Kampala · Kololo, Entebbe · Airport pickup, and delivery. Camera Matrix will confirm the collection or delivery arrangement for your request.</p></details>
+        <details><summary>How much will my rental cost?</summary><p>The catalog shows daily rates in UGX. Your written quote will confirm the full amount and any applicable taxes, delivery, deposit, or other fees before you accept or pay.</p></details>
+        <details><summary>Do I pay online?</summary><p>No. This website does not collect payment. Camera Matrix will provide payment details and terms with the written quote or confirmation.</p></details>
+        <details><summary>Can I change or cancel a request?</summary><p>You can withdraw an unconfirmed request by contacting Camera Matrix. For a confirmed booking, follow the terms in your written confirmation and see the <a href="/refund-policy.html">Cancellation and Refund Policy</a>.</p></details>
+        <details><summary>How do I check that a lens works with my camera?</summary><p>Check the mount and specifications on the product page before requesting it. Contact the team if you need help checking compatibility.</p></details>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-buy-heading">
+        <h2 id="faq-buy-heading">Buying gear</h2>
+        <details><summary>Can I buy the items shown in the rental catalog?</summary><p>The Rent and Buy catalogs are separate. Browse <a href="/buy.html">gear for sale</a> for sale prices, specifications, product details, and the comparison tool.</p></details>
+        <details><summary>How do I buy a camera listed for sale?</summary><p>Contact Camera Matrix with the model you are interested in to confirm current availability, package contents, and payment or delivery arrangements.</p></details>
+        <details><summary>Are sale prices and stock guaranteed?</summary><p>Please confirm the current price and availability with Camera Matrix before purchase. The website does not take payment or complete purchases online.</p></details>
+      </section>
+
+      <section class="faq-contact">
+        <h2>Still have a question?</h2>
+        <p>Send us the product name, your dates, or what you are trying to create. We’ll help you find the right next step.</p>
+        <a href="https://wa.me/256704738156" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp <span aria-hidden="true">↗</span></a>
+        <a href="mailto:Cameramatrixrentals@gmail.com">Email Camera Matrix <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+    <footer id="footer"><img src="assets/logo-01.png" alt="Camera Matrix" /><p>Good gear. Great stories. Yours next.</p><div class="footer-links"><a href="/">Rent gear</a><a href="/buy.html">Gear for sale</a><a href="/how-to-rent.html">How it works</a><a href="/contact.html">Contact</a><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund-policy.html">Cancellations &amp; refunds</a></div><a href="mailto:Cameramatrixrentals@gmail.com">Bookings &amp; enquiries: Cameramatrixrentals@gmail.com ↗</a></footer>
+    <script src="scroll-effects.js"></script>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector("#primary-navigation");
+      menuToggle.addEventListener("click", () => {
+        const open = menuToggle.getAttribute("aria-expanded") !== "true";
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+        navigation.classList.toggle("is-open", open);
+      });
+      navigation.addEventListener("click", (event) => {
+        if (!event.target.closest("a")) return;
+        menuToggle.setAttribute("aria-expanded", "false");
+        navigation.classList.remove("is-open");
+      });
+    </script>
+  </body>
+</html>

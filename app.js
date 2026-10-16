@@ -28,6 +28,7 @@ function initHeroSlider() {
   const textSlides = [...hero.querySelectorAll(".hero-copy-slide")];
   const imageSlides = [...hero.querySelectorAll(".hero-image-slide")];
   const dots = [...hero.querySelectorAll("[data-hero-go]")];
+  if (!textSlides.length || !imageSlides.length || !dots.length) return;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let current = 0;
   let timer;
@@ -239,15 +240,39 @@ document.querySelector("#checkout").addEventListener("click", async () => {
     button.firstChild.textContent = "Request this booking ";
   }
 });
-fetch("/api/gear").then((response) => response.json()).then((data) => {
-  if (!Array.isArray(data.products)) throw new Error("The rental catalog response is invalid.");
-  gear = data.products;
+async function loadRentalCatalog() {
+  let source = "availability service";
+  try {
+    const response = await fetch("/api/gear");
+    const data = await response.json();
+    if (!response.ok || !Array.isArray(data.products)) throw new Error(data.error || "The rental catalog response is invalid.");
+    gear = data.products;
+  } catch (error) {
+    console.error("Could not load the rental catalog API; trying the bundled catalog", error);
+    source = "bundled catalog";
+    try {
+      const response = await fetch("/catalog.json");
+      if (!response.ok) throw new Error("The bundled rental catalog could not be loaded.");
+      const data = await response.json();
+      if (!Array.isArray(data)) throw new Error("The bundled rental catalog is invalid.");
+      gear = data;
+    } catch (fallbackError) {
+      console.error("Could not load the bundled rental catalog", fallbackError);
+      grid.innerHTML = "";
+      const emptyState = document.querySelector("#empty-state");
+      emptyState.hidden = false;
+      emptyState.textContent = "Rental gear could not load right now. Please refresh the page to try again.";
+      return;
+    }
+  }
   const validIds = new Set(gear.map((item) => item.id));
   cart = Object.fromEntries(Object.entries(cart).filter(([id]) => validIds.has(id)));
   inventoryReady = true;
   renderProducts();
   renderCart();
-}).catch((error) => { console.error("Could not load rental catalog", error); toast("The rental catalog could not load. Refresh the page to try again."); });
+  if (source === "bundled catalog") toast("Showing the saved rental catalog while availability reconnects.");
+}
+loadRentalCatalog();
 initHeroSlider();
 renderProducts();
 renderCart();

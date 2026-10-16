@@ -20,59 +20,22 @@
   <body>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Camera Matrix home"><img src="assets/logo-01.png" alt="Camera Matrix" /></a>
+      <div class="mode-switch" aria-label="Choose a service"><a class="mode-option is-active" href="/" aria-current="page">Rent</a><a class="mode-option" href="/buy.html">Buy</a><span class="mode-liquid" aria-hidden="true"></span></div>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span><span></span></button>
-      <nav id="primary-navigation" aria-label="Main navigation"><a class="active" href="#catalog">Rent gear</a><a href="/how-to-rent.html">How it works</a><a href="/contact.html">Contact</a></nav>
+      <nav id="primary-navigation" aria-label="Main navigation"><a class="active" href="#catalog">Rent gear</a><a href="/how-to-rent.html">How it works</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></nav>
       <button class="cart-button" id="cart-open" aria-label="Open booking cart"><span class="cart-icon">▤</span> My booking <span class="cart-count" id="cart-count">0</span></button>
     </header>
 
     <main id="top">
-      <section class="hero" aria-label="Featured rental gear">
-        <div class="hero-copy">
+      <section class="hero hero-video-hero rent-video-hero" aria-labelledby="rent-hero-title" data-video-hero data-video-sources="/assets/hero-videos/rent-01.mp4|/assets/hero-videos/rent-02.mp4|/assets/hero-videos/buy-01.mp4|/assets/hero-videos/buy-02.mp4">
+        <video class="hero-background-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        <div class="hero-video-shade" aria-hidden="true"></div>
+        <div class="hero-video-copy">
           <p class="hero-kicker"><span></span> CAMERA MATRIX RENTALS <span class="hero-kicker-line"></span> KAMPALA, UGANDA</p>
-          <div class="hero-copy-slides" aria-live="polite" aria-atomic="true">
-            <article class="hero-copy-slide is-active" data-hero-slide="0">
-              <p class="hero-overline">THE HYBRID THAT DOES IT ALL</p>
-              <h1>Bring your<br /><em>vision to life.</em></h1>
-              <p class="hero-lead">Take the Sony α7 IV from a fleeting moment to a finished frame. Ready for your next shoot.</p>
-              <a class="hero-link" href="#catalog">Explore the gear <span>↘</span></a>
-            </article>
-            <article class="hero-copy-slide" data-hero-slide="1" aria-hidden="true" inert>
-              <p class="hero-overline">GO FURTHER. GET THE SHOT.</p>
-              <h1>Reach beyond<br /><em>the moment.</em></h1>
-              <p class="hero-lead">Get close to the action with the Sony 200–600mm G lens, built for wildlife, sport and the unexpected.</p>
-              <a class="hero-link" href="#catalog">Explore the gear <span>↘</span></a>
-            </article>
-            <article class="hero-copy-slide" data-hero-slide="2" aria-hidden="true" inert>
-              <p class="hero-overline">SHAPE LIGHT. SET THE SCENE.</p>
-              <h1>Give your story<br /><em>its own light.</em></h1>
-              <p class="hero-lead">Bring color and control to your setup with the Amaran 300c. Your next great scene starts here.</p>
-              <a class="hero-link" href="#catalog">Explore the gear <span>↘</span></a>
-            </article>
-          </div>
-          <div class="hero-controls" aria-label="Featured gear slides">
-            <button class="hero-arrow" type="button" data-hero-prev aria-label="Previous featured gear">←</button>
-            <button class="hero-dot is-active" type="button" data-hero-go="0" aria-label="Show featured Sony Alpha 7 IV" aria-current="true"></button>
-            <button class="hero-dot" type="button" data-hero-go="1" aria-label="Show featured Sony 200–600mm lens"></button>
-            <button class="hero-dot" type="button" data-hero-go="2" aria-label="Show featured Amaran 300c"></button>
-            <button class="hero-arrow" type="button" data-hero-next aria-label="Next featured gear">→</button>
-            <span class="hero-slide-count"><b id="hero-current">01</b> / 03</span>
-          </div>
-        </div>
-        <div class="hero-showcase" aria-label="Featured equipment photographs">
-          <div class="hero-atmosphere" aria-hidden="true"><img class="hero-atmosphere-fx" src="/assets/hero/Photo%20by%20David%20Liceaga%20on%20Unsplash.jpeg" alt="" /><img class="hero-atmosphere-alpha" src="/assets/hero/Sony%20camera%20cgI.jpeg" alt="" /></div>
-          <div class="hero-image-slide is-active" data-hero-slide="0">
-            <img src="/assets/hero/Sony%20camera%20cgI.jpeg" alt="Sony Alpha 7 IV mirrorless camera body" fetchpriority="high" />
-            <span class="hero-image-index">01 <i>—</i> 03</span><span class="hero-image-tag">SONY α7 IV <b>FULL-FRAME HYBRID</b></span>
-          </div>
-          <div class="hero-image-slide" data-hero-slide="1" aria-hidden="true" inert>
-            <img src="https://sonyimages.blob.core.windows.net/productr/large/sel200600_g-allsel200600_g_ps_04_en_gb.png" alt="Sony FE 200–600mm G super-telephoto zoom lens" loading="lazy" />
-            <span class="hero-image-index">02 <i>—</i> 03</span><span class="hero-image-tag">SONY 200–600mm G <b>SUPER-TELEPHOTO</b></span>
-          </div>
-          <div class="hero-image-slide" data-hero-slide="2" aria-hidden="true" inert>
-            <img src="https://www.kamera-express.nl/media/2fa90bbc-84ce-4b39-a79c-a14e1a7294d9/amaran-300c-grey-eu-version-.jpg" alt="Amaran 300c RGB LED light" loading="lazy" />
-            <span class="hero-image-index">03 <i>—</i> 03</span><span class="hero-image-tag">AMARAN 300c <b>RGB LED LIGHT</b></span>
-          </div>
-          <span class="hero-showcase-orbit" aria-hidden="true"></span>
+          <p class="hero-overline" data-video-kicker>GOOD GEAR. GREAT STORIES.</p>
+          <h1 id="rent-hero-title"><span data-video-title-first>Camera gear rentals</span><br /><em data-video-title-second>for every story.</em></h1>
+          <p class="hero-lead" data-video-subtitle aria-live="off">Find the cameras, lenses and production gear that help you bring your next idea to life in Kampala.</p>
+          <div class="hero-video-actions"><a class="hero-link" href="#catalog">Explore rental gear <span>↘</span></a><a class="hero-video-secondary" href="/buy.html">Explore gear for sale <span>↗</span></a></div>
         </div>
       </section>
 
@@ -93,12 +56,14 @@
       <section class="how" id="how-it-works"><div><p class="eyebrow"><span></span> ZERO FUSS, ALL FOCUS</p><h2>Your kit, in<br /><em>three easy steps.</em></h2></div><div class="steps"><article><span>01</span><h3>Choose your gear</h3><p>Choose the gear and quantities you want to request.</p></article><article><span>02</span><h3>Pick your dates</h3><p>Set your rental period and collection or delivery option.</p></article><article><span>03</span><h3>Get creating</h3><p>The Camera Matrix team will confirm your request before pickup.</p></article></div></section>
     </main>
 
-    <footer id="footer"><img src="assets/logo-01.png" alt="Camera Matrix" /><p>Good gear. Great stories. Yours next.</p><div class="footer-links"><a href="/rentals.html">All rental gear</a><a href="/camera-rentals-kampala.html">Camera rentals</a><a href="/lens-rentals-kampala.html">Lens rentals</a><a href="/lighting-audio-rentals.html">Lighting &amp; audio</a><a href="/how-to-rent.html">How to rent</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a><a href="/cookie-policy.html">Cookies</a><a href="/terms.html">Terms</a><a href="/refund-policy.html">Cancellations &amp; refunds</a></div><a href="mailto:Cameramatrixrentals@gmail.com">Bookings &amp; enquiries: Cameramatrixrentals@gmail.com ↗</a></footer>
+    <footer id="footer"><img src="assets/logo-01.png" alt="Camera Matrix" /><p>Good gear. Great stories. Yours next.</p><div class="footer-links"><a href="/rentals.html">All rental gear</a><a href="/camera-rentals-kampala.html">Camera rentals</a><a href="/lens-rentals-kampala.html">Lens rentals</a><a href="/lighting-audio-rentals.html">Lighting &amp; audio</a><a href="/how-to-rent.html">How to rent</a><a href="/faq.html">FAQ</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a><a href="/cookie-policy.html">Cookies</a><a href="/terms.html">Terms</a><a href="/refund-policy.html">Cancellations &amp; refunds</a></div><a href="mailto:Cameramatrixrentals@gmail.com">Bookings &amp; enquiries: Cameramatrixrentals@gmail.com ↗</a></footer>
 
     <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
     <aside class="cart-drawer" id="cart-drawer" aria-label="Your booking" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow"><span></span> YOUR KIT</p><h2>Booking list</h2></div><button class="close-button" id="cart-close" aria-label="Close booking">×</button></div><div id="cart-items" class="cart-items"></div><div class="cart-bottom"><p id="rental-summary" class="rental-summary">Choose pickup and return dates to price your rental.</p><p id="availability-summary" class="availability-summary">The team confirms requested gear and quantities.</p><p><span id="cart-total-label">Daily estimate</span><strong id="cart-total">UGX 0</strong></p><label class="checkout-field">YOUR NAME<input id="customer-name" autocomplete="name" placeholder="Full name" required /></label><label class="checkout-field">EMAIL ADDRESS<input id="customer-email" type="email" autocomplete="email" placeholder="you@example.com" required /></label><label class="checkout-field">PHONE / WHATSAPP<input id="customer-phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+256 7xx xxx xxx" required /></label><small class="phone-use-note">We’ll use this number only to follow up about this booking request.</small><label class="privacy-consent"><input id="privacy-consent" type="checkbox" required /><span>I’ve read the <a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms.html" target="_blank" rel="noopener">Terms</a>. I understand this is a request, not a confirmed booking.</span></label><p id="booking-status" class="booking-status" aria-live="polite"></p><button id="checkout" class="find-button">Request this booking <span>→</span></button><small>Submitting requests a reservation. Payment is not collected online.</small></div></aside>
     <a class="whatsapp-float" href="https://wa.me/256704738156?text=Hello%20Camera%20Matrix%2C%20I%27d%20like%20to%20ask%20about%20a%20rental." target="_blank" rel="noopener noreferrer" aria-label="Contact Camera Matrix on WhatsApp at +256 704 738 156"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.4A12.4 12.4 0 0 0 5.3 22.1L4 28l6-1.3A12.4 12.4 0 1 0 16 3.4Zm0 22.5c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.8.8-3.4-.2-.4A10.1 10.1 0 1 1 16 25.9Zm5.6-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.8.6.8.2 1.5.2 2.1.1.7-.1 1.8-.8 2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.5Z"/></svg></a>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="scroll-effects.js"></script>
     <script src="app.js"></script>
+    <script src="hero-videos.js"></script>
   </body>
 </html>

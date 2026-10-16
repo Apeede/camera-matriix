@@ -22,10 +22,18 @@ STATIC_FILES = (
     "product.html",
     "admin.html",
     "styles.css",
+    "scroll-effects.js",
     "app.js",
     "product.js",
     "admin.js",
     "catalog.json",
+    "buy.html",
+    "buy.js",
+    "buy-catalog.json",
+    "buy-item.html",
+    "buy-item.js",
+    "faq.html",
+    "hero-videos.js",
 )
 SEO_PATHS = (
     "/rentals.html",

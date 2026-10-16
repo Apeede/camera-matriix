@@ -1,0 +1,1158 @@
+[
+  {
+    "id": "sony-a7-iv-body",
+    "brand": "Sony",
+    "name": "A7 IV body",
+    "price": 7000000,
+    "images": [
+      "/assets/hero/Sony%20camera%20cgI.jpeg",
+      "https://www.capesindia.com/cdn/shop/files/sony-a7-iv-front-back_696015bb-1423-41de-bdb1-56f6a3a7797e.jpg?v=1694752829&width=800"
+    ],
+    "imageSources": [
+      "Camera Matrix",
+      "Capes India"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
+    "description": "A versatile full-frame hybrid camera for detailed stills and high-quality video. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "33 MP full-frame Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR"
+      },
+      {
+        "label": "Autofocus",
+        "value": "759-point phase-detection AF"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 10 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 60p; 10-bit 4:2:2 recording"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 slots: CFexpress Type A / SD and SD"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen; 3.69M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-a7-iv-kit",
+    "brand": "Sony",
+    "name": "A7 IV kit",
+    "price": 8500000,
+    "images": [
+      "https://www.foto-wolf-dresden.de/images/product_images/original_images/Alpha-7IV-bild1a_0_8022_4.jpg",
+      "/assets/hero/Sony%20camera%20cgI.jpeg"
+    ],
+    "imageSources": [
+      "Foto-Wolf Dresden",
+      "Camera Matrix"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
+    "description": "A full-frame hybrid camera suited to photography, interviews and creator video. Kit lens and included accessories should be confirmed before purchase.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "33 MP full-frame Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR"
+      },
+      {
+        "label": "Autofocus",
+        "value": "759-point phase-detection AF"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 10 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 60p; 10-bit 4:2:2 recording"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 slots: CFexpress Type A / SD and SD"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen; 3.69M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      },
+      {
+        "label": "Kit contents",
+        "value": "Kit lens and included accessories to be confirmed"
+      }
+    ]
+  },
+  {
+    "id": "sony-a7-v-body",
+    "brand": "Sony",
+    "name": "A7 V body",
+    "price": 9500000,
+    "images": [
+      "https://thecamerastore.com/cdn/shop/files/Sony-a7-V-Body-07_grande.jpg?v=1764695753",
+      "https://assets.videomaker.com/2025/12/sony_alpha_7_v_feat-1392x783.jpg"
+    ],
+    "imageSources": [
+      "The Camera Store",
+      "Videomaker"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m5",
+    "description": "A full-frame hybrid camera designed for high-resolution stills and advanced video capture. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "33 MP full-frame sensor"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR with AI processing unit"
+      },
+      {
+        "label": "Autofocus",
+        "value": "AI subject recognition and tracking"
+      },
+      {
+        "label": "Stabilization",
+        "value": "In-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 30 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 120p; high-frame-rate recording uses a crop"
+      },
+      {
+        "label": "Media slots",
+        "value": "Dual card slots"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-zv-e10-kit",
+    "brand": "Sony",
+    "name": "ZV-E10 kit",
+    "price": 3000000,
+    "images": [
+      "https://www.kamera-express.nl/media/9e75a33a-e483-4704-a1f2-f7e4c6d4e459/12376882%20-%20Sony.jpg",
+      "https://cameracommons.ph/cdn/shop/files/SONYZV-E10L202410oct_84ba866a-d843-48f8-8b25-ff73529d8700.jpg?v=1772781386"
+    ],
+    "imageSources": [
+      "Kamera Express",
+      "Camera Commons"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
+    "description": "A compact APS-C mirrorless camera aimed at vlogging and everyday creator work. Confirm the included kit lens and accessories.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "APS-C interchangeable-lens mirrorless creator camera"
+      },
+      {
+        "label": "Sensor",
+        "value": "24.2 MP APS-C Exmor CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ X"
+      },
+      {
+        "label": "Autofocus",
+        "value": "425-point phase-detection AF"
+      },
+      {
+        "label": "Stabilization",
+        "value": "Electronic active stabilization for video; no sensor-shift IBIS"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 11 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 30p"
+      },
+      {
+        "label": "Media",
+        "value": "Single SD/SDHC/SDXC card slot"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      },
+      {
+        "label": "Kit contents",
+        "value": "Kit lens and included accessories to be confirmed"
+      }
+    ]
+  },
+  {
+    "id": "sony-zv-e10-mark-ii",
+    "brand": "Sony",
+    "name": "ZV-E10 Mark II",
+    "price": 4000000,
+    "images": [
+      "https://store.sony.com.tw/resource/file/product_files/ZV-E10M2-B/01.jpg",
+      "https://cdn11.bigcommerce.com/s-6eafq5t88w/images/stencil/original/products/60480/589539/ZV-E10_II_front_black__52957.1720624018.jpg?c=1",
+      "https://seentat.com/cdn/shop/files/sony-zv-e10-ii-vlog-camera-body-only-black-1.jpg?v=1769575170"
+    ],
+    "imageSources": [
+      "Sony Taiwan",
+      "Kenmore Camera",
+      "Seentat"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
+    "description": "A compact creator camera with an APS-C sensor and 10-bit video options for flexible editing.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "APS-C interchangeable-lens mirrorless creator camera"
+      },
+      {
+        "label": "Sensor",
+        "value": "26 MP APS-C Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR"
+      },
+      {
+        "label": "Autofocus",
+        "value": "759-point phase-detection AF"
+      },
+      {
+        "label": "Stabilization",
+        "value": "Electronic active stabilization for video; no sensor-shift IBIS"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 11 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 60p; 10-bit 4:2:2 recording"
+      },
+      {
+        "label": "Media",
+        "value": "Single SD/SDHC/SDXC card slot"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-a6700-body",
+    "brand": "Sony",
+    "name": "A6700 body",
+    "price": 4500000,
+    "images": [
+      "https://s3.amazonaws.com/pr-prd-preview-dolphin-upload-cfn/sites/268/2023/07/13012615/a6700_front-Large.jpg",
+      "https://cdn11.bigcommerce.com/s-6eafq5t88w/images/stencil/1280x1280/products/49756/124846/ILCE-6700_front-3000px__32462.1689172476.jpg?c=1"
+    ],
+    "imageSources": [
+      "Sony press release",
+      "Kenmore Camera"
+    ],
+    "productUrl": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6700-b",
+    "description": "A compact APS-C camera for travel, action and hybrid photo/video work. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "APS-C interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "26 MP APS-C Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR with AI processing unit"
+      },
+      {
+        "label": "Autofocus",
+        "value": "759-point phase-detection AF"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 11 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 120p; high-frame-rate recording uses a crop"
+      },
+      {
+        "label": "Media",
+        "value": "Single SD/SDHC/SDXC card slot"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-a6700-kit",
+    "brand": "Sony",
+    "name": "A6700 kit",
+    "price": 5000000,
+    "images": [
+      "https://zshop.vn/images/thumbnails/1357/1000/detailed/166/Sony_A6700__9__4n6w-hq.jpg",
+      "https://www.afoto.cz/imgs/products/Sony/1166098_SONY_a6700_telo_main.jpg"
+    ],
+    "imageSources": [
+      "ZShop",
+      "aFoto"
+    ],
+    "productUrl": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6700-b",
+    "description": "A compact APS-C hybrid camera supplied as a kit; confirm the included lens and accessories.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "APS-C interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "26 MP APS-C Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR with AI processing unit"
+      },
+      {
+        "label": "Autofocus",
+        "value": "759-point phase-detection AF"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 11 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 120p; high-frame-rate recording uses a crop"
+      },
+      {
+        "label": "Media",
+        "value": "Single SD/SDHC/SDXC card slot"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      },
+      {
+        "label": "Kit contents",
+        "value": "Kit lens and included accessories to be confirmed"
+      }
+    ]
+  },
+  {
+    "id": "sony-a7r-v-body",
+    "brand": "Sony",
+    "name": "A7R V body",
+    "price": 10000000,
+    "images": [
+      "https://www.sony.com.au/content/dam/sony/contents/global/cameras/alpha-interchangeable-lens-cameras/year-2023/homepage/ilce-7rm5/overview/og.png",
+      "https://www.wexphotovideo.com/globalassets/product-images/3073000/3073940.jpg",
+      "https://www.cameraservice.it/cdn/shop/files/sony-alpha-7r-v.jpg?v=1739356735"
+    ],
+    "imageSources": [
+      "Sony Australia",
+      "Wex Photo Video",
+      "Camera Service"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7rm5",
+    "description": "A high-resolution full-frame camera suited to detailed commercial, portrait and landscape photography. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame high-resolution mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "61 MP full-frame Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR with AI processing unit"
+      },
+      {
+        "label": "Autofocus",
+        "value": "693-point phase-detection AF with subject recognition"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 10 fps"
+      },
+      {
+        "label": "Video",
+        "value": "8K up to 24p; 4K up to 60p"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 slots: CFexpress Type A / SD and SD"
+      },
+      {
+        "label": "Display",
+        "value": "4-axis multi-angle touchscreen; 9.44M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-a7r-iv-body",
+    "brand": "Sony",
+    "name": "A7R IV body",
+    "price": 7000000,
+    "images": [
+      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048",
+      "https://ac-foto.com/storage/img/uploads/products/11374/pi_2436616359.png"
+    ],
+    "imageSources": [
+      "Capes India",
+      "AC-Foto"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7rm4",
+    "description": "A high-resolution full-frame camera built for detailed still photography. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame high-resolution mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "61 MP full-frame Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ X"
+      },
+      {
+        "label": "Autofocus",
+        "value": "567-point phase-detection AF"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 10 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 30p"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 SD card slots; one supports UHS-II"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch tilting touchscreen; 5.76M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-a7r-vi-body",
+    "brand": "Sony",
+    "name": "A7R VI body",
+    "price": 16000000,
+    "images": [
+      "https://www.sony.co.uk/image/771293ec03a6b964389e28f379f38d67?fmt=png-alpha&hei=400&wid=676",
+      "https://www.photura.com/cdn/shop/files/ILCE7RM6_Sony_Web_012.jpg?v=1779737873&width=1214"
+    ],
+    "imageSources": [
+      "Sony UK",
+      "Photura"
+    ],
+    "productUrl": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm6b",
+    "description": "A high-resolution full-frame camera for detailed stills and advanced video production. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame high-resolution mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "66.8 MP full-frame stacked Exmor RS CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR with AI processing unit"
+      },
+      {
+        "label": "Autofocus",
+        "value": "AI subject recognition and tracking"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 30 fps"
+      },
+      {
+        "label": "Video",
+        "value": "8K up to 30p"
+      },
+      {
+        "label": "Media slots",
+        "value": "Dual card slots: CFexpress Type A / SD"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-fx30-body",
+    "brand": "Sony",
+    "name": "FX30 body",
+    "price": 6500000,
+    "images": [
+      "https://cdn.mediapark.uz/imgs/085ec46a-cd53-4d19-b2a8-b6a88607ce68_ed49d60a9ced194e93c11ffbc9775860bc30f3b02425d27dfe0fae467602cbff.jpg.webp",
+      "https://cdn.rubbermonkey.com/ProductImage/Huge/270765.jpg/sony-fx30-digital-cinema-camera-body-only.jpg",
+      "https://www.kamera-express.nl/media/42f9f007-bf65-490c-ab9f-d0851be81fc3/12473424_2.jpg"
+    ],
+    "imageSources": [
+      "Mediapark",
+      "Rubber Monkey",
+      "Kamera Express"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilme-fx30",
+    "description": "A Super 35 cinema camera with professional video formats and high-frame-rate 4K recording. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Super 35 / APS-C Cinema Line camera"
+      },
+      {
+        "label": "Sensor",
+        "value": "26 MP APS-C Exmor R CMOS; approx. 20.1 MP effective for video"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Fast Hybrid AF with phase detection"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 120p; 10-bit 4:2:2 recording"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 slots: CFexpress Type A / SD"
+      },
+      {
+        "label": "Audio",
+        "value": "Multi Interface Shoe; XLR handle is not included with all regional packages"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-fx3-body",
+    "brand": "Sony",
+    "name": "FX3 body",
+    "price": 12500000,
+    "images": [
+      "https://store.sony.com.tw/resource/file/product_files/ILME-FX3/01_800e83033.jpg",
+      "https://static.wixstatic.com/media/6018d2_5c959e6fc3334d0b860bacf764d27491~mv2.jpg/v1/fill/w_700%2Ch_700%2Cal_c%2Cq_85%2Cenc_auto/6018d2_5c959e6fc3334d0b860bacf764d27491~mv2.jpg"
+    ],
+    "imageSources": [
+      "Sony Taiwan",
+      "Rent a Camera HK"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilme-fx3",
+    "description": "A compact full-frame Cinema Line camera for production workflows, with high-frame-rate 4K and 10-bit recording options.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame Cinema Line camera"
+      },
+      {
+        "label": "Sensor",
+        "value": "12.1 MP full-frame Exmor R CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "BIONZ XR"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Fast Hybrid AF with phase detection"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body image stabilization"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 120p; 10-bit 4:2:2 recording"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 slots: CFexpress Type A / SD"
+      },
+      {
+        "label": "Audio",
+        "value": "3.5 mm mic input; digital audio through Multi Interface Shoe"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-fx6-body",
+    "brand": "Sony",
+    "name": "FX6 body",
+    "price": 19500000,
+    "images": [
+      "https://store.sony.com.au/dw/image/v2/ABBC_PRD/on/demandware.static/-/Sites-sony-master-catalog/default/dwefbc1f61/images/ILMEFX6V/ILMEFX6V_2.png",
+      "https://content.abt.com/image.php/4d2331751a62b826d9ed81572af01d90?canvas=&ck=2&height=550&image=%2Fimages%2Fproducts%2FBDP_Images%2Fsony-camcorder-ILME-FX6V-rear-angled-2.jpg&width=750",
+      "https://www.camera-people.ru/upload/iblock/936/ri8kt0dmkztf5noesofbk3pu1mp5085p.png"
+    ],
+    "imageSources": [
+      "Sony Australia",
+      "Abt",
+      "Camera People"
+    ],
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilme-fx6",
+    "description": "A full-frame Cinema Line camera for professional video production, with built-in ND filtration and high-frame-rate 4K recording.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame Cinema Line professional camcorder"
+      },
+      {
+        "label": "Sensor",
+        "value": "10.2 MP full-frame Exmor R CMOS"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Fast Hybrid AF with phase detection"
+      },
+      {
+        "label": "Exposure control",
+        "value": "Built-in electronic variable ND filter"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 120p; 10-bit 4:2:2 recording"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 slots: CFexpress Type A / SD"
+      },
+      {
+        "label": "Audio",
+        "value": "2 XLR inputs"
+      },
+      {
+        "label": "Connectivity",
+        "value": "12G-SDI, HDMI, timecode and USB"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Sony E-mount"
+      }
+    ]
+  },
+  {
+    "id": "sony-z200",
+    "brand": "Sony",
+    "name": "Z200",
+    "price": 16000000,
+    "images": [
+      "https://store.sony.com.tw/resource/file/product_files/PXW-Z200/01_90d155152.jpg",
+      "https://inwfile.com/s-cg/12n2mz.png",
+      "https://digitalcamera.mn/uploads/middle/digital-camera-img-17383006314.jpg"
+    ],
+    "imageSources": [
+      "Sony Taiwan",
+      "4K PLUS",
+      "Digital Camera Mongolia"
+    ],
+    "productUrl": "https://pro.sony/ue_US/products/handheld-camcorders/pxw-z200",
+    "description": "A professional handheld 4K camcorder with an integrated zoom lens for event, documentary and broadcast work.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Professional 4K handheld camcorder"
+      },
+      {
+        "label": "Sensor",
+        "value": "1.0-type Exmor RS stacked CMOS"
+      },
+      {
+        "label": "Lens",
+        "value": "Integrated 20× optical zoom"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Fast Hybrid AF with AI-based subject recognition"
+      },
+      {
+        "label": "Neutral density",
+        "value": "Built-in electronic variable ND filter"
+      },
+      {
+        "label": "Video",
+        "value": "4K up to 120p"
+      },
+      {
+        "label": "Connectivity",
+        "value": "12G-SDI, HDMI, USB-C and Wi-Fi"
+      },
+      {
+        "label": "Audio",
+        "value": "2 XLR inputs"
+      },
+      {
+        "label": "Media",
+        "value": "Dual CFexpress Type A / SD card slots"
+      }
+    ]
+  },
+  {
+    "id": "canon-r6-mark-ii-body",
+    "brand": "Canon",
+    "name": "R6 Mark II body",
+    "price": 6700000,
+    "images": [
+      "https://theflashcentre.com/cdn/shop/products/CANN021_1_1024x1024.png?v=1667385289",
+      "https://www.capesindia.com/cdn/shop/products/canon-eos-r6-mark-II-front-back-base-image.jpg?crop=center&height=1200&v=1696850423&width=1200",
+      "https://www.academy.canon.at/storage/0002_im_focus/2211_eos_r6_mkii/09-frontback-720x500.jpg"
+    ],
+    "imageSources": [
+      "The Flash Centre",
+      "Capes India",
+      "Canon Academy"
+    ],
+    "productUrl": "https://www.usa.canon.com/shop/p/eos-r6-mark-ii",
+    "description": "A full-frame hybrid camera for fast action, portraits and video work. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "24.2 MP full-frame CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "DIGIC X"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Dual Pixel CMOS AF II with subject tracking"
+      },
+      {
+        "label": "Stabilization",
+        "value": "In-body image stabilization; up to 8 stops with compatible lenses"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 40 fps electronic; 12 fps mechanical"
+      },
+      {
+        "label": "Video",
+        "value": "6K-oversampled 4K up to 60p"
+      },
+      {
+        "label": "Media slots",
+        "value": "2 SD card slots; UHS-II supported"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen; 3.69M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Canon RF mount"
+      }
+    ]
+  },
+  {
+    "id": "canon-r6-mark-iii-body",
+    "brand": "Canon",
+    "name": "R6 Mark III body",
+    "price": 10000000,
+    "images": [
+      "https://www.capesindia.com/cdn/shop/files/canon-eos-r6-mark-III-front-back-base-image.png?v=1773635334&width=700",
+      "https://a.allegroimg.com/original/113ca6/1cc1be4d48e9a5f1a8295c9db6e6/Canon-EOS-R6-Mark-III-32-5-MP-Full-Frame-40-kl-s-Body"
+    ],
+    "imageSources": [
+      "Capes India",
+      "Allegro"
+    ],
+    "productUrl": "https://www.usa.canon.com/shop/p/eos-r6-mark-iii",
+    "description": "A full-frame hybrid camera combining high-resolution stills with internal RAW video recording. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "32.5 MP full-frame CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "DIGIC X"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Dual Pixel CMOS AF II with subject tracking"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 40 fps electronic; 12 fps mechanical"
+      },
+      {
+        "label": "Video",
+        "value": "Internal 7K RAW up to 60p; oversampled 4K up to 60p"
+      },
+      {
+        "label": "Media slots",
+        "value": "CFexpress Type B and SD UHS-II"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Canon RF mount"
+      }
+    ]
+  },
+  {
+    "id": "nikon-zr-body",
+    "brand": "Nikon",
+    "name": "ZR body",
+    "price": 8500000,
+    "images": [
+      "https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/ZR_front-Eh6hkPQO.png",
+      "https://cdn11.bigcommerce.com/s-e9bd7/images/stencil/1280x1280/products/52950/95472/ZR_BF-N1_front__87188.1757510864.jpg?c=2",
+      "https://www.backscatter.com/ITEM_IMAGES/nkl-2006_1.jpg?resizeh=1000&resizeid=7&resizew=1000"
+    ],
+    "imageSources": [
+      "Nikon USA",
+      "Bedfords",
+      "Backscatter"
+    ],
+    "productUrl": "https://www.nikonusa.com/p/zr/2006/overview",
+    "description": "A full-frame cinema-focused mirrorless camera with internal RAW recording and a large monitor. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame cinema mirrorless camera"
+      },
+      {
+        "label": "Sensor",
+        "value": "24.5 MP full-frame CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "EXPEED 7"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Subject detection for 9 subject types"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body vibration reduction"
+      },
+      {
+        "label": "Video",
+        "value": "Internal 12-bit R3D NE RAW up to 6K/60p; 4K up to 120p"
+      },
+      {
+        "label": "Audio",
+        "value": "32-bit float audio recording"
+      },
+      {
+        "label": "Display",
+        "value": "4.0-inch monitor"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Nikon Z mount"
+      }
+    ]
+  },
+  {
+    "id": "nikon-z6-ii-body",
+    "brand": "Nikon",
+    "name": "Z6 II body",
+    "price": 5500000,
+    "images": [
+      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg",
+      "https://www.nikon.com.au/media/wysiwyg/Z7II_PBS_2_-_LR.jpeg"
+    ],
+    "imageSources": [
+      "PetaPixel",
+      "Nikon Australia"
+    ],
+    "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_6_2/",
+    "description": "A full-frame hybrid camera for still photography and video, with dual card slots. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "24.5 MP full-frame BSI CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "Dual EXPEED 6"
+      },
+      {
+        "label": "Autofocus",
+        "value": "273-point hybrid AF with eye detection"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body vibration reduction"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 14 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K UHD up to 60p (crop)"
+      },
+      {
+        "label": "Media slots",
+        "value": "CFexpress Type B / XQD and SD UHS-II"
+      },
+      {
+        "label": "Display",
+        "value": "3.2-inch tilting touchscreen; 3.69M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Nikon Z mount"
+      }
+    ]
+  },
+  {
+    "id": "nikon-z6-iii-body",
+    "brand": "Nikon",
+    "name": "Z6 III body",
+    "price": 7000000,
+    "images": [
+      "https://www.nikon.es/globalassets/digizuite/190047-en-z6iii_front-vD0491068D5AC.png/OptimizelyDesktopPNG",
+      "https://www.shutterbug.com/images/22/03142025.NikonZ6III.Top%20Front.jpg",
+      "https://www.cameraland.nl/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/z/6/z6iii_z24-70_4_back34l_monitor_side.jpg"
+    ],
+    "imageSources": [
+      "Nikon Spain",
+      "Shutterbug",
+      "CameraLand"
+    ],
+    "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z6_3/",
+    "description": "A full-frame hybrid camera with a partially stacked sensor and internal RAW video options. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame interchangeable-lens mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "24.5 MP partially stacked full-frame CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "EXPEED 7"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Subject detection for 9 subject types"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body vibration reduction"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 120 fps in selected JPEG mode"
+      },
+      {
+        "label": "Video",
+        "value": "6K/60p internal RAW; 4K UHD up to 120p"
+      },
+      {
+        "label": "Media slots",
+        "value": "CFexpress Type B / XQD and SD UHS-II"
+      },
+      {
+        "label": "Display",
+        "value": "Vari-angle touchscreen; 5.76M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Nikon Z mount"
+      }
+    ]
+  },
+  {
+    "id": "nikon-z7-ii-body",
+    "brand": "Nikon",
+    "name": "Z7 II body",
+    "price": 8000000,
+    "images": [
+      "https://cdn11.bigcommerce.com/s-1nktaieb4v/images/stencil/original/image-manager/z7iimirrorlesscamera.jpg?t=1709540474",
+      "https://www.nikon.com.au/media/wysiwyg/Z7II_PBS_2_-_LR.jpeg"
+    ],
+    "imageSources": [
+      "Bluewater Photo Store",
+      "Nikon Australia"
+    ],
+    "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_7_2/",
+    "description": "A high-resolution full-frame camera for detailed photography, with advanced video features. This listing is for the body.",
+    "specs": [
+      {
+        "label": "Camera type",
+        "value": "Full-frame high-resolution mirrorless"
+      },
+      {
+        "label": "Sensor",
+        "value": "45.7 MP full-frame BSI CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "Dual EXPEED 6"
+      },
+      {
+        "label": "Autofocus",
+        "value": "493-point hybrid AF with eye detection"
+      },
+      {
+        "label": "Stabilization",
+        "value": "5-axis in-body vibration reduction"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 10 fps"
+      },
+      {
+        "label": "Video",
+        "value": "4K UHD up to 60p"
+      },
+      {
+        "label": "Media slots",
+        "value": "CFexpress Type B / XQD and SD UHS-II"
+      },
+      {
+        "label": "Display",
+        "value": "3.2-inch tilting touchscreen; 3.69M-dot EVF"
+      },
+      {
+        "label": "Lens mount",
+        "value": "Nikon Z mount"
+      }
+    ]
+  }
+]
