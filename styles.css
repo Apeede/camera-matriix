@@ -125,6 +125,33 @@ footer img{width:208px;height:43px;object-fit:cover;object-position:center 49%;b
 .sale-qty button{width:26px;height:26px;border:1px solid #d8dce2;background:#fff;color:var(--brand-navy);font-size:15px;line-height:1}
 .sale-qty button:hover{border-color:var(--brand-red);color:var(--brand-red)}
 .sale-cta{border:0;cursor:pointer}
+.hero-video-hero{position:relative}
+.hero-scroll-cue{position:absolute;z-index:3;left:50%;bottom:24px;display:flex;align-items:center;gap:10px;color:#ffffffd9;text-decoration:none;font-size:8px;font-weight:700;letter-spacing:.19em;transform:translateX(-50%)}
+.hero-scroll-cue i{position:relative;width:18px;height:27px;border:1px solid #ffffffa8;border-radius:12px}
+.hero-scroll-cue i:after{position:absolute;top:5px;left:7px;width:2px;height:5px;border-radius:2px;background:#fff;content:"";animation:hero-scroll-bounce 1.35s ease-in-out infinite}
+@keyframes hero-scroll-bounce{0%,100%{transform:translateY(0);opacity:.65}55%{transform:translateY(9px);opacity:1}}
+.sale-enquiry-drawer{z-index:14}
+.sale-drawer-backdrop{z-index:13}
+.sale-enquiry-form{display:grid;gap:10px}
+.sale-enquiry-form[hidden],#sale-enquiry-start[hidden]{display:none}
+.sale-enquiry-form .checkout-field{padding:0;border:0;gap:6px}
+.sale-enquiry-form .checkout-field input{min-height:42px;padding:10px;border:1px solid #d8dce2;background:#fff;color:var(--brand-navy);font-size:13px}
+.sale-enquiry-form .privacy-consent{margin:2px 0 0}
+.sale-enquiry-form .find-button{width:100%}
+.sale-enquiry-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid #e5e6e8}
+.sale-enquiry-row p{margin:0 0 5px;color:#7a8491;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.sale-enquiry-row h3{margin:0 0 5px;color:var(--brand-navy);font:700 13px/1.35 Manrope,sans-serif}
+.sale-enquiry-row span,.sale-enquiry-note{color:#737d89;font-size:10px}
+.sale-enquiry-controls{display:flex;align-items:center;gap:9px;color:var(--brand-navy);font-size:11px;font-weight:700}
+.sale-enquiry-controls button{width:29px;height:29px;border:1px solid #d8dce2;background:#fff;color:var(--brand-navy);font-size:17px}
+.sale-enquiry-empty{margin:24px 0;color:#737d89;font-size:12px;line-height:1.65}
+.sale-enquiry-total{display:flex;justify-content:space-between;gap:12px;margin:0 0 8px;color:#707987;font-size:11px}
+.sale-enquiry-total strong{color:var(--brand-navy);font-size:13px}
+.sale-enquiry-note{line-height:1.6;margin:0 0 15px}
+.sale-enquiry-bottom .find-button{width:100%}
+.sale-enquiry-bottom .find-button:disabled{opacity:.5;cursor:not-allowed}
+body.drawer-open{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.hero-scroll-cue i:after{animation:none}}
 .sale-photo{position:absolute;z-index:1;inset:0;width:100%;height:100%;padding:23px;object-fit:contain;mix-blend-mode:multiply}
 .sale-learn{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid #eeeff1;color:#606e80;text-decoration:none;font-size:10px;font-weight:700}
 .sale-learn:hover{color:var(--brand-red)}

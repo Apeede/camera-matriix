@@ -5,6 +5,7 @@ let products = [];
 let selected = {};
 let item;
 let photoIndex = 0;
+window.addEventListener("sale-enquiry-change", () => { selected = getSelection(); renderDetails(); });
 
 function getSelection() {
   try {
@@ -15,6 +16,7 @@ function getSelection() {
 function saveSelection() {
   try { localStorage.setItem(key, JSON.stringify(selected)); } catch { /* Keep the current-page enquiry usable if storage is unavailable. */ }
   document.querySelector("#sale-enquiry-count").textContent = String(Object.values(selected).reduce((sum, qty) => sum + qty, 0));
+  window.dispatchEvent(new Event("sale-enquiry-change"));
   renderDetails();
 }
 function renderDetails() {
@@ -42,19 +44,6 @@ function renderDetails() {
     saveSelection();
   });
 }
-
-document.querySelector("#sale-enquiry-open").addEventListener("click", () => {
-  const lines = products.filter((product) => selected[product.id] > 0).map((product) => `${product.brand} ${product.name} × ${selected[product.id]} — ${salePrice(product.price)} each`);
-  if (!lines.length) {
-    const toast = document.querySelector("#toast");
-    toast.textContent = "Add cameras to your enquiry list first.";
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 2300);
-    return;
-  }
-  const message = ["Hello Camera Matrix, please let me know availability for:", ...lines, "Please confirm stock and package details."].join("\n");
-  window.open(`https://wa.me/256704738156?${new URLSearchParams({ text: message })}`, "_blank", "noopener,noreferrer");
-});
 
 const menuToggle = document.querySelector(".menu-toggle");
 menuToggle.addEventListener("click", () => {

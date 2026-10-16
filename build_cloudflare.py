@@ -32,6 +32,7 @@ STATIC_FILES = (
     "buy-catalog.json",
     "buy-item.html",
     "buy-item.js",
+    "sale-enquiry-drawer.js",
     "faq.html",
     "hero-videos.js",
 )

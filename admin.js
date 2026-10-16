@@ -1,5 +1,6 @@
 let token = "";
 const list = document.querySelector("#bookings");
+const saleList = document.querySelector("#sale-enquiries");
 const message = document.querySelector("#admin-message");
 const formatUGX = (value) => `UGX ${new Intl.NumberFormat("en-UG").format(value)}`;
 const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
@@ -18,9 +19,15 @@ function render(bookings) {
     return `<article class="booking"><div><h2>${escapeHtml(booking.customer.name)} · ${escapeHtml(booking.id)}</h2><p>${escapeHtml(booking.pickupDate)} → ${escapeHtml(booking.returnDate)} · ${escapeHtml(booking.collection)}</p><p>${escapeHtml(booking.customer.email)} · ${escapeHtml(booking.customer.phone || "No phone")} · ${formatUGX(booking.estimatedTotal)} total</p><p class="booking-items">${booking.items.map((item) => `${escapeHtml(item.name)} × ${item.quantity}`).join(" · ")}</p><p>Submitted ${escapeHtml(new Date(booking.createdAt).toLocaleString())}</p><p>Email: ${escapeHtml(emailStatus)} · WhatsApp: ${escapeHtml(whatsappStatus)}</p>${notifications.email?.error || notifications.whatsapp?.error ? `<p class="admin-error">${escapeHtml(notifications.email?.error || notifications.whatsapp?.error)}</p>` : ""}${retryable ? `<button type="button" data-retry-id="${escapeHtml(booking.id)}">Retry notifications</button>` : ""}</div><label>Status <select class="status-select" data-status-id="${escapeHtml(booking.id)}" data-current-status="${escapeHtml(booking.status)}">${["requested", "confirmed", "declined", "cancelled", "completed"].map((status) => `<option value="${status}" ${booking.status === status ? "selected" : ""}>${status}</option>`).join("")}</select></label></article>`;
   }).join("") : "<p>No booking requests yet.</p>";
 }
+function renderSaleEnquiries(enquiries) {
+  saleList.innerHTML = enquiries.length ? enquiries.map((enquiry) => {
+    const contact = [`<a href="https://wa.me/${escapeHtml(enquiry.customer.phone.replace(/\D/g, ""))}" target="_blank" rel="noopener noreferrer">${escapeHtml(enquiry.customer.phone)}</a>`, enquiry.customer.email ? escapeHtml(enquiry.customer.email) : "No email provided"].join(" · ");
+    return `<article class="booking sale-enquiry-admin"><div><h2>${escapeHtml(enquiry.customer.name)} · ${escapeHtml(enquiry.id)}</h2><p>${contact}</p><p class="booking-items">${enquiry.items.map((item) => `${escapeHtml(item.brand)} ${escapeHtml(item.name)} × ${item.quantity} — ${formatUGX(item.unitPrice)} each`).join(" · ")}</p><p>Estimated total: ${formatUGX(enquiry.estimatedTotal)}</p><p>Submitted ${escapeHtml(new Date(enquiry.createdAt).toLocaleString())}</p></div><label>Status <select class="status-select" data-sale-status-id="${escapeHtml(enquiry.id)}" data-current-status="${escapeHtml(enquiry.status)}">${["new", "contacted", "resolved"].map((status) => `<option value="${status}" ${enquiry.status === status ? "selected" : ""}>${status}</option>`).join("")}</select></label></article>`;
+  }).join("") : "<p>No sale enquiries yet.</p>";
+}
 async function refresh() {
   message.textContent = "Loading…";
-  try { const data = await request("/api/admin/bookings"); render(data.bookings); message.className = "admin-help"; message.textContent = `${data.bookings.length} booking(s). Changes save immediately.`; }
+  try { const [data, saleData] = await Promise.all([request("/api/admin/bookings"), request("/api/admin/sale-enquiries")]); render(data.bookings); renderSaleEnquiries(saleData.enquiries); message.className = "admin-help"; message.textContent = `${data.bookings.length} booking(s) · ${saleData.enquiries.length} sale enquiry(s). Changes save immediately.`; }
   catch (error) { message.textContent = error.message; message.className = "admin-error"; }
 }
 document.querySelector("#admin-login").addEventListener("submit", async (event) => { event.preventDefault(); token = document.querySelector("#admin-token").value; await refresh(); });
@@ -29,6 +36,13 @@ list.addEventListener("change", async (event) => {
   if (!select) return;
   const previousStatus = select.dataset.currentStatus || select.value;
   try { await request(`/api/admin/bookings/${encodeURIComponent(select.dataset.statusId)}`, { method: "POST", body: JSON.stringify({ status: select.value }) }); select.dataset.currentStatus = select.value; message.className = "admin-help"; message.textContent = "Booking status saved. Inventory has been updated."; }
+  catch (error) { select.value = previousStatus; message.textContent = error.message; message.className = "admin-error"; }
+});
+saleList.addEventListener("change", async (event) => {
+  const select = event.target.closest("[data-sale-status-id]");
+  if (!select) return;
+  const previousStatus = select.dataset.currentStatus || select.value;
+  try { await request(`/api/admin/sale-enquiries/${encodeURIComponent(select.dataset.saleStatusId)}`, { method: "POST", body: JSON.stringify({ status: select.value }) }); select.dataset.currentStatus = select.value; message.className = "admin-help"; message.textContent = "Sale enquiry status saved."; }
   catch (error) { select.value = previousStatus; message.textContent = error.message; message.className = "admin-error"; }
 });
 list.addEventListener("click", async (event) => {

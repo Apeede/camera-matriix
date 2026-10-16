@@ -32,6 +32,22 @@ async function productsFor(env) {
   return response.json();
 }
 
+async function saleProductsFor(env) {
+  const response = await env.ASSETS.fetch(new Request("https://assets/buy-catalog.json"));
+  if (!response.ok) throw new Error("Could not load the sale catalog.");
+  return response.json();
+}
+
+function validSaleItems(rawItems, products) {
+  if (!rawItems || typeof rawItems !== "object" || Array.isArray(rawItems) || !Object.keys(rawItems).length) throw new Error("Add at least one item to your enquiry.");
+  const byId = new Map(products.map((product) => [product.id, product]));
+  return Object.entries(rawItems).map(([id, quantity]) => {
+    if (!byId.has(id) || !Number.isSafeInteger(quantity) || quantity < 1 || quantity > 99) throw new Error("One or more enquiry quantities are invalid.");
+    const product = byId.get(id);
+    return { id, brand: product.brand, name: product.name, quantity, unitPrice: product.price };
+  });
+}
+
 function dateValue(value) {
   if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error("Enter valid pickup and return dates.");
   const parsed = new Date(`${value}T00:00:00.000Z`);
@@ -201,6 +217,55 @@ async function changeBookingStatus(env, booking, status, products) {
 
 async function bookingApi(request, env, url) {
   const path = url.pathname;
+  if (request.method === "GET" && path === "/api/admin/sale-enquiries") {
+    if (!adminAuthorized(request, env)) return json({ error: "Admin access is not configured or the token is invalid." }, 401);
+    const result = await env.DB.prepare("SELECT enquiry_json FROM sale_enquiries ORDER BY created_at DESC").all();
+    return json({ enquiries: (result.results || []).map((row) => JSON.parse(row.enquiry_json)) });
+  }
+  const saleAdminMatch = path.match(/^\/api\/admin\/sale-enquiries\/([A-Fa-f0-9]+)$/);
+  if (request.method === "POST" && saleAdminMatch) {
+    if (!adminAuthorized(request, env)) return json({ error: "Admin access is not configured or the token is invalid." }, 401);
+    try {
+      const payload = await readJson(request);
+      if (!["new", "contacted", "resolved"].includes(payload.status)) throw new Error("Choose a valid enquiry status.");
+      const row = await env.DB.prepare("SELECT enquiry_json FROM sale_enquiries WHERE id = ?").bind(saleAdminMatch[1]).first();
+      if (!row) return json({ error: "Sale enquiry not found." }, 404);
+      const enquiry = JSON.parse(row.enquiry_json);
+      enquiry.status = payload.status;
+      enquiry.updatedAt = new Date().toISOString();
+      await env.DB.prepare("UPDATE sale_enquiries SET status = ?, updated_at = ?, enquiry_json = ? WHERE id = ?")
+        .bind(enquiry.status, enquiry.updatedAt, JSON.stringify(enquiry), enquiry.id).run();
+      return json({ enquiry });
+    } catch (error) {
+      if (isDatabaseError(error)) return json({ error: "The sale enquiry could not be updated right now. Please try again." }, 503);
+      return json({ error: error.message || "Invalid enquiry status." }, 400);
+    }
+  }
+  if (request.method === "POST" && path === "/api/sale-enquiries") {
+    if (!await allowBookingRequest(request, env)) return json({ error: "Too many requests from this connection. Please try again later." }, 429);
+    try {
+      const payload = await readJson(request);
+      const customer = payload.customer || {};
+      const name = typeof customer.name === "string" ? customer.name.trim() : "";
+      const phone = typeof customer.phone === "string" ? customer.phone.trim() : "";
+      const email = typeof customer.email === "string" ? customer.email.trim() : "";
+      if (!name || name.length > 100) throw new Error("Enter your name.");
+      if (!/^\+?[0-9][0-9 ()-]{6,20}$/.test(phone) || phone.replace(/\D/g, "").length < 7) throw new Error("Enter a valid phone or WhatsApp number.");
+      if (email && (email.length > 200 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) throw new Error("Enter a valid email address or leave it blank.");
+      if (payload.privacyAcknowledged !== true) throw new Error("Agree to the privacy notice before sending your enquiry.");
+      const products = await saleProductsFor(env);
+      const items = validSaleItems(payload.items, products);
+      const now = new Date().toISOString();
+      const id = crypto.randomUUID().replaceAll("-", "").toUpperCase();
+      const enquiry = { id, type: "sale", status: "new", createdAt: now, updatedAt: now, privacyAcknowledgedAt: now, privacyPolicyVersion: "2026-10-16.1", customer: { name, phone, email }, items, estimatedTotal: items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0), currency: "UGX" };
+      await env.DB.prepare("INSERT INTO sale_enquiries (id,status,created_at,updated_at,enquiry_json) VALUES (?, ?, ?, ?, ?)")
+        .bind(id, enquiry.status, now, now, JSON.stringify(enquiry)).run();
+      return json({ enquiry }, 201);
+    } catch (error) {
+      if (isDatabaseError(error)) return json({ error: "We could not save your enquiry right now. Please try again." }, 503);
+      return json({ error: error.message || "Invalid sale enquiry." }, 400);
+    }
+  }
   if (request.method === "GET" && path === "/api/gear") {
     try { return json({ products: await productsFor(env) }); }
     catch { return json({ error: "Could not load the rental catalog." }, 500); }
@@ -347,6 +412,7 @@ export default {
   async scheduled(_event, env, ctx) {
     const cutoff = new Date(Date.now() - RETENTION_DAYS * 86_400_000).toISOString();
     ctx.waitUntil(env.DB.prepare("DELETE FROM bookings WHERE updated_at < ?").bind(cutoff).run());
+    ctx.waitUntil(env.DB.prepare("DELETE FROM sale_enquiries WHERE updated_at < ?").bind(cutoff).run());
     ctx.waitUntil(env.DB.prepare("DELETE FROM booking_attempts WHERE created_at < ?").bind(Math.floor(Date.now() / 1000) - RATE_WINDOW_SECONDS).run());
   },
 };

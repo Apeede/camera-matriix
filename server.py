@@ -24,6 +24,7 @@ from email.message import EmailMessage
 
 ROOT = Path(__file__).resolve().parent
 BOOKINGS_FILE = ROOT / "data" / "bookings.json"
+SALE_ENQUIRIES_FILE = ROOT / "data" / "sale-enquiries.json"
 
 
 def load_local_env():
@@ -57,6 +58,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 LOGGER = logging.getLogger("camera_matrix")
 PRODUCTS = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
 PRODUCT_BY_ID = {p["id"]: p for p in PRODUCTS}
+SALE_PRODUCTS = json.loads((ROOT / "buy-catalog.json").read_text(encoding="utf-8"))
+SALE_PRODUCT_BY_ID = {p["id"]: p for p in SALE_PRODUCTS}
 SEO_PAGES = {
     "/rentals.html": ("Camera and Production Gear Rentals in Kampala | Camera Matrix", "Browse cameras, lenses, lighting and audio equipment available to rent by the day in Kampala, Uganda.", "rentals"),
     "/camera-rentals-kampala.html": ("Camera Rentals in Kampala, Uganda | Camera Matrix", "Rent Sony and Canon cameras and production equipment in Kampala. Compare daily UGX rates, choose rental dates and send a booking request.", "cameras"),
@@ -72,8 +75,8 @@ SEO_PAGES = {
 }
 
 POLICY_CONTENT = {
-    "privacy": '''<h1>Privacy Policy</h1><p class="seo-lead">Last updated: 13 October 2026. This notice explains how Camera Matrix Rentals handles information when you browse the site or send a rental request.</p><h2>Who is responsible</h2><p>Camera Matrix Rentals is the business contact for booking information. Contact us at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156 on WhatsApp</a>. The service area is Kampala and Entebbe, Uganda.</p><h2>Information we collect</h2><ul><li>Your name, email address, and phone/WhatsApp number when you submit a booking request.</li><li>Your selected equipment and quantities, pickup and return dates, collection option, booking ID, request status, and estimated rental amount.</li><li>Basic server request details used for operation and security, such as IP address, request path, and request time.</li><li>Your saved kit in your browser’s local storage. The saved kit contains product IDs and quantities, not your name or email.</li></ul><h2>How we use it</h2><p>We use booking information to check inventory, respond to the request you asked us to make, prepare a quote, manage a confirmed rental, and meet applicable record-keeping duties. We use your phone/WhatsApp number only to follow up about that booking request. A booking request is not automatically confirmed and the site does not collect payment.</p><p>We rely on the steps you ask us to take before entering a rental agreement and, where applicable, your consent or a legal obligation. The form asks you to acknowledge this notice and the rental terms before submitting.</p><h2>Who may receive it</h2><p>Authorized Camera Matrix staff can access booking records. The site host processes requests and stores booking records. If email notifications are configured, the booking details are sent through the configured email provider. If automatic WhatsApp notifications are enabled, booking details are sent through Meta’s WhatsApp Business Platform. If you choose the pre-filled WhatsApp link, you send the details to WhatsApp yourself. The site also loads Google Fonts and some product images from third-party hosts; those hosts may receive technical connection information such as your IP address and browser data.</p><p>We do not sell booking details. Some service providers may process information outside Uganda under their own terms and safeguards.</p><h2>Retention</h2><p>We retain enquiry and booking records for up to 12 months after the last update. The site removes expired records from its active booking file and sanitizes retained backup copies during its daily retention sweep. Records may be kept longer where required for legal, accounting, dispute, or security purposes.</p><h2>Your choices and rights</h2><p>You may ask us to confirm what personal information we hold, correct it, stop or restrict processing where the law allows, or delete it where we are not required to keep it. Contact <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a>. You can clear the saved kit by clearing this site’s browser storage. You may also contact Uganda’s Personal Data Protection Office about a data protection concern.</p><h2>Security</h2><p>Booking files and backups are stored by the site operator and should be accessible only to authorized staff. Use the admin token, restrict access to the server and its data folder, and use HTTPS for any public deployment. No internet transmission or storage method is completely secure.</p><h2>Changes and contact</h2><p>We may update this notice when our practices change. The latest date appears at the top. For privacy questions, email <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or call/WhatsApp <a href="https://wa.me/256704738156">+256 704 738 156</a>.</p>''',
-    "cookies": '''<h1>Cookie and Browser Storage Policy</h1><p class="seo-lead">Last updated: 13 October 2026.</p><h2>Cookies</h2><p>The site’s current code does not set cookies and does not use analytics or advertising pixels. A cookie-consent pop-up is therefore not currently shown.</p><h2>Local browser storage</h2><p>The booking page uses browser local storage to remember the equipment and quantities in your kit between visits. This is a functional feature of the booking service; it does not store your name or email. You can remove it by clearing site data in your browser. If we add analytics, advertising, or other non-essential tracking/storage, we will update this policy and provide appropriate choices before enabling it.</p><h2>External content</h2><p>The site loads some fonts and product photographs from third-party services, and links to WhatsApp. When your browser loads or opens those services, they may receive technical information and apply their own policies. See our <a href="/privacy-policy.html">Privacy Policy</a> for more detail.</p><h2>Contact</h2><p>Questions? Email <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or WhatsApp <a href="https://wa.me/256704738156">+256 704 738 156</a>.</p>''',
+    "privacy": '''<h1>Privacy Policy</h1><p class="seo-lead">Last updated: 16 October 2026. This notice explains how Camera Matrix handles information when you browse the site, send a rental request, or ask about equipment for sale.</p><h2>Who is responsible</h2><p>Camera Matrix is the business contact for booking and sales enquiry information. Contact us at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156 on WhatsApp</a>. The service area is Kampala and Entebbe, Uganda.</p><h2>Information we collect</h2><ul><li>Your name and phone/WhatsApp number, and optional email address, when you send a sales enquiry; or your name, email address and phone/WhatsApp number when you submit a rental request.</li><li>For a sales enquiry, the products and quantities you selected, the enquiry ID, request status, and estimated product total. For a rental request, your selected equipment and quantities, pickup and return dates, collection option, booking ID, request status, and estimated rental amount.</li><li>Basic server request details used for operation and security, such as IP address, request path, and request time.</li><li>Your saved rental kit or sales enquiry list in your browser’s local storage. It contains product IDs and quantities, not your contact details.</li></ul><h2>How we use it</h2><p>We use your details to respond to your sales enquiry, confirm product stock and package details, or review a rental request and prepare a rental quote. A sales enquiry is not a confirmed purchase, and a rental request is not a confirmed booking. The site does not collect payment.</p><p>We rely on the steps you ask us to take before a possible sale or rental agreement and, where applicable, your consent or a legal obligation. The sales form asks you to agree to follow-up about that enquiry. The rental form asks you to acknowledge this notice and the rental terms before submitting.</p><h2>Who may receive it</h2><p>Authorized Camera Matrix staff can access sales enquiries and booking records in the private admin interface. The site host processes and stores these records. If email or automatic WhatsApp notifications are configured for rental bookings, booking details are sent through the configured providers. If you choose a pre-filled WhatsApp link, you send the details to WhatsApp yourself. The site also loads Google Fonts and some product images from third-party hosts; those hosts may receive technical connection information such as your IP address and browser data.</p><p>We do not sell enquiry or booking details. Some service providers may process information outside Uganda under their own terms and safeguards.</p><h2>Retention</h2><p>We retain enquiry and booking records for up to 12 months after the last update. The site removes expired records from its active files and sanitizes retained booking backups during its daily retention sweep. Records may be kept longer where required for legal, accounting, dispute, or security purposes.</p><h2>Your choices and rights</h2><p>You may ask us to confirm what personal information we hold, correct it, stop or restrict processing where the law allows, or delete it where we are not required to keep it. Contact <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a>. You can clear saved gear lists by clearing this site’s browser storage. You may also contact Uganda’s Personal Data Protection Office about a data protection concern.</p><h2>Security</h2><p>Enquiry and booking files are stored by the site operator and should be accessible only to authorized staff. Use the admin token, restrict access to the server and its data, and use HTTPS for any public deployment. No internet transmission or storage method is completely secure.</p><h2>Changes and contact</h2><p>We may update this notice when our practices change. The latest date appears at the top. For privacy questions, email <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or call/WhatsApp <a href="https://wa.me/256704738156">+256 704 738 156</a>.</p>''',
+    "cookies": '''<h1>Cookie and Browser Storage Policy</h1><p class="seo-lead">Last updated: 16 October 2026.</p><h2>Cookies</h2><p>The site’s current code does not set cookies and does not use analytics or advertising pixels. A cookie-consent pop-up is therefore not currently shown.</p><h2>Local browser storage</h2><p>The site uses browser local storage to remember rental gear and sale enquiry list quantities between visits. This is a functional feature; it does not store your name, phone number or email. You can remove it by clearing site data in your browser. If we add analytics, advertising, or other non-essential tracking/storage, we will update this policy and provide appropriate choices before enabling it.</p><h2>External content</h2><p>The site loads some fonts and product photographs from third-party services, and links to WhatsApp. When your browser loads or opens those services, they may receive technical information and apply their own policies. See our <a href="/privacy-policy.html">Privacy Policy</a> for more detail.</p><h2>Contact</h2><p>Questions? Email <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or WhatsApp <a href="https://wa.me/256704738156">+256 704 738 156</a>.</p>''',
     "terms": '''<h1>Rental Terms and Conditions</h1><p class="seo-lead">Last updated: 13 October 2026. These draft terms apply to requests made through the Camera Matrix Rentals website.</p><h2>1. A request is not a confirmed booking</h2><p>Submitting the online form sends a request only. It does not reserve equipment or create a confirmed rental. Camera Matrix must confirm availability and send you a written quote/confirmation. Do not travel to collect equipment until you have received confirmation.</p><h2>2. Reviewing your request and price</h2><p>Before submitting, review the equipment, quantities, dates, collection option, and displayed estimate in the booking drawer. You can change them before submission. Catalog rates are daily equipment rates. The written quote will state the full amount, including any applicable taxes, delivery/transport, deposits, other fees, payment method, and due dates before you accept or pay.</p><h2>3. Confirmation and collection</h2><p>A booking becomes confirmed only when Camera Matrix confirms it in writing and you accept the quote. The confirmation will state pickup and return arrangements, rental period, payment terms, any deposit, and the cancellation/refund terms for that booking.</p><h2>4. Use and return of equipment</h2><p>Use the equipment carefully and lawfully, keep it secure, do not lend or sub-rent it without written permission, and return it at the agreed time in the condition received, allowing for ordinary wear. Tell Camera Matrix promptly about loss, damage, malfunction, or a return delay. Any applicable late-return, repair, replacement, or other charge must be explained in the written quote or confirmation before the booking is accepted.</p><h2>5. Payment, cancellation, and refunds</h2><p>The website does not take payment. You may withdraw a request before it is confirmed without an online cancellation charge. For a confirmed booking, the written quote/confirmation will state the applicable deposit, payment schedule, cancellation cutoff, and refund treatment before you accept or pay. See the <a href="/refund-policy.html">Cancellation and Refund Policy</a>. These terms do not remove rights provided by applicable law.</p><h2>6. Contact and governing law</h2><p>Contact Camera Matrix Rentals at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156</a>. These terms are governed by the laws of Uganda, subject to any mandatory consumer rights.</p>''',
     "refunds": '''<h1>Cancellation and Refund Policy</h1><p class="seo-lead">Last updated: 13 October 2026.</p><h2>Online requests</h2><p>Submitting a request through this website does not confirm a rental and does not charge you. You may withdraw an unconfirmed request at no charge by contacting Camera Matrix at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156</a>. Since the website does not collect payment, there is no website payment to refund at this stage.</p><h2>Confirmed bookings</h2><p>Before you accept or pay for a confirmed booking, Camera Matrix will give you written terms stating any deposit, cancellation deadline, late-cancellation or no-show treatment, refund amount or deductions, and expected refund timing. Those terms form part of the quote/confirmation. No payment should be requested until those terms and the full price have been disclosed.</p><h2>Refund requests</h2><p>Contact Camera Matrix using the email or WhatsApp above and include your booking ID and payment details (do not send card passwords, PINs, or one-time codes). Refunds will be handled through the original payment method where practicable, within the period stated in the applicable confirmation and subject to mandatory law.</p><p>For each confirmed booking, the written quote will state the applicable cancellation deadline, deposit treatment, late-cancellation or no-show rule, and refund timing before payment is requested.</p>''',
 }
@@ -103,6 +106,20 @@ def load_bookings():
         return json.loads(BOOKINGS_FILE.read_text(encoding="utf-8"))
     except FileNotFoundError:
         return []
+
+
+def load_sale_enquiries():
+    try:
+        return json.loads(SALE_ENQUIRIES_FILE.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return []
+
+
+def save_sale_enquiries(enquiries):
+    SALE_ENQUIRIES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    temporary = SALE_ENQUIRIES_FILE.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(enquiries, indent=2, ensure_ascii=False), encoding="utf-8")
+    os.replace(temporary, SALE_ENQUIRIES_FILE)
 
 
 def booking_is_expired(booking, now=None):
@@ -148,6 +165,10 @@ def run_retention_sweep(force=False):
         if len(retained) != len(records):
             write_booking_file(BOOKINGS_FILE, retained)
             LOGGER.info("Retention sweep removed %d expired booking record(s)", len(records) - len(retained))
+        sale_enquiries = load_sale_enquiries()
+        retained_enquiries = [enquiry for enquiry in sale_enquiries if not booking_is_expired(enquiry, now)]
+        if len(retained_enquiries) != len(sale_enquiries):
+            save_sale_enquiries(retained_enquiries)
         backups = BOOKINGS_FILE.parent / "backups"
         cutoff = now - timedelta(days=30)
         for backup in backups.glob("bookings-*.json") if backups.exists() else ():
@@ -445,6 +466,11 @@ class Handler(SimpleHTTPRequestHandler):
                 return
             with LOCK:
                 return self.send_json(200, {"bookings": list(reversed(load_bookings()))})
+        if parsed.path == "/api/admin/sale-enquiries":
+            if not self.require_admin():
+                return
+            with LOCK:
+                return self.send_json(200, {"enquiries": list(reversed(load_sale_enquiries()))})
         if parsed.path == "/api/availability":
             query = parse_qs(parsed.query)
             try:
@@ -470,6 +496,64 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         run_retention_sweep()
+        if urlparse(self.path).path.startswith("/api/admin/sale-enquiries/"):
+            if not self.require_admin():
+                return
+            enquiry_id = urlparse(self.path).path.rsplit("/", 1)[-1]
+            try:
+                payload = self.read_json()
+                if payload.get("status") not in {"new", "contacted", "resolved"}:
+                    raise ValueError("Choose a valid enquiry status.")
+                with LOCK:
+                    enquiries = load_sale_enquiries()
+                    enquiry = next((row for row in enquiries if row.get("id") == enquiry_id), None)
+                    if not enquiry:
+                        return self.send_json(404, {"error": "Sale enquiry not found."})
+                    enquiry["status"] = payload["status"]
+                    enquiry["updatedAt"] = datetime.now(timezone.utc).isoformat()
+                    save_sale_enquiries(enquiries)
+                return self.send_json(200, {"enquiry": enquiry})
+            except (ValueError, TypeError, json.JSONDecodeError) as error:
+                return self.send_json(400, {"error": str(error)})
+        if urlparse(self.path).path == "/api/sale-enquiries":
+            if not self.allow_booking_request():
+                return
+            try:
+                payload = self.read_json()
+                customer = payload.get("customer", {})
+                if not isinstance(customer, dict):
+                    raise ValueError("Enter your name and phone number.")
+                name, phone = customer.get("name", ""), customer.get("phone", "")
+                email = customer.get("email", "")
+                if not all(isinstance(value, str) for value in (name, phone, email)):
+                    raise ValueError("Enter valid contact details.")
+                name, phone, email = name.strip(), phone.strip(), email.strip()
+                if not name or len(name) > 100:
+                    raise ValueError("Enter your name.")
+                if not re.fullmatch(r"\+?[0-9][0-9 ()-]{6,20}", phone) or len(re.sub(r"\D", "", phone)) < 7:
+                    raise ValueError("Enter a valid phone or WhatsApp number.")
+                if email and (len(email) > 200 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email)):
+                    raise ValueError("Enter a valid email address or leave it blank.")
+                if payload.get("privacyAcknowledged") is not True:
+                    raise ValueError("Agree to the privacy notice before sending your enquiry.")
+                raw_items = payload.get("items", {})
+                if not isinstance(raw_items, dict) or not raw_items:
+                    raise ValueError("Add at least one item to your enquiry.")
+                items = []
+                for product_id, quantity in raw_items.items():
+                    if product_id not in SALE_PRODUCT_BY_ID or type(quantity) is not int or not 1 <= quantity <= 99:
+                        raise ValueError("One or more enquiry quantities are invalid.")
+                    product = SALE_PRODUCT_BY_ID[product_id]
+                    items.append({"id": product_id, "brand": product["brand"], "name": product["name"], "quantity": quantity, "unitPrice": product["price"]})
+                now = datetime.now(timezone.utc).isoformat()
+                enquiry = {"id": uuid.uuid4().hex.upper(), "type": "sale", "status": "new", "createdAt": now, "updatedAt": now, "privacyAcknowledgedAt": now, "privacyPolicyVersion": "2026-10-16.1", "customer": {"name": name, "phone": phone, "email": email}, "items": items, "estimatedTotal": sum(row["unitPrice"] * row["quantity"] for row in items), "currency": "UGX"}
+                with LOCK:
+                    enquiries = load_sale_enquiries()
+                    enquiries.append(enquiry)
+                    save_sale_enquiries(enquiries)
+                return self.send_json(201, {"enquiry": enquiry})
+            except (KeyError, ValueError, TypeError, json.JSONDecodeError) as error:
+                return self.send_json(400, {"error": str(error) or "Invalid sale enquiry."})
         if urlparse(self.path).path.startswith("/api/admin/bookings/"):
             if not self.require_admin():
                 return
