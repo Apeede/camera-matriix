@@ -345,6 +345,9 @@ html{scroll-padding-top:92px}
 @media(max-width:520px){.buy-hero{padding:36px 21px}.buy-hero .hero-kicker{margin-bottom:22px}.buy-hero h1{font-size:54px}.buy-hero .hero-lead{font-size:12px;line-height:1.7}.buy-hero-feature-copy h2{font-size:24px}.buy-hero-detail-link{gap:6px;font-size:9px}.buy-hero-image-link{height:270px}.buy-hero-image-link img{padding:0}.buy-hero-promo-copy{left:20px;right:20px;bottom:24px}.buy-hero-promo-copy h2{font-size:29px}.buy-hero-promo-copy>p:not(.buy-hero-feature-kicker){max-width:290px;font-size:11px}.buy-hero-feature-credit{font-size:8px}.back-to-top{right:12px;bottom:12px;width:40px;height:40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scroll-reveal{opacity:1;transform:none;transition:none}.buy-hero-image-link img,.buy-hero-dots button,.buy-hero-detail-link span,.back-to-top{transition:none}}
 
+/* Keep the Buy drawer above its backdrop after the rental mobile drawer rules. */
+.cart-drawer.sale-enquiry-drawer{z-index:14}
+
 /* Shared, searchable promotional video heroes */
 .hero-video-hero{position:relative;isolation:isolate;display:flex;align-items:stretch;min-height:clamp(540px,65vw,700px);overflow:hidden;background:#121820;color:#fff}
 .hero-video-hero.buy-hero{padding:0;background:#121820;color:#fff}
