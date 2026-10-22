@@ -335,7 +335,7 @@ async function bookingApi(request, env, url) {
     if (!/^\+?[0-9][0-9 ()-]{6,20}$/.test(phone) || phone.replace(/\D/g, "").length < 7) throw new Error("Enter a valid phone number, including country code for WhatsApp follow-up.");
     if (payload.privacyAcknowledged !== true) throw new Error("Acknowledge the Privacy Policy and Terms before submitting.");
     const collection = payload.collection;
-    if (!["Kampala · Kololo", "Entebbe · Airport pickup", "Delivery to me"].includes(collection)) throw new Error("Choose a valid collection option.");
+    if (!["Kampala · Makindye", "Delivery to me"].includes(collection)) throw new Error("Choose a valid collection option.");
     const products = await productsFor(env);
     const items = validItems(payload.items, products);
     const days = dayCount(pickup, returnDate);
