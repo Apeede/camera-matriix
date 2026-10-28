@@ -750,3 +750,20 @@ body {
 }
 
 .academy-menu-icon{position:relative;display:block;width:18px;height:14px;margin:auto;border-top:1px solid currentColor;border-bottom:1px solid currentColor}.academy-menu-icon:after{content:"";position:absolute;left:0;right:0;top:6px;border-top:1px solid currentColor}
+
+/* Partner logos: calm, continuous vertical movement beside the Academy story. */
+.academy-partners{width:min(1180px,90%);margin:0 auto;padding:74px 0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(300px,1fr);gap:clamp(32px,7vw,100px);align-items:center;border-bottom:1px solid var(--academy-line)}
+.academy-partners-copy h2{margin:0;color:#f4f6fa;font:500 clamp(38px,5vw,61px)/1.02 'Space Grotesk',sans-serif}
+.academy-partners-copy h2 em{font-family:var(--academy-serif);font-weight:400;color:var(--academy-red)}
+.academy-partners-copy>p:not(.academy-eyebrow){max-width:390px;color:var(--academy-muted);font-size:14px;line-height:1.8}
+.academy-partner-window{height:390px;overflow:hidden;position:relative;mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent)}
+.academy-partner-track{display:flex;flex-direction:column;animation:academy-partners-rise 38s linear infinite}
+.academy-partner-window:hover .academy-partner-track,.academy-partner-window:focus-within .academy-partner-track{animation-play-state:paused}
+.academy-partner-set{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:82px;gap:12px;padding-bottom:12px}
+.academy-partner-logo{min-width:0;display:grid;place-items:center;padding:12px 18px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(255,255,255,.93);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.academy-partner-logo--light{background:#121722;border-color:rgba(255,255,255,.18)}
+.academy-partner-logo img{display:block;max-width:100%;max-height:55px;width:auto;height:auto;object-fit:contain}
+@keyframes academy-partners-rise{to{transform:translateY(-50%)}}
+@media(max-width:780px){.academy-partners{grid-template-columns:1fr;gap:28px;padding:56px 0}.academy-partner-window{height:330px}.academy-partner-set{grid-auto-rows:72px}.academy-partner-logo{padding:10px 14px}.academy-partner-logo img{max-height:50px}}
+@media(max-width:480px){.academy-partner-window{height:300px}.academy-partner-set{gap:9px;grid-auto-rows:66px}.academy-partner-logo{padding:8px 10px;border-radius:11px}}
+@media(prefers-reduced-motion:reduce){.academy-partner-track{animation:none}}
