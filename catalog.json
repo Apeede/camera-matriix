@@ -439,11 +439,11 @@
     "tag": "FE 24–105mm G OSS",
     "art": "lens",
     "specUrl": "https://www.sony.com/electronics/support/lenses-e-mount-lenses/sel24105g/specifications",
-    "image": "https://www.sony.com/image/3591edf89e148307eab72daa132d15d8?fmt=png-alpha&wid=1200",
+    "image": "https://old.yarkiy.ru/system/uploads/preview/photo_storage/401372/SEL24105G.SYX.jpg",
     "imageAlt": "Sony FE 24–105mm F4 G OSS lens",
     "brand": "Sony",
-    "imageSource": "Sony",
-    "imageSourceUrl": "https://www.sony.com/image/3591edf89e148307eab72daa132d15d8?fmt=png-alpha&wid=1200"
+    "imageSource": "Yarkiy",
+    "imageSourceUrl": "https://old.yarkiy.ru/system/uploads/preview/photo_storage/401372/SEL24105G.SYX.jpg"
   },
   {
     "id": "sony-fe85f14gm",
@@ -475,10 +475,10 @@
     "tag": "EF-EOS R adapter",
     "art": "accessory",
     "specUrl": "https://www.usa.canon.com/support/p/mount-adapter-ef-eos-r",
-    "image": "https://www.digidirect.com.au/media/catalog/product/c/a/canon_ef_-_eos_r_mount_adaptor_01.jpg?bg-color=255%2C255%2C255&fit=bounds&height=453&optimize=medium&width=445",
+    "image": "https://storage.googleapis.com/prg-photo-shop-bucket/2022/02/CN-MOUNT-ADAPTER-EOS-R-C.jpg",
     "imageAlt": "Canon EF-EOS R mount adapter",
     "brand": "Canon",
-    "imageSource": "digiDirect",
-    "imageSourceUrl": "https://www.digidirect.com.au/media/catalog/product/c/a/canon_ef_-_eos_r_mount_adaptor_01.jpg?bg-color=255%2C255%2C255&fit=bounds&height=453&optimize=medium&width=445"
+    "imageSource": "PRG Photo Shop",
+    "imageSourceUrl": "https://storage.googleapis.com/prg-photo-shop-bucket/2022/02/CN-MOUNT-ADAPTER-EOS-R-C.jpg"
   }
 ]
