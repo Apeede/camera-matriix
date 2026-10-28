@@ -5,11 +5,11 @@
     "name": "A7 IV body",
     "price": 7000000,
     "images": [
-      "/assets/hero/Sony%20camera%20cgI.jpeg",
+      "https://ac-foto.com/storage/img/uploads/products/11374/pi_2436616359.png",
       "https://www.capesindia.com/cdn/shop/files/sony-a7-iv-front-back_696015bb-1423-41de-bdb1-56f6a3a7797e.jpg?v=1694752829&width=800"
     ],
     "imageSources": [
-      "Camera Matrix",
+      "AC-Foto",
       "Capes India"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
@@ -55,6 +55,10 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://ac-foto.com/storage/img/uploads/products/11374/pi_2436616359.png",
+      "https://www.capesindia.com/cdn/shop/files/sony-a7-iv-front-back_696015bb-1423-41de-bdb1-56f6a3a7797e.jpg?v=1694752829&width=800"
     ]
   },
   {
@@ -63,12 +67,10 @@
     "name": "A7 IV kit",
     "price": 8500000,
     "images": [
-      "https://www.foto-wolf-dresden.de/images/product_images/original_images/Alpha-7IV-bild1a_0_8022_4.jpg",
-      "/assets/hero/Sony%20camera%20cgI.jpeg"
+      "https://www.fotokoch.mt/bilddaten/bildgroesser/sony-alpha-7-iv-ilce-7m4kb-sel-28-70mm-oss-fe_64654.jpg"
     ],
     "imageSources": [
-      "Foto-Wolf Dresden",
-      "Camera Matrix"
+      "Foto Koch"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
     "description": "A full-frame hybrid camera suited to photography, interviews and creator video. Kit lens and included accessories should be confirmed before purchase.",
@@ -117,6 +119,9 @@
         "label": "Kit contents",
         "value": "Kit lens and included accessories to be confirmed"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.fotokoch.mt/bilddaten/bildgroesser/sony-alpha-7-iv-ilce-7m4kb-sel-28-70mm-oss-fe_64654.jpg"
     ]
   },
   {
@@ -171,6 +176,10 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://thecamerastore.com/cdn/shop/files/Sony-a7-V-Body-07_grande.jpg?v=1764695753",
+      "https://assets.videomaker.com/2025/12/sony_alpha_7_v_feat-1392x783.jpg"
     ]
   },
   {
@@ -186,7 +195,7 @@
       "Kamera Express",
       "Camera Commons"
     ],
-    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/zv-e10",
     "description": "A compact APS-C mirrorless camera aimed at vlogging and everyday creator work. Confirm the included kit lens and accessories.",
     "specs": [
       {
@@ -233,6 +242,10 @@
         "label": "Kit contents",
         "value": "Kit lens and included accessories to be confirmed"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.kamera-express.nl/media/9e75a33a-e483-4704-a1f2-f7e4c6d4e459/12376882%20-%20Sony.jpg",
+      "https://cameracommons.ph/cdn/shop/files/SONYZV-E10L202410oct_84ba866a-d843-48f8-8b25-ff73529d8700.jpg?v=1772781386"
     ]
   },
   {
@@ -250,7 +263,7 @@
       "Kenmore Camera",
       "Seentat"
     ],
-    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
+    "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/zv-e10m2",
     "description": "A compact creator camera with an APS-C sensor and 10-bit video options for flexible editing.",
     "specs": [
       {
@@ -293,6 +306,11 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://store.sony.com.tw/resource/file/product_files/ZV-E10M2-B/01.jpg",
+      "https://cdn11.bigcommerce.com/s-6eafq5t88w/images/stencil/original/products/60480/589539/ZV-E10_II_front_black__52957.1720624018.jpg?c=1",
+      "https://seentat.com/cdn/shop/files/sony-zv-e10-ii-vlog-camera-body-only-black-1.jpg?v=1769575170"
     ]
   },
   {
@@ -351,6 +369,10 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://s3.amazonaws.com/pr-prd-preview-dolphin-upload-cfn/sites/268/2023/07/13012615/a6700_front-Large.jpg",
+      "https://cdn11.bigcommerce.com/s-6eafq5t88w/images/stencil/1280x1280/products/49756/124846/ILCE-6700_front-3000px__32462.1689172476.jpg?c=1"
     ]
   },
   {
@@ -359,12 +381,10 @@
     "name": "A6700 kit",
     "price": 5000000,
     "images": [
-      "https://zshop.vn/images/thumbnails/1357/1000/detailed/166/Sony_A6700__9__4n6w-hq.jpg",
-      "https://www.afoto.cz/imgs/products/Sony/1166098_SONY_a6700_telo_main.jpg"
+      "https://www.sonystyle.com.cn/content/dam/sonystyle/products/ilc/e-body/ilce_6700/product/ilce_6700k_01.jpg"
     ],
     "imageSources": [
-      "ZShop",
-      "aFoto"
+      "Sony Store China"
     ],
     "productUrl": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6700-b",
     "description": "A compact APS-C hybrid camera supplied as a kit; confirm the included lens and accessories.",
@@ -413,6 +433,9 @@
         "label": "Kit contents",
         "value": "Kit lens and included accessories to be confirmed"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.sonystyle.com.cn/content/dam/sonystyle/products/ilc/e-body/ilce_6700/product/ilce_6700k_01.jpg"
     ]
   },
   {
@@ -473,6 +496,11 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.sony.com.au/content/dam/sony/contents/global/cameras/alpha-interchangeable-lens-cameras/year-2023/homepage/ilce-7rm5/overview/og.png",
+      "https://www.wexphotovideo.com/globalassets/product-images/3073000/3073940.jpg",
+      "https://www.cameraservice.it/cdn/shop/files/sony-alpha-7r-v.jpg?v=1739356735"
     ]
   },
   {
@@ -481,12 +509,10 @@
     "name": "A7R IV body",
     "price": 7000000,
     "images": [
-      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048",
-      "https://ac-foto.com/storage/img/uploads/products/11374/pi_2436616359.png"
+      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048"
     ],
     "imageSources": [
-      "Capes India",
-      "AC-Foto"
+      "Capes India"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7rm4",
     "description": "A high-resolution full-frame camera built for detailed still photography. This listing is for the body.",
@@ -531,6 +557,9 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048"
     ]
   },
   {
@@ -585,6 +614,10 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.sony.co.uk/image/771293ec03a6b964389e28f379f38d67?fmt=png-alpha&hei=400&wid=676",
+      "https://www.photura.com/cdn/shop/files/ILCE7RM6_Sony_Web_012.jpg?v=1779737873&width=1214"
     ]
   },
   {
@@ -641,6 +674,11 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://cdn.mediapark.uz/imgs/085ec46a-cd53-4d19-b2a8-b6a88607ce68_ed49d60a9ced194e93c11ffbc9775860bc30f3b02425d27dfe0fae467602cbff.jpg.webp",
+      "https://cdn.rubbermonkey.com/ProductImage/Huge/270765.jpg/sony-fx30-digital-cinema-camera-body-only.jpg",
+      "https://www.kamera-express.nl/media/42f9f007-bf65-490c-ab9f-d0851be81fc3/12473424_2.jpg"
     ]
   },
   {
@@ -695,6 +733,10 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://store.sony.com.tw/resource/file/product_files/ILME-FX3/01_800e83033.jpg",
+      "https://static.wixstatic.com/media/6018d2_5c959e6fc3334d0b860bacf764d27491~mv2.jpg/v1/fill/w_700%2Ch_700%2Cal_c%2Cq_85%2Cenc_auto/6018d2_5c959e6fc3334d0b860bacf764d27491~mv2.jpg"
     ]
   },
   {
@@ -751,6 +793,11 @@
         "label": "Lens mount",
         "value": "Sony E-mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://store.sony.com.au/dw/image/v2/ABBC_PRD/on/demandware.static/-/Sites-sony-master-catalog/default/dwefbc1f61/images/ILMEFX6V/ILMEFX6V_2.png",
+      "https://content.abt.com/image.php/4d2331751a62b826d9ed81572af01d90?canvas=&ck=2&height=550&image=%2Fimages%2Fproducts%2FBDP_Images%2Fsony-camcorder-ILME-FX6V-rear-angled-2.jpg&width=750",
+      "https://www.camera-people.ru/upload/iblock/936/ri8kt0dmkztf5noesofbk3pu1mp5085p.png"
     ]
   },
   {
@@ -807,6 +854,11 @@
         "label": "Media",
         "value": "Dual CFexpress Type A / SD card slots"
       }
+    ],
+    "imageSourceUrls": [
+      "https://store.sony.com.tw/resource/file/product_files/PXW-Z200/01_90d155152.jpg",
+      "https://inwfile.com/s-cg/12n2mz.png",
+      "https://digitalcamera.mn/uploads/middle/digital-camera-img-17383006314.jpg"
     ]
   },
   {
@@ -867,6 +919,11 @@
         "label": "Lens mount",
         "value": "Canon RF mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://theflashcentre.com/cdn/shop/products/CANN021_1_1024x1024.png?v=1667385289",
+      "https://www.capesindia.com/cdn/shop/products/canon-eos-r6-mark-II-front-back-base-image.jpg?crop=center&height=1200&v=1696850423&width=1200",
+      "https://www.academy.canon.at/storage/0002_im_focus/2211_eos_r6_mkii/09-frontback-720x500.jpg"
     ]
   },
   {
@@ -921,6 +978,10 @@
         "label": "Lens mount",
         "value": "Canon RF mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.capesindia.com/cdn/shop/files/canon-eos-r6-mark-III-front-back-base-image.png?v=1773635334&width=700",
+      "https://a.allegroimg.com/original/113ca6/1cc1be4d48e9a5f1a8295c9db6e6/Canon-EOS-R6-Mark-III-32-5-MP-Full-Frame-40-kl-s-Body"
     ]
   },
   {
@@ -977,6 +1038,11 @@
         "label": "Lens mount",
         "value": "Nikon Z mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/ZR_front-Eh6hkPQO.png",
+      "https://cdn11.bigcommerce.com/s-e9bd7/images/stencil/1280x1280/products/52950/95472/ZR_BF-N1_front__87188.1757510864.jpg?c=2",
+      "https://www.backscatter.com/ITEM_IMAGES/nkl-2006_1.jpg?resizeh=1000&resizeid=7&resizew=1000"
     ]
   },
   {
@@ -985,12 +1051,10 @@
     "name": "Z6 II body",
     "price": 5500000,
     "images": [
-      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg",
-      "https://www.nikon.com.au/media/wysiwyg/Z7II_PBS_2_-_LR.jpeg"
+      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg"
     ],
     "imageSources": [
-      "PetaPixel",
-      "Nikon Australia"
+      "PetaPixel"
     ],
     "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_6_2/",
     "description": "A full-frame hybrid camera for still photography and video, with dual card slots. This listing is for the body.",
@@ -1035,6 +1099,9 @@
         "label": "Lens mount",
         "value": "Nikon Z mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg"
     ]
   },
   {
@@ -1095,6 +1162,11 @@
         "label": "Lens mount",
         "value": "Nikon Z mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://www.nikon.es/globalassets/digizuite/190047-en-z6iii_front-vD0491068D5AC.png/OptimizelyDesktopPNG",
+      "https://www.shutterbug.com/images/22/03142025.NikonZ6III.Top%20Front.jpg",
+      "https://www.cameraland.nl/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/z/6/z6iii_z24-70_4_back34l_monitor_side.jpg"
     ]
   },
   {
@@ -1153,6 +1225,10 @@
         "label": "Lens mount",
         "value": "Nikon Z mount"
       }
+    ],
+    "imageSourceUrls": [
+      "https://cdn11.bigcommerce.com/s-1nktaieb4v/images/stencil/original/image-manager/z7iimirrorlesscamera.jpg?t=1709540474",
+      "https://www.nikon.com.au/media/wysiwyg/Z7II_PBS_2_-_LR.jpeg"
     ]
   },
   {
@@ -1160,103 +1236,220 @@
     "brand": "Canon",
     "name": "R8 body",
     "price": 5500000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://i1.adis.ws/i/canon/5803C017_EOS-R8_01?aspect=1%3A1&bg=rgb%28245%2C246%2C246%29&fmt=webp&qlt=100&sm=aspect&w=940"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Canon UK"
+    ],
+    "imageSourceUrls": [
+      "https://www.canon.co.uk/store/canon-eos-r8-mirrorless-camera-body/5803C017/"
+    ],
+    "productUrl": "https://www.usa.canon.com/shop/p/eos-r8"
   },
   {
     "id": "godox-v860-iii-n",
     "brand": "Godox",
     "name": "V860 III N",
     "price": 950000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.godox.com/static/upload/image/20230807/1691391760155720.jpg"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Godox"
+    ],
+    "imageSourceUrls": [
+      "https://www.godox.com/product-d/V860III.html"
+    ],
+    "productUrl": "https://www.godox.com/product-d/V860III.html"
   },
   {
     "id": "godox-v860-iii-c",
     "brand": "Godox",
     "name": "V860 IIIC",
     "price": 950000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.godox.com/static/upload/image/20230807/1691391760155720.jpg"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Godox"
+    ],
+    "imageSourceUrls": [
+      "https://www.godox.com/product-d/V860III.html"
+    ],
+    "productUrl": "https://www.godox.com/product-d/V860III.html"
   },
   {
     "id": "godox-v860-iii-s",
     "brand": "Godox",
     "name": "V860 III S",
     "price": 950000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.godox.com/static/upload/image/20230807/1691391760155720.jpg"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Godox"
+    ],
+    "imageSourceUrls": [
+      "https://www.godox.com/product-d/V860III.html"
+    ],
+    "productUrl": "https://www.godox.com/product-d/V860III.html"
   },
   {
     "id": "sgr-a40-black",
-    "brand": "SGR",
-    "name": "SGR-A40 black",
+    "brand": "Sony",
+    "name": "SRG-A40 black",
     "price": 13000000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.avshop.ca/images/sony/SONYSRGA40_2.jpeg"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "AVShop.ca"
+    ],
+    "imageSourceUrls": [
+      "https://www.avshop.ca/video-cameras/sony-srg-a40-ptz-auto-framing-cameraai-analytics-30xciz-zoom-black"
+    ],
+    "productUrl": "https://pro.sony/en_AE/products/ptz-network-cameras/srg-a40"
   },
   {
     "id": "sgr-a12-black",
-    "brand": "SGR",
-    "name": "SGR-A12 BLACK",
+    "brand": "Sony",
+    "name": "SRG-A12 BLACK",
     "price": 11500000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://shashinki.com/shop/getimage/products/so-srga12-02.jpg"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "ShaShinKi"
+    ],
+    "imageSourceUrls": [
+      "https://shashinki.com/shop/sony-srg-a12-4k-ptz-camera-with-built-in-ai-and-12x-optical-zoom-black-p-56874.html"
+    ],
+    "productUrl": "https://pro.sony/en_AE/products/ptz-network-cameras/srg-a40"
   },
   {
     "id": "nikon-z8-body",
     "brand": "Nikon",
     "name": "Z8 body",
     "price": 13000000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.ormsdirect.co.za/cdn/shop/files/nikon-z8-mirrorless-digital-camera-body-front.webp?v=1683720355&width=1024"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Orms Direct"
+    ],
+    "imageSourceUrls": [
+      "https://www.ormsdirect.co.za/products/nikon-z8-mirrorless-digital-camera-body"
+    ],
+    "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_8/"
   },
   {
     "id": "dji-mic-3",
     "brand": "DJI",
     "name": "Mic 3",
     "price": 1500000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://se-cdn.djiits.com/tpc/uploads/spu/cover/473691cc5e140d0341a30b31b479c627%40small.png?format=webp"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "DJI Store"
+    ],
+    "imageSourceUrls": [
+      "https://store.dji.com/product/dji-mic-3?from=landing_page&site=brandsite"
+    ],
+    "productUrl": "https://www.dji.com/mic-3"
   },
   {
     "id": "atomos-ninja-raw-5-2-hdmi-recorder",
     "brand": "Atomos",
     "name": "Ninja RAW 5.2 HDMI recorder",
     "price": 3500000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.atomos.com/wp-content/uploads/2026/08/DTC-NINJA-RAW-8.png"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Atomos"
+    ],
+    "imageSourceUrls": [
+      "https://www.atomos.com/product/ninja-raw/"
+    ],
+    "productUrl": "https://www.atomos.com/product/ninja-raw/"
   },
   {
     "id": "blackmagic-video-assist-7-12g",
     "brand": "Blackmagic Design",
     "name": "Video Assist 7 12G-SDI/HDMI HDR recording monitor",
     "price": 4500000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://images.blackmagicdesign.com/images/products/blackmagicvideoassist/techspecs/hero/blackmagic-video-assist-7-inch-12g-hdr-sm.jpg?_v=1664770318"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Blackmagic Design"
+    ],
+    "imageSourceUrls": [
+      "https://www.blackmagicdesign.com/uk/products/blackmagicvideoassist/techspecs"
+    ],
+    "productUrl": "https://www.blackmagicdesign.com/products/blackmagicvideoassist/techspecs"
   },
   {
     "id": "nikon-ftz-ii-adapter",
     "brand": "Nikon",
     "name": "FTZ II adapter",
     "price": 950000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.nikon.co.uk/globalassets/digizuite/164101-en-ftzii_angle3-v08FA2AAAD25A.png/OptimizelyPhoneWebP"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Nikon UK"
+    ],
+    "imageSourceUrls": [
+      "https://www.nikon.co.uk/en_GB/product/accessories/camera-accessories/mount-adapter-ftz-ii"
+    ],
+    "productUrl": "https://imaging.nikon.com/imaging/lineup/accessory/camera/ftz_2/index.html"
   },
   {
     "id": "godox-ad600bm-ii",
     "brand": "Godox",
     "name": "AD600BM II",
     "price": 2600000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.godox.com/static/upload/image/20250218/1739872753791281.jpg"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Godox"
+    ],
+    "imageSourceUrls": [
+      "https://www.godox.com/product-b/Flash/AD600BMII.html"
+    ],
+    "productUrl": "https://www.godox.com/product-b/Flash/AD600BMII.html"
   },
   {
     "id": "godox-ad600bm",
     "brand": "Godox",
     "name": "AD600BM",
     "price": 2000000,
-    "images": [],
-    "description": "Contact Camera Matrix to confirm current availability and package contents."
+    "images": [
+      "https://www.godox.com/static/upload/image/20220117/1642418923197509.jpg"
+    ],
+    "description": "Contact Camera Matrix to confirm current availability and package contents.",
+    "imageSources": [
+      "Godox"
+    ],
+    "imageSourceUrls": [
+      "https://www.godox.com/product-d/AD600M-AD600BM.html"
+    ],
+    "productUrl": "https://www.godox.com/product-d/AD600M-AD600BM.html"
   }
 ]

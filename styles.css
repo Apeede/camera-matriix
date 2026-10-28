@@ -379,3 +379,4 @@ html{scroll-padding-top:92px}
 .topbar{position:sticky;top:0;z-index:30}
 
 .sale-visual--type{background:linear-gradient(140deg,#263b4d,#101c29);color:#fff}.sale-visual--type .sale-brand{color:#ffffffa8}.sale-visual-name{max-width:82%;padding:12px;color:#fff;font:600 15px/1.3 Manrope,sans-serif;text-align:center}.sale-photo-pending{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:30px;background:linear-gradient(140deg,#263b4d,#101c29);color:white;text-align:center}.sale-photo-pending span{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#ffffffa8}.sale-photo-pending strong{max-width:85%;font:600 clamp(20px,3vw,34px)/1.2 Manrope,sans-serif}
+.detail-image-caption a,.sale-photo-credits a{color:inherit;text-underline-offset:3px}.detail-image-caption a:hover,.sale-photo-credits a:hover{color:var(--brand-red)}

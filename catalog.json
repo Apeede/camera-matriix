@@ -12,7 +12,9 @@
     "art": "lens",
     "specUrl": "https://www.sony.com/electronics/camera-lenses/sel70200gm",
     "image": "https://www.sony.jp/ichigan/lens/G-Master/img/pdct_SEL70200GM%402x.jpg",
-    "brand": "Sony"
+    "brand": "Sony",
+    "imageSource": "Sony Japan",
+    "imageSourceUrl": "https://www.sony.jp/ichigan/lens/G-Master/img/pdct_SEL70200GM%402x.jpg"
   },
   {
     "id": "sony-35gm",
@@ -27,7 +29,9 @@
     "art": "lens",
     "specUrl": "https://www.sony.com/electronics/camera-lenses/sel35f14gm",
     "image": "https://dc.watch.impress.co.jp/img/dcw/list/1311/547/01.jpg",
-    "brand": "Sony"
+    "brand": "Sony",
+    "imageSource": "Digital Camera Watch",
+    "imageSourceUrl": "https://dc.watch.impress.co.jp/img/dcw/list/1311/547/01.jpg"
   },
   {
     "id": "sony-200600g",
@@ -42,7 +46,9 @@
     "art": "lens",
     "specUrl": "https://www.sony.com/electronics/camera-lenses/sel200600g",
     "image": "https://sonyimages.blob.core.windows.net/productr/large/sel200600_g-allsel200600_g_ps_04_en_gb.png",
-    "brand": "Sony"
+    "brand": "Sony",
+    "imageSource": "Sony",
+    "imageSourceUrl": "https://sonyimages.blob.core.windows.net/productr/large/sel200600_g-allsel200600_g_ps_04_en_gb.png"
   },
   {
     "id": "sigma-85dgdn",
@@ -57,7 +63,9 @@
     "art": "lens",
     "specUrl": "https://www.sigma-global.com/en/lenses/a020_85_14/",
     "image": "https://www.fujiya-camera.co.jp/img/goods/1/C0085126322656_1.jpg",
-    "brand": "Sigma"
+    "brand": "Sigma",
+    "imageSource": "Fujiya Camera",
+    "imageSourceUrl": "https://www.fujiya-camera.co.jp/img/goods/1/C0085126322656_1.jpg"
   },
   {
     "id": "sony-a7iv",
@@ -71,9 +79,11 @@
     "tag": "α7 IV",
     "art": "camera",
     "specUrl": "https://www.sony.com/electronics/support/e-mount-body-ilce-7-series/ilce-7m4/specifications",
-    "image": "/assets/hero/Sony%20camera%20cgI.jpeg",
+    "image": "https://ac-foto.com/storage/img/uploads/products/11374/pi_2436616359.png",
     "imageAlt": "Sony α7 IV mirrorless camera body photographed at an angle",
-    "brand": "Sony"
+    "brand": "Sony",
+    "imageSource": "AC-Foto",
+    "imageSourceUrl": "https://ac-foto.com/storage/img/uploads/products/11374/pi_2436616359.png"
   },
   {
     "id": "sony-fx3",
@@ -88,7 +98,9 @@
     "art": "camera",
     "specUrl": "https://www.sony.com/electronics/support/camcorders-interchangeable-lens-cameras/ilme-fx3/specifications",
     "image": "https://store.sony.com.tw/resource/file/product_files/ILME-FX3/01_800e83033.jpg",
-    "brand": "Sony"
+    "brand": "Sony",
+    "imageSource": "Sony Taiwan",
+    "imageSourceUrl": "https://store.sony.com.tw/resource/file/product_files/ILME-FX3/01_800e83033.jpg"
   },
   {
     "id": "canon-r6mkii",
@@ -103,7 +115,9 @@
     "art": "camera",
     "specUrl": "https://www.canon-europe.com/cameras/eos-r6-mark-ii/specifications/",
     "image": "https://theflashcentre.com/cdn/shop/products/CANN021_1_1024x1024.png?v=1667385289",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "The Flash Centre",
+    "imageSourceUrl": "https://theflashcentre.com/cdn/shop/products/CANN021_1_1024x1024.png?v=1667385289"
   },
   {
     "id": "canon-rf24105stm",
@@ -118,7 +132,9 @@
     "art": "lens",
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://harrisoncameras.co.uk/cdn/shop/files/4111C005AA_grande.jpg?v=1720775322",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "Harrison Cameras",
+    "imageSourceUrl": "https://harrisoncameras.co.uk/cdn/shop/files/4111C005AA_grande.jpg?v=1720775322"
   },
   {
     "id": "canon-rf24105l",
@@ -133,7 +149,9 @@
     "art": "lens",
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://lenz.pe/cdn/shop/files/O6137_1.png?v=1761153678&width=1500",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "Lenz Peru",
+    "imageSourceUrl": "https://lenz.pe/cdn/shop/files/O6137_1.png?v=1761153678&width=1500"
   },
   {
     "id": "canon-rf50",
@@ -148,7 +166,9 @@
     "art": "lens",
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://tokiwa-camera.co.jp/cdn/shop/files/IMG_3098.jpg?v=1781253751&width=1946",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "Tokiwa Camera",
+    "imageSourceUrl": "https://tokiwa-camera.co.jp/cdn/shop/files/IMG_3098.jpg?v=1781253751&width=1946"
   },
   {
     "id": "canon-rf85macro",
@@ -163,7 +183,9 @@
     "art": "lens",
     "specUrl": "https://files.canon-europe.com/files/webcontent/rf-lens-world/features/rf-lineup/index.html?pop=pop18",
     "image": "https://www.toneart-shop.de/media/catalog/product/c/a/canon-rf-85mm-f2-macro-is-stm_kaufen_toneart-shop.jpg",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "Toneart",
+    "imageSourceUrl": "https://www.toneart-shop.de/media/catalog/product/c/a/canon-rf-85mm-f2-macro-is-stm_kaufen_toneart-shop.jpg"
   },
   {
     "id": "canon-ef24105",
@@ -178,7 +200,9 @@
     "art": "lens",
     "specUrl": "https://www.usa.canon.com/support/p/ef-24-105mm-f-4l-is-usm",
     "image": "https://shashinki.com/shop/getimage/products/CN-24105L.jpg",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "ShaShinKi",
+    "imageSourceUrl": "https://shashinki.com/shop/getimage/products/CN-24105L.jpg"
   },
   {
     "id": "canon-ef2470",
@@ -193,7 +217,9 @@
     "art": "lens",
     "specUrl": "https://www.usa.canon.com/support/p/ef-24-70mm-f-2-8l-usm",
     "image": "https://img-estoquenow.s3.amazonaws.com/items/10905/lente-canon-ef-24-70mm-f2.8l-usm_f1d669e4561bcb788c9dd7c854bded7b.jpeg",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "EstoqueNow",
+    "imageSourceUrl": "https://img-estoquenow.s3.amazonaws.com/items/10905/lente-canon-ef-24-70mm-f2.8l-usm_f1d669e4561bcb788c9dd7c854bded7b.jpeg"
   },
   {
     "id": "canon-ef85",
@@ -208,7 +234,9 @@
     "art": "lens",
     "specUrl": "https://www.usa.canon.com/shop/p/ef-85mm-f-1-8-usm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Canon_85mm_f1.8.jpg",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "Wikimedia Commons",
+    "imageSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Canon_85mm_f1.8.jpg"
   },
   {
     "id": "canon-ef50",
@@ -223,7 +251,9 @@
     "art": "lens",
     "specUrl": "https://www.usa.canon.com/support/p/ef-50mm-f-1-8-stm",
     "image": "https://bizweb.dktcdn.net/100/378/894/files/minhquangcamera-2-canon-ef-50mm-stm-copy.jpg?v=1732520335870",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "Minh Quang Camera",
+    "imageSourceUrl": "https://bizweb.dktcdn.net/100/378/894/files/minhquangcamera-2-canon-ef-50mm-stm-copy.jpg?v=1732520335870"
   },
   {
     "id": "canon-ef70200",
@@ -238,7 +268,9 @@
     "art": "lens",
     "specUrl": "https://www.usa.canon.com/shop/p/ef-70-200mm-f-2-8l-is-iii-usm",
     "image": "https://s7d1.scene7.com/is/image/canon/3044C002_ef-70-200mm-f-2.8l-is-iii-usm_primary?fmt=webp-alpha",
-    "brand": "Canon"
+    "brand": "Canon",
+    "imageSource": "Canon",
+    "imageSourceUrl": "https://s7d1.scene7.com/is/image/canon/3044C002_ef-70-200mm-f-2.8l-is-iii-usm_primary?fmt=webp-alpha"
   },
   {
     "id": "dji-mic3",
@@ -253,7 +285,9 @@
     "art": "audio",
     "specUrl": "https://www.dji.com/mic-3/specs",
     "image": "https://www.system5.jp/cdn/shop/files/N_1210302p1_3fdf13ef-c974-4a31-9a86-3a53cd2f6b37_2100x2100.jpg?v=1756278410",
-    "brand": "DJI"
+    "brand": "DJI",
+    "imageSource": "System5",
+    "imageSourceUrl": "https://www.system5.jp/cdn/shop/files/N_1210302p1_3fdf13ef-c974-4a31-9a86-3a53cd2f6b37_2100x2100.jpg?v=1756278410"
   },
   {
     "id": "rode-wg2",
@@ -268,7 +302,9 @@
     "art": "audio",
     "specUrl": "https://rode.com/en/microphones/wireless/wirelessgoii",
     "image": "https://www.maddogs.tv/wp-content/uploads/Rode-Wireless-Go-2-II-Dual-Channel-Radio-Mic-Kit-800x800.png",
-    "brand": "RØDE"
+    "brand": "RØDE",
+    "imageSource": "Mad Dogs TV",
+    "imageSourceUrl": "https://www.maddogs.tv/wp-content/uploads/Rode-Wireless-Go-2-II-Dual-Channel-Radio-Mic-Kit-800x800.png"
   },
   {
     "id": "godox-ad600bm",
@@ -284,7 +320,9 @@
     "specUrl": "https://godox.com/product-d/AD600M-AD600BM.html",
     "image": "https://godox.com/static/upload/image/20220117/1642418923197509.jpg",
     "imageAlt": "Godox AD600BM flash head; kit contents are not shown",
-    "brand": "Godox"
+    "brand": "Godox",
+    "imageSource": "Godox",
+    "imageSourceUrl": "https://godox.com/static/upload/image/20220117/1642418923197509.jpg"
   },
   {
     "id": "godox-tt600",
@@ -299,7 +337,9 @@
     "art": "light",
     "specUrl": "https://godox.com/product-d/TT600.html",
     "image": "https://www.retinadigicam.com/wp-content/uploads/2018/02/TT600.jpg",
-    "brand": "Godox"
+    "brand": "Godox",
+    "imageSource": "Retina Digicam",
+    "imageSourceUrl": "https://www.retinadigicam.com/wp-content/uploads/2018/02/TT600.jpg"
   },
   {
     "id": "zoom-h5",
@@ -314,7 +354,9 @@
     "art": "audio",
     "specUrl": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h5/",
     "image": "https://soundselect.co.za/cdn/shop/files/h5_front.jpg?v=1764677294",
-    "brand": "Zoom"
+    "brand": "Zoom",
+    "imageSource": "Sound Select",
+    "imageSourceUrl": "https://soundselect.co.za/cdn/shop/files/h5_front.jpg?v=1764677294"
   },
   {
     "id": "zoom-h6",
@@ -329,7 +371,9 @@
     "art": "audio",
     "specUrl": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h6/",
     "image": "https://www.scmusic.com.au/content/uploads/2013/11/p-19155-zoomh6.jpg",
-    "brand": "Zoom"
+    "brand": "Zoom",
+    "imageSource": "SC Music",
+    "imageSourceUrl": "https://www.scmusic.com.au/content/uploads/2013/11/p-19155-zoomh6.jpg"
   },
   {
     "id": "amaran-300c",
@@ -344,7 +388,9 @@
     "art": "light",
     "specUrl": "https://amarancreators.com/pages/amaran-300c",
     "image": "https://www.kamera-express.nl/media/2fa90bbc-84ce-4b39-a79c-a14e1a7294d9/amaran-300c-grey-eu-version-.jpg",
-    "brand": "amaran"
+    "brand": "amaran",
+    "imageSource": "Kamera Express",
+    "imageSourceUrl": "https://www.kamera-express.nl/media/2fa90bbc-84ce-4b39-a79c-a14e1a7294d9/amaran-300c-grey-eu-version-.jpg"
   },
   {
     "id": "dji-rs4",
@@ -359,6 +405,8 @@
     "art": "accessory",
     "specUrl": "https://www.dji.com/rs-4/specs",
     "image": "https://www.ec-mall.com/media/catalog/product/cache/55b8d9149c90ec27221b7d1ab8c3d7ed/D/J/DJI-RS-4-Gimbal-Stabilizer-2.webp",
-    "brand": "DJI"
+    "brand": "DJI",
+    "imageSource": "EC-Mall",
+    "imageSourceUrl": "https://www.ec-mall.com/media/catalog/product/cache/55b8d9149c90ec27221b7d1ab8c3d7ed/D/J/DJI-RS-4-Gimbal-Stabilizer-2.webp"
   }
 ]

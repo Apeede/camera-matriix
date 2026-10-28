@@ -27,7 +27,7 @@ fetch("/api/gear").then((response) => response.json()).then(({ products }) => {
   root.innerHTML = `
     <a class="detail-back" href="index.html#catalog">← Back to all gear</a>
     <section class="detail-layout">
-      <div class="detail-gallery"><div class="detail-photo-frame" data-tone="${item.tone}">${photo}</div><p class="detail-image-caption">${item.name}</p></div>
+      <div class="detail-gallery"><div class="detail-photo-frame" data-tone="${item.tone}">${photo}</div><p class="detail-image-caption">${escapeHtml(item.name)} · Photo source: <a href="${escapeHtml(item.imageSourceUrl || item.image)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.imageSource || "Open source image")}</a></p></div>
       <div class="detail-copy">
         <p class="eyebrow"><span></span> ${escapeHtml(item.tag.toUpperCase())}</p>
         <p class="detail-type">${escapeHtml(item.type)}</p>
