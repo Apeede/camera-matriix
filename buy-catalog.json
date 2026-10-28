@@ -67,10 +67,12 @@
     "name": "A7 IV kit",
     "price": 8500000,
     "images": [
-      "/assets/catalog/sony-a7-iv-kit.jpg"
+      "/assets/catalog/sony-a7-iv-kit.jpg",
+      "https://www.doddcamera.com/media/catalog/product/cache/e65dd725c4a9c1815d378f597d477351/s/o/sony_a7_iv_02_1.png"
     ],
     "imageSources": [
-      "PC Factory"
+      "PC Factory",
+      "Dodd Camera"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
     "description": "A full-frame hybrid camera suited to photography, interviews and creator video. Kit lens and included accessories should be confirmed before purchase.",
@@ -121,7 +123,8 @@
       }
     ],
     "imageSourceUrls": [
-      "https://assets.pcfactory.cl/public/foto/45721/google_1000.jpg"
+      "https://assets.pcfactory.cl/public/foto/45721/google_1000.jpg",
+      "https://www.doddcamera.com/media/catalog/product/cache/e65dd725c4a9c1815d378f597d477351/s/o/sony_a7_iv_02_1.png"
     ]
   },
   {
@@ -188,10 +191,12 @@
     "name": "ZV-E10 kit",
     "price": 3000000,
     "images": [
-      "/assets/catalog/sony-zv-e10-kit.webp"
+      "/assets/catalog/sony-zv-e10-kit.webp",
+      "https://www.sony.com/is/image/sonyglobalsolutions/Primary_image-2?$S7Product$"
     ],
     "imageSources": [
-      "Joybuy"
+      "Joybuy",
+      "Sony"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/zv-e10",
     "description": "A compact APS-C mirrorless camera aimed at vlogging and everyday creator work. Confirm the included kit lens and accessories.",
@@ -242,7 +247,8 @@
       }
     ],
     "imageSourceUrls": [
-      "https://images4.joy-sourcing.com/product/jfsintlpro-000-product/t1/4294967296/3080192/101615961315977/928559/690c7056E4de5efdd/42b10752b5083d5e.jpg%21q70.webp"
+      "https://images4.joy-sourcing.com/product/jfsintlpro-000-product/t1/4294967296/3080192/101615961315977/928559/690c7056E4de5efdd/42b10752b5083d5e.jpg%21q70.webp",
+      "https://www.sony.com/is/image/sonyglobalsolutions/Primary_image-2?$S7Product$"
     ]
   },
   {
@@ -378,10 +384,12 @@
     "name": "A6700 kit",
     "price": 5000000,
     "images": [
-      "https://www.sonystyle.com.cn/content/dam/sonystyle/products/ilc/e-body/ilce_6700/product/ilce_6700k_01.jpg"
+      "https://www.sonystyle.com.cn/content/dam/sonystyle/products/ilc/e-body/ilce_6700/product/ilce_6700k_01.jpg",
+      "https://www.gigaparts.com/media/catalog/product/cache/002dc70ccef261c78c46589b619436fc/a/6/a6700.6.png"
     ],
     "imageSources": [
-      "Sony Store China"
+      "Sony Store China",
+      "GigaParts"
     ],
     "productUrl": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6700-b",
     "description": "A compact APS-C hybrid camera supplied as a kit; confirm the included lens and accessories.",
@@ -432,7 +440,8 @@
       }
     ],
     "imageSourceUrls": [
-      "https://www.sonystyle.com.cn/content/dam/sonystyle/products/ilc/e-body/ilce_6700/product/ilce_6700k_01.jpg"
+      "https://www.sonystyle.com.cn/content/dam/sonystyle/products/ilc/e-body/ilce_6700/product/ilce_6700k_01.jpg",
+      "https://www.gigaparts.com/media/catalog/product/cache/002dc70ccef261c78c46589b619436fc/a/6/a6700.6.png"
     ]
   },
   {
@@ -506,10 +515,12 @@
     "name": "A7R IV body",
     "price": 7000000,
     "images": [
-      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048"
+      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048",
+      "https://image.ceneostatic.pl/data/products/84588324/25212691-9c9c-4384-bc42-926bd83a4478_i-sony-alpha-a7r-iv-czarny-body.jpg"
     ],
     "imageSources": [
-      "Capes India"
+      "Capes India",
+      "Ceneo"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7rm4",
     "description": "A high-resolution full-frame camera built for detailed still photography. This listing is for the body.",
@@ -556,7 +567,8 @@
       }
     ],
     "imageSourceUrls": [
-      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048"
+      "https://www.capesindia.com/cdn/shop/files/sony-a7r-iv-front-back.jpg?v=1694759161&width=2048",
+      "https://image.ceneostatic.pl/data/products/84588324/25212691-9c9c-4384-bc42-926bd83a4478_i-sony-alpha-a7r-iv-czarny-body.jpg"
     ]
   },
   {
@@ -1048,10 +1060,12 @@
     "name": "Z6 II body",
     "price": 5500000,
     "images": [
-      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg"
+      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg",
+      "https://emania.vteximg.com.br/arquivos/ids/229701-1000-1000/Camera-Nikon-Z6-II-Mirrorless-Corpo-Z6-Mark-II-1659--1-.png?v=638584896860970000"
     ],
     "imageSources": [
-      "PetaPixel"
+      "PetaPixel",
+      "eMania"
     ],
     "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_6_2/",
     "description": "A full-frame hybrid camera for still photography and video, with dual card slots. This listing is for the body.",
@@ -1098,7 +1112,8 @@
       }
     ],
     "imageSourceUrls": [
-      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg"
+      "https://petapixel.com/assets/uploads/2020/12/nikonz6ii.jpg",
+      "https://emania.vteximg.com.br/arquivos/ids/229701-1000-1000/Camera-Nikon-Z6-II-Mirrorless-Corpo-Z6-Mark-II-1659--1-.png?v=638584896860970000"
     ]
   },
   {
@@ -1234,16 +1249,53 @@
     "name": "R8 body",
     "price": 5500000,
     "images": [
-      "https://i1.adis.ws/i/canon/5803C017_EOS-R8_01?aspect=1%3A1&bg=rgb%28245%2C246%2C246%29&fmt=webp&qlt=100&sm=aspect&w=940"
+      "https://i1.adis.ws/i/canon/5803C017_EOS-R8_01?aspect=1%3A1&bg=rgb%28245%2C246%2C246%29&fmt=webp&qlt=100&sm=aspect&w=940",
+      "https://assets.cathayphoto.com.sg/product/Canon-EOS-R8-body_2.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Canon UK"
+      "Canon UK",
+      "Cathay Photo"
     ],
     "imageSourceUrls": [
-      "https://www.canon.co.uk/store/canon-eos-r8-mirrorless-camera-body/5803C017/"
+      "https://www.canon.co.uk/store/canon-eos-r8-mirrorless-camera-body/5803C017/",
+      "https://assets.cathayphoto.com.sg/product/Canon-EOS-R8-body_2.jpg"
     ],
-    "productUrl": "https://www.usa.canon.com/shop/p/eos-r8"
+    "productUrl": "https://www.usa.canon.com/shop/p/eos-r8",
+    "specs": [
+      {
+        "label": "Sensor",
+        "value": "24.2 MP full-frame CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "DIGIC X"
+      },
+      {
+        "label": "Autofocus",
+        "value": "Dual Pixel CMOS AF II with subject tracking"
+      },
+      {
+        "label": "Video",
+        "value": "6K-oversampled 4K up to 60p"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 40 fps electronic shutter"
+      },
+      {
+        "label": "Display",
+        "value": "3.0-inch vari-angle touchscreen; 2.36M-dot OLED EVF"
+      },
+      {
+        "label": "Media",
+        "value": "Single SD UHS-II card slot"
+      },
+      {
+        "label": "Mount",
+        "value": "Canon RF mount"
+      }
+    ]
   },
   {
     "id": "godox-v860-iii-n",
@@ -1251,16 +1303,53 @@
     "name": "V860 III N",
     "price": 950000,
     "images": [
-      "/assets/catalog/godox-v860-iii-n.jpg"
+      "/assets/catalog/godox-v860-iii-n.jpg",
+      "https://strobepro.com/cdn/shop/products/Strobepro_Godox_V860iii_Side_Nikon_5000x.jpg?v=1632947091"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Walmart"
+      "Walmart",
+      "Strobepro"
     ],
     "imageSourceUrls": [
-      "https://i5.walmartimages.com/seo/Godox-V860III-N-Camera-Flash-for-Nikon-Camera-Flash-Speedlight-Speedlite-Light-10-Levels-LED-Modeling-Lamp_574e77b2-d4d8-4582-bf49-71f965179a5f.a941ca2f29447da914089f0eb9ded649.jpeg"
+      "https://i5.walmartimages.com/seo/Godox-V860III-N-Camera-Flash-for-Nikon-Camera-Flash-Speedlight-Speedlite-Light-10-Levels-LED-Modeling-Lamp_574e77b2-d4d8-4582-bf49-71f965179a5f.a941ca2f29447da914089f0eb9ded649.jpeg",
+      "https://strobepro.com/cdn/shop/products/Strobepro_Godox_V860iii_Side_Nikon_5000x.jpg?v=1632947091"
     ],
-    "productUrl": "https://www.godox.com/product-d/V860III.html"
+    "productUrl": "https://www.godox.com/product-d/V860III.html",
+    "specs": [
+      {
+        "label": "Camera compatibility",
+        "value": "Nikon i-TTL"
+      },
+      {
+        "label": "Flash power",
+        "value": "76 Ws; guide number approx. 60 m at ISO 100"
+      },
+      {
+        "label": "Zoom coverage",
+        "value": "20–200 mm"
+      },
+      {
+        "label": "Flash head",
+        "value": "-7° to 120° tilt; 0–330° rotation"
+      },
+      {
+        "label": "Wireless",
+        "value": "Built-in 2.4 GHz Godox X system; approx. 100 m range"
+      },
+      {
+        "label": "Sync",
+        "value": "High-speed sync up to 1/8000 s"
+      },
+      {
+        "label": "Recycle / battery",
+        "value": "Approx. 1.5 s; approx. 480 full-power flashes"
+      },
+      {
+        "label": "Modeling light",
+        "value": "2 W LED"
+      }
+    ]
   },
   {
     "id": "godox-v860-iii-c",
@@ -1268,16 +1357,53 @@
     "name": "V860 IIIC",
     "price": 950000,
     "images": [
-      "/assets/catalog/godox-v860-iii-c.jpg"
+      "/assets/catalog/godox-v860-iii-c.jpg",
+      "https://martcom.eu/assets/media/brands/godox/v860iiic-kits_godox_flash-on-camera-ttl-li-ion-godox-v860iiic-kits-per-canon-eos_05.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Amazon"
+      "Amazon",
+      "Martcom"
     ],
     "imageSourceUrls": [
-      "https://m.media-amazon.com/images/I/51EWw7rEDHL._AC_.jpg"
+      "https://m.media-amazon.com/images/I/51EWw7rEDHL._AC_.jpg",
+      "https://martcom.eu/assets/media/brands/godox/v860iiic-kits_godox_flash-on-camera-ttl-li-ion-godox-v860iiic-kits-per-canon-eos_05.jpg"
     ],
-    "productUrl": "https://www.godox.com/product-d/V860III.html"
+    "productUrl": "https://www.godox.com/product-d/V860III.html",
+    "specs": [
+      {
+        "label": "Camera compatibility",
+        "value": "Canon E-TTL II"
+      },
+      {
+        "label": "Flash power",
+        "value": "76 Ws; guide number approx. 60 m at ISO 100"
+      },
+      {
+        "label": "Zoom coverage",
+        "value": "20–200 mm"
+      },
+      {
+        "label": "Flash head",
+        "value": "-7° to 120° tilt; 0–330° rotation"
+      },
+      {
+        "label": "Wireless",
+        "value": "Built-in 2.4 GHz Godox X system; approx. 100 m range"
+      },
+      {
+        "label": "Sync",
+        "value": "High-speed sync up to 1/8000 s"
+      },
+      {
+        "label": "Recycle / battery",
+        "value": "Approx. 1.5 s; approx. 480 full-power flashes"
+      },
+      {
+        "label": "Modeling light",
+        "value": "2 W LED"
+      }
+    ]
   },
   {
     "id": "godox-v860-iii-s",
@@ -1285,16 +1411,53 @@
     "name": "V860 III S",
     "price": 950000,
     "images": [
-      "/assets/catalog/godox-v860-iii-s.jpg"
+      "/assets/catalog/godox-v860-iii-s.jpg",
+      "https://www.cameraelectronic.com.au/cdn/shop/products/4_189_20_1024x1024.jpg?v=1680274111"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Amazon"
+      "Amazon",
+      "Camera Electronic"
     ],
     "imageSourceUrls": [
-      "https://m.media-amazon.com/images/I/71eWHIeh3yL._AC_SL1500_.jpg"
+      "https://m.media-amazon.com/images/I/71eWHIeh3yL._AC_SL1500_.jpg",
+      "https://www.cameraelectronic.com.au/cdn/shop/products/4_189_20_1024x1024.jpg?v=1680274111"
     ],
-    "productUrl": "https://www.godox.com/product-d/V860III.html"
+    "productUrl": "https://www.godox.com/product-d/V860III.html",
+    "specs": [
+      {
+        "label": "Camera compatibility",
+        "value": "Sony TTL"
+      },
+      {
+        "label": "Flash power",
+        "value": "76 Ws; guide number approx. 60 m at ISO 100"
+      },
+      {
+        "label": "Zoom coverage",
+        "value": "20–200 mm"
+      },
+      {
+        "label": "Flash head",
+        "value": "-7° to 120° tilt; 0–330° rotation"
+      },
+      {
+        "label": "Wireless",
+        "value": "Built-in 2.4 GHz Godox X system; approx. 100 m range"
+      },
+      {
+        "label": "Sync",
+        "value": "High-speed sync up to 1/8000 s"
+      },
+      {
+        "label": "Recycle / battery",
+        "value": "Approx. 1.5 s; approx. 480 full-power flashes"
+      },
+      {
+        "label": "Modeling light",
+        "value": "2 W LED"
+      }
+    ]
   },
   {
     "id": "sgr-a40-black",
@@ -1302,16 +1465,45 @@
     "name": "SRG-A40 black",
     "price": 13000000,
     "images": [
-      "/assets/catalog/sony-srg-a40-black.jpg"
+      "/assets/catalog/sony-srg-a40-black.jpg",
+      "https://www.avshop.ca/images/sony/SONYSRGA40_2.jpeg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Crosstec"
+      "Crosstec",
+      "AVShop"
     ],
     "imageSourceUrls": [
-      "https://crosstec.co.jp/rental/image/1_SRGA40.jpg"
+      "https://crosstec.co.jp/rental/image/1_SRGA40.jpg",
+      "https://www.avshop.ca/images/sony/SONYSRGA40_2.jpeg"
     ],
-    "productUrl": "https://pro.sony/en_AE/products/ptz-network-cameras/srg-a40"
+    "productUrl": "https://pro.sony/en_AE/products/ptz-network-cameras/srg-a40",
+    "specs": [
+      {
+        "label": "Sensor",
+        "value": "1/2.5-type Exmor R CMOS; approx. 8.5 MP"
+      },
+      {
+        "label": "Optical zoom",
+        "value": "20×; 26.8–536 mm equivalent"
+      },
+      {
+        "label": "Video output",
+        "value": "4K up to 30p via HDMI/IP; 3G-SDI up to HD"
+      },
+      {
+        "label": "Imaging",
+        "value": "AI auto framing and subject tracking"
+      },
+      {
+        "label": "Connectivity",
+        "value": "HDMI, 3G-SDI, IP; PoE++"
+      },
+      {
+        "label": "Camera type",
+        "value": "Professional PTZ camera"
+      }
+    ]
   },
   {
     "id": "sgr-a12-black",
@@ -1319,16 +1511,45 @@
     "name": "SRG-A12 BLACK",
     "price": 11500000,
     "images": [
-      "https://shashinki.com/shop/getimage/products/so-srga12-02.jpg"
+      "https://shashinki.com/shop/getimage/products/so-srga12-02.jpg",
+      "https://www.scan.co.uk/images/products/xlarge/3587450-xl-b.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "ShaShinKi"
+      "ShaShinKi",
+      "Scan"
     ],
     "imageSourceUrls": [
-      "https://shashinki.com/shop/sony-srg-a12-4k-ptz-camera-with-built-in-ai-and-12x-optical-zoom-black-p-56874.html"
+      "https://shashinki.com/shop/sony-srg-a12-4k-ptz-camera-with-built-in-ai-and-12x-optical-zoom-black-p-56874.html",
+      "https://www.scan.co.uk/images/products/xlarge/3587450-xl-b.jpg"
     ],
-    "productUrl": "https://pro.sony/en_AE/products/ptz-network-cameras/srg-a40"
+    "productUrl": "https://pro.sony/en_AE/products/ptz-network-cameras/srg-a40",
+    "specs": [
+      {
+        "label": "Sensor",
+        "value": "1/2.5-type Exmor R CMOS; approx. 8.5 MP"
+      },
+      {
+        "label": "Optical zoom",
+        "value": "12×; 26.8–322.8 mm equivalent"
+      },
+      {
+        "label": "Video output",
+        "value": "4K up to 30p via HDMI/IP; 3G-SDI up to HD"
+      },
+      {
+        "label": "Imaging",
+        "value": "AI auto framing and subject tracking"
+      },
+      {
+        "label": "Connectivity",
+        "value": "HDMI, 3G-SDI, IP; PoE++"
+      },
+      {
+        "label": "Camera type",
+        "value": "Professional PTZ camera"
+      }
+    ]
   },
   {
     "id": "nikon-z8-body",
@@ -1336,16 +1557,53 @@
     "name": "Z8 body",
     "price": 13000000,
     "images": [
-      "https://www.ormsdirect.co.za/cdn/shop/files/nikon-z8-mirrorless-digital-camera-body-front.webp?v=1683720355&width=1024"
+      "https://www.ormsdirect.co.za/cdn/shop/files/nikon-z8-mirrorless-digital-camera-body-front.webp?v=1683720355&width=1024",
+      "https://www.audiophil-foto.de/media/e6/d0/8e/1684146293/nikon_z8_body_18413.jpeg?ts=1684146293"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Orms Direct"
+      "Orms Direct",
+      "Audiophil-Foto"
     ],
     "imageSourceUrls": [
-      "https://www.ormsdirect.co.za/products/nikon-z8-mirrorless-digital-camera-body"
+      "https://www.ormsdirect.co.za/products/nikon-z8-mirrorless-digital-camera-body",
+      "https://www.audiophil-foto.de/media/e6/d0/8e/1684146293/nikon_z8_body_18413.jpeg?ts=1684146293"
     ],
-    "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_8/"
+    "productUrl": "https://imaging.nikon.com/imaging/lineup/mirrorless/z_8/",
+    "specs": [
+      {
+        "label": "Sensor",
+        "value": "45.7 MP full-frame stacked CMOS"
+      },
+      {
+        "label": "Processor",
+        "value": "EXPEED 7"
+      },
+      {
+        "label": "Autofocus",
+        "value": "493-point hybrid AF with subject detection"
+      },
+      {
+        "label": "Video",
+        "value": "8.3K 60p N-RAW; 4K up to 120p"
+      },
+      {
+        "label": "Continuous shooting",
+        "value": "Up to 120 fps at reduced resolution"
+      },
+      {
+        "label": "Media slots",
+        "value": "CFexpress Type B/XQD and SD UHS-II"
+      },
+      {
+        "label": "Display",
+        "value": "3.2-inch 4-axis tilt touchscreen; 3.69M-dot EVF"
+      },
+      {
+        "label": "Mount",
+        "value": "Nikon Z mount"
+      }
+    ]
   },
   {
     "id": "dji-mic-3",
@@ -1353,16 +1611,49 @@
     "name": "Mic 3",
     "price": 1500000,
     "images": [
-      "https://se-cdn.djiits.com/tpc/uploads/spu/cover/473691cc5e140d0341a30b31b479c627%40small.png?format=webp"
+      "https://se-cdn.djiits.com/tpc/uploads/spu/cover/473691cc5e140d0341a30b31b479c627%40small.png?format=webp",
+      "https://www.digidirect.com.au/cdn/shop/files/dji_mic_3_2tx_1rx_charging_2.png?v=1775355457&width=3840"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "DJI Store"
+      "DJI Store",
+      "digiDirect"
     ],
     "imageSourceUrls": [
-      "https://store.dji.com/product/dji-mic-3?from=landing_page&site=brandsite"
+      "https://store.dji.com/product/dji-mic-3?from=landing_page&site=brandsite",
+      "https://www.digidirect.com.au/cdn/shop/files/dji_mic_3_2tx_1rx_charging_2.png?v=1775355457&width=3840"
     ],
-    "productUrl": "https://www.dji.com/mic-3"
+    "productUrl": "https://www.dji.com/mic-3",
+    "specs": [
+      {
+        "label": "Audio",
+        "value": "48 kHz; switchable 24-bit / 32-bit float"
+      },
+      {
+        "label": "Microphone",
+        "value": "Omnidirectional transmitter microphones"
+      },
+      {
+        "label": "Wireless range",
+        "value": "Up to 400 m unobstructed (manufacturer measurement)"
+      },
+      {
+        "label": "Recording",
+        "value": "Internal 32-bit float recording"
+      },
+      {
+        "label": "Battery life",
+        "value": "Transmitter approx. 8 hours; receiver approx. 10 hours"
+      },
+      {
+        "label": "Connections",
+        "value": "3.5 mm TRS and USB-C"
+      },
+      {
+        "label": "Package",
+        "value": "Confirm transmitter/receiver count and accessories with Camera Matrix"
+      }
+    ]
   },
   {
     "id": "atomos-ninja-raw-5-2-hdmi-recorder",
@@ -1370,16 +1661,45 @@
     "name": "Ninja RAW 5.2 HDMI recorder",
     "price": 3500000,
     "images": [
-      "https://www.atomos.com/wp-content/uploads/2026/08/DTC-NINJA-RAW-8.png"
+      "https://www.atomos.com/wp-content/uploads/2026/08/DTC-NINJA-RAW-8.png",
+      "https://cdn11.bigcommerce.com/s-1gjhifmkdp/images/stencil/1280x1280/products/10979/44473/ATOMNJTX02_6_WHITE__09459.1771969838.png?c=2%3Fimbypass%3Don"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Atomos"
+      "Atomos",
+      "Omega Broadcast"
     ],
     "imageSourceUrls": [
-      "https://www.atomos.com/product/ninja-raw/"
+      "https://www.atomos.com/product/ninja-raw/",
+      "https://cdn11.bigcommerce.com/s-1gjhifmkdp/images/stencil/1280x1280/products/10979/44473/ATOMNJTX02_6_WHITE__09459.1771969838.png?c=2%3Fimbypass%3Don"
     ],
-    "productUrl": "https://www.atomos.com/product/ninja-raw/"
+    "productUrl": "https://www.atomos.com/product/ninja-raw/",
+    "specs": [
+      {
+        "label": "Display",
+        "value": "5.2-inch 1920 × 1080 touchscreen; 1500 nits"
+      },
+      {
+        "label": "Input/output",
+        "value": "HDMI up to 6Kp30 input/output"
+      },
+      {
+        "label": "Recording",
+        "value": "ProRes RAW up to 6Kp30; DCI 4Kp60"
+      },
+      {
+        "label": "Media",
+        "value": "CFexpress Type B and USB-C storage"
+      },
+      {
+        "label": "Monitoring",
+        "value": "HDR/HLG/PQ, 3D LUTs, waveform and focus tools"
+      },
+      {
+        "label": "Operating system",
+        "value": "AtomOS 12"
+      }
+    ]
   },
   {
     "id": "blackmagic-video-assist-7-12g",
@@ -1387,16 +1707,45 @@
     "name": "Video Assist 7 12G-SDI/HDMI HDR recording monitor",
     "price": 4500000,
     "images": [
-      "https://images.blackmagicdesign.com/images/products/blackmagicvideoassist/techspecs/hero/blackmagic-video-assist-7-inch-12g-hdr-sm.jpg?_v=1664770318"
+      "https://images.blackmagicdesign.com/images/products/blackmagicvideoassist/techspecs/hero/blackmagic-video-assist-7-inch-12g-hdr-sm.jpg?_v=1664770318",
+      "https://images.blackmagicdesign.com/images/products/blackmagicvideoassist/techspecs/connections/blackmagic-video-assist-7-inch-12g-hdr-connections.jpg?_v=1664770318"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
+      "Blackmagic Design",
       "Blackmagic Design"
     ],
     "imageSourceUrls": [
-      "https://www.blackmagicdesign.com/uk/products/blackmagicvideoassist/techspecs"
+      "https://www.blackmagicdesign.com/uk/products/blackmagicvideoassist/techspecs",
+      "https://images.blackmagicdesign.com/images/products/blackmagicvideoassist/techspecs/connections/blackmagic-video-assist-7-inch-12g-hdr-connections.jpg?_v=1664770318"
     ],
-    "productUrl": "https://www.blackmagicdesign.com/products/blackmagicvideoassist/techspecs"
+    "productUrl": "https://www.blackmagicdesign.com/products/blackmagicvideoassist/techspecs",
+    "specs": [
+      {
+        "label": "Display",
+        "value": "7-inch 1920 × 1200; 2500 nits; P3 wide color gamut"
+      },
+      {
+        "label": "SDI",
+        "value": "12G-SDI input and output"
+      },
+      {
+        "label": "HDMI",
+        "value": "HDMI 2.0a input and output"
+      },
+      {
+        "label": "Recording",
+        "value": "10-bit 4:2:2 ProRes or DNx"
+      },
+      {
+        "label": "Media",
+        "value": "Dual UHS-II SD card slots"
+      },
+      {
+        "label": "Audio",
+        "value": "2 mini-XLR inputs with 48V phantom power; headphone output"
+      }
+    ]
   },
   {
     "id": "nikon-ftz-ii-adapter",
@@ -1404,16 +1753,45 @@
     "name": "FTZ II adapter",
     "price": 950000,
     "images": [
-      "https://www.nikon.co.uk/globalassets/digizuite/164101-en-ftzii_angle3-v08FA2AAAD25A.png/OptimizelyPhoneWebP"
+      "https://www.nikon.co.uk/globalassets/digizuite/164101-en-ftzii_angle3-v08FA2AAAD25A.png/OptimizelyPhoneWebP",
+      "https://thepixelconnection.com/cdn/shop/products/1635407477_1669887.jpg?v=1691212275"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Nikon UK"
+      "Nikon UK",
+      "The Pixel Connection"
     ],
     "imageSourceUrls": [
-      "https://www.nikon.co.uk/en_GB/product/accessories/camera-accessories/mount-adapter-ftz-ii"
+      "https://www.nikon.co.uk/en_GB/product/accessories/camera-accessories/mount-adapter-ftz-ii",
+      "https://thepixelconnection.com/cdn/shop/products/1635407477_1669887.jpg?v=1691212275"
     ],
-    "productUrl": "https://imaging.nikon.com/imaging/lineup/accessory/camera/ftz_2/index.html"
+    "productUrl": "https://imaging.nikon.com/imaging/lineup/accessory/camera/ftz_2/index.html",
+    "specs": [
+      {
+        "label": "Camera mount",
+        "value": "Nikon F-mount lenses to Nikon Z-mount mirrorless cameras"
+      },
+      {
+        "label": "Exposure support",
+        "value": "AE with approx. 360 NIKKOR F lenses from AI onward"
+      },
+      {
+        "label": "Autofocus support",
+        "value": "AF/AE with 94 AF-P, AF-S and AF-I lenses"
+      },
+      {
+        "label": "Dimensions",
+        "value": "Approx. 70 × 70 mm"
+      },
+      {
+        "label": "Weight",
+        "value": "Approx. 125 g"
+      },
+      {
+        "label": "Design",
+        "value": "No tripod foot; dust- and drip-resistant sealing"
+      }
+    ]
   },
   {
     "id": "godox-ad600bm-ii",
@@ -1421,16 +1799,53 @@
     "name": "AD600BM II",
     "price": 2600000,
     "images": [
-      "https://www.godox.com/static/upload/image/20250218/1739872753791281.jpg"
+      "https://www.godox.com/static/upload/image/20250218/1739872753791281.jpg",
+      "https://www.camerastuff.co.za/cdn/shop/files/godox_ad600bmII.webp?v=1761219523&width=480"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Godox"
+      "Godox",
+      "CameraStuff"
     ],
     "imageSourceUrls": [
-      "https://www.godox.com/product-b/Flash/AD600BMII.html"
+      "https://www.godox.com/product-b/Flash/AD600BMII.html",
+      "https://www.camerastuff.co.za/cdn/shop/files/godox_ad600bmII.webp?v=1761219523&width=480"
     ],
-    "productUrl": "https://www.godox.com/product-b/Flash/AD600BMII.html"
+    "productUrl": "https://www.godox.com/product-b/Flash/AD600BMII.html",
+    "specs": [
+      {
+        "label": "Flash power",
+        "value": "600 Ws; guide number 87 at ISO 100"
+      },
+      {
+        "label": "Power range",
+        "value": "1/512 to full in 0.1-step increments"
+      },
+      {
+        "label": "Flash duration",
+        "value": "1/220 to 1/11,760 s"
+      },
+      {
+        "label": "Sync",
+        "value": "High-speed sync up to 1/8000 s"
+      },
+      {
+        "label": "Recycle time",
+        "value": "Approx. 0.01–1.9 s"
+      },
+      {
+        "label": "Modeling light",
+        "value": "40 W LED"
+      },
+      {
+        "label": "Wireless",
+        "value": "Built-in 2.4 GHz Godox X receiver"
+      },
+      {
+        "label": "Mount",
+        "value": "Bowens"
+      }
+    ]
   },
   {
     "id": "godox-ad600bm",
@@ -1438,15 +1853,52 @@
     "name": "AD600BM",
     "price": 2000000,
     "images": [
-      "https://www.godox.com/static/upload/image/20220117/1642418923197509.jpg"
+      "https://www.godox.com/static/upload/image/20220117/1642418923197509.jpg",
+      "https://m.media-amazon.com/images/I/61aVpcpAvFL._AC_SL1500_.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Godox"
+      "Godox",
+      "Amazon"
     ],
     "imageSourceUrls": [
-      "https://www.godox.com/product-d/AD600M-AD600BM.html"
+      "https://www.godox.com/product-d/AD600M-AD600BM.html",
+      "https://m.media-amazon.com/images/I/61aVpcpAvFL._AC_SL1500_.jpg"
     ],
-    "productUrl": "https://www.godox.com/product-d/AD600M-AD600BM.html"
+    "productUrl": "https://www.godox.com/product-d/AD600M-AD600BM.html",
+    "specs": [
+      {
+        "label": "Flash power",
+        "value": "600 Ws; guide number 87 at ISO 100"
+      },
+      {
+        "label": "Power range",
+        "value": "1/256 to full"
+      },
+      {
+        "label": "Flash duration",
+        "value": "1/220 to 1/10,000 s"
+      },
+      {
+        "label": "Sync",
+        "value": "High-speed sync up to 1/8000 s"
+      },
+      {
+        "label": "Recycle time",
+        "value": "Approx. 0.01–2.5 s"
+      },
+      {
+        "label": "Modeling light",
+        "value": "10 W LED"
+      },
+      {
+        "label": "Wireless",
+        "value": "Built-in 2.4 GHz Godox X receiver"
+      },
+      {
+        "label": "Mount",
+        "value": "Bowens"
+      }
+    ]
   }
 ]
