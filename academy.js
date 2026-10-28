@@ -13,19 +13,116 @@ document.querySelectorAll("[data-email-form]").forEach((form) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
 
-    const fields = new FormData(form);
-    const subject = String(fields.get("subject") || form.dataset.subject || "Cinematrix Academy enquiry");
-    const message = [...fields.entries()]
-      .filter(([name]) => name !== "subject")
-      .map(([name, value]) => `${name.replaceAll("_", " ")}: ${String(value).trim()}`)
-      .join("\n");
-    const email = `mailto:Cameramatrixrentals@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-    window.location.href = email;
-
+    const formData = new FormData(form);
+    const fields = Object.fromEntries([...formData.entries()]
+      .filter(([name]) => !["consent", "website"].includes(name))
+      .map(([name, value]) => [name, String(value).trim()]));
+    const payload = {
+      type: form.dataset.submissionType,
+      fields,
+      consent: formData.get("consent") === "yes",
+      website: String(formData.get("website") || ""),
+    };
     const status = form.querySelector("[data-form-status]");
-    if (status) status.textContent = "Your email app should open with this message ready. Send it there to complete your request.";
+    const button = form.querySelector('[type="submit"]');
+    const originalLabel = button?.innerHTML;
+    if (button) button.disabled = true;
+    form.setAttribute("aria-busy", "true");
+    if (status) status.textContent = "Sending securely…";
+
+    fetch("/api/academy-submissions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+      .then(async (response) => {
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || "We couldn’t send your form.");
+        return result;
+      })
+      .then((result) => {
+        const alreadySubscribed = form.dataset.submissionType === "newsletter" && result.alreadySubscribed;
+        if (status) status.textContent = alreadySubscribed
+          ? "This email is already subscribed to Academy updates."
+          : form.dataset.submissionType === "newsletter"
+            ? "You’re subscribed to Academy announcements."
+            : "Thanks — your request is saved for the Cinematrix team.";
+        if (!alreadySubscribed) form.reset();
+      })
+      .catch((error) => {
+        if (status) status.textContent = `${error.message} Please try again, or contact us on WhatsApp.`;
+      })
+      .finally(() => {
+        form.removeAttribute("aria-busy");
+        if (button) {
+          button.disabled = false;
+          button.innerHTML = originalLabel;
+        }
+      });
   });
 });
+
+const academyCarousel = document.querySelector("[data-academy-carousel]");
+
+if (academyCarousel) {
+  const slides = [...academyCarousel.querySelectorAll(".academy-hero-slide")];
+  const slideButtons = [...academyCarousel.querySelectorAll("[data-carousel-slide]")];
+  const toggleButton = academyCarousel.querySelector("[data-carousel-toggle]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeSlide = 0;
+  let paused = reducedMotion.matches;
+  let carouselTimer;
+
+  function showSlide(index) {
+    activeSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const active = slideIndex === activeSlide;
+      slide.classList.toggle("is-active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+    });
+    slideButtons.forEach((button, buttonIndex) => {
+      button.setAttribute("aria-pressed", String(buttonIndex === activeSlide));
+    });
+  }
+
+  function stopCarousel() {
+    window.clearInterval(carouselTimer);
+    carouselTimer = undefined;
+  }
+
+  function startCarousel() {
+    stopCarousel();
+    if (paused || document.hidden || slides.length < 2) return;
+    carouselTimer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
+  }
+
+  function syncToggle() {
+    if (!toggleButton) return;
+    toggleButton.textContent = paused ? "▶" : "Ⅱ";
+    toggleButton.setAttribute("aria-label", paused ? "Resume automatic slides" : "Pause automatic slides");
+    toggleButton.setAttribute("aria-pressed", String(paused));
+  }
+
+  slideButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showSlide(Number(button.dataset.carouselSlide));
+      startCarousel();
+    });
+  });
+  toggleButton?.addEventListener("click", () => {
+    paused = !paused;
+    syncToggle();
+    startCarousel();
+  });
+  document.addEventListener("visibilitychange", startCarousel);
+  reducedMotion.addEventListener?.("change", (event) => {
+    if (event.matches) paused = true;
+    syncToggle();
+    startCarousel();
+  });
+  syncToggle();
+  startCarousel();
+}
 
 const orbitCanvas = document.querySelector("[data-orbit-canvas]");
 

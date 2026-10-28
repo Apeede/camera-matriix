@@ -2,34 +2,216 @@
   position: fixed;
   z-index: 9998;
   top: 0;
-  right: 24px;
+  right: 0;
+  left: 0;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 10px 20px;
   font-family: Montserrat, sans-serif;
+  pointer-events: none;
+}
+
+.gallery-brand {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.gallery-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-navigation { display: flex; pointer-events: auto; }
+
+.gallery-title {
+  position: fixed;
+  z-index: 9996;
+  top: 15px;
+  left: 50%;
+  margin: 0;
+  padding: 8px 16px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08), inset 0 1px rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  pointer-events: none;
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
 }
 
 .back-to-academy {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 30px;
   align-items: center;
-  padding: 0 16px;
-  border: 1px solid rgba(51, 222, 244, 0.55);
-  background: rgba(1, 1, 42, 0.82);
-  color: #33def4;
-  font-size: 10px;
-  font-weight: 700;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(12, 15, 24, 0.35);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 9px;
+  font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .back-to-academy:hover,
 .back-to-academy:focus-visible {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(12, 15, 24, 0.68);
   color: #fff;
-  border-color: #33def4;
+}
+
+.album-links {
+  position: fixed;
+  z-index: 9997;
+  right: 50%;
+  bottom: 16px;
+  width: min(940px, calc(100vw - 40px));
+  transform: translateX(50%);
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  background: rgba(12, 15, 24, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  font-family: Montserrat, sans-serif;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.album-links-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  overflow-x: auto;
+  padding: 0;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.album-links-list::-webkit-scrollbar { display: none; }
+
+.album-links-list a {
+  display: inline-flex;
+  min-height: 31px;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.album-links-list a:hover,
+.album-links-list a:focus-visible {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.academy-whatsapp-float {
+  position: fixed;
+  z-index: 10000;
+  right: 20px;
+  bottom: 88px;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  background: #20c76a;
+  color: white;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.32);
+  animation: gallery-whatsapp-bounce 2.8s ease-in-out infinite;
+}
+
+.academy-whatsapp-float svg { width: 25px; height: 25px; fill: currentColor; }
+.academy-whatsapp-float:hover { background: #18b95d; }
+.academy-whatsapp-float:focus-visible { outline: 3px solid rgba(255, 255, 255, .9); outline-offset: 3px; }
+
+@keyframes gallery-whatsapp-bounce {
+  0%, 78%, 100% { transform: translateY(0); }
+  84% { transform: translateY(-8px); }
+  90% { transform: translateY(0); }
+  95% { transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .academy-whatsapp-float { animation: none; }
 }
 
 @media (max-width: 480px) {
   .site-navigation {
-    right: 12px;
+    min-height: 46px;
+    padding: 8px 12px;
+  }
+
+  .gallery-brand {
+    width: 32px;
+    height: 32px;
+  }
+
+  .back-to-academy {
+    min-height: 28px;
+    padding-inline: 10px;
+    font-size: 8px;
+  }
+
+  .gallery-title {
+    top: 13px;
+    padding: 7px 12px;
+    font-size: 8px;
+  }
+
+  .album-links {
+    bottom: 10px;
+    width: calc(100vw - 24px);
+    padding: 4px;
+  }
+
+  .academy-whatsapp-float {
+    right: 14px;
+    bottom: 82px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .album-links-list {
+    justify-content: flex-start;
+    gap: 2px;
+  }
+
+  .album-links-list a {
+    min-height: 29px;
+    padding-inline: 8px;
+    font-size: 7px;
   }
 }

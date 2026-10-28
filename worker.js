@@ -10,7 +10,7 @@ function json(data, status = 200) {
 }
 
 function isDatabaseError(error) {
-  return /^(D1_ERROR:|SQLITE_|no such (?:table|column)|database is locked)/i.test(String(error?.message || ""));
+  return /^(D1_ERROR:|SQLITE_|no such (?:table|column)|database is locked)|constraint failed/i.test(String(error?.message || ""));
 }
 
 function escapeXml(value) {
@@ -158,6 +158,68 @@ async function sendNotifications(booking, env, selected = ["email", "whatsapp"])
   return notifications;
 }
 
+const ACADEMY_FIELDS = {
+  training_interest: ["name", "email", "interest"],
+  newsletter: ["email", "first_name"],
+  contact: ["name", "email", "enquiry", "message"],
+  partnership: ["name", "email", "organization", "partnership_type", "proposal"],
+};
+
+function normalizeAcademySubmission(payload) {
+  const type = payload.type;
+  if (!Object.hasOwn(ACADEMY_FIELDS, type)) throw new Error("Choose a valid enquiry type.");
+  if (payload.consent !== true) throw new Error("Please agree before sending this form.");
+  const fields = payload.fields;
+  if (!fields || typeof fields !== "object" || Array.isArray(fields)) throw new Error("Complete the required form fields.");
+  const data = {};
+  const limits = { name: 100, email: 200, interest: 80, first_name: 100, enquiry: 100, message: 4000, organization: 160, partnership_type: 100, proposal: 4000 };
+  for (const key of ACADEMY_FIELDS[type]) {
+    const raw = fields[key];
+    if (raw === undefined && key === "first_name") continue;
+    if (typeof raw !== "string") throw new Error("Complete the required form fields.");
+    const value = raw.trim();
+    if (value.length > limits[key]) throw new Error("One of your answers is too long.");
+    if (!value && key !== "first_name") throw new Error("Complete the required form fields.");
+    data[key] = value;
+  }
+  data.email = data.email.toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) throw new Error("Enter a valid email address.");
+  if (type !== "newsletter" && (!data.name || data.name.length > 100)) throw new Error("Enter your name.");
+  const options = {
+    training_interest: { interest: ["Photography", "Videography", "Lighting and production", "Private team training", "Open to future programmes"] },
+    contact: { enquiry: ["Photography or videography project", "Private training for my team", "Upcoming training opportunities", "Creative partnership", "Other enquiry"] },
+    partnership: { partnership_type: ["Sponsorship", "University or institution", "Community or church", "Media house or industry organization", "Equipment, venue or expertise", "Other collaboration"] },
+  }[type] || {};
+  for (const [key, values] of Object.entries(options)) {
+    if (!values.includes(data[key])) throw new Error("Choose one of the listed options.");
+  }
+  return { type, data, email: data.email, name: data.name || data.first_name || "" };
+}
+
+async function notifyAcademySubmission(submission, env) {
+  if (!env.RESEND_API_KEY || !env.BOOKING_NOTIFY_EMAIL || !env.MAIL_FROM) return { status: "not_configured" };
+  const labels = { name: "Name", first_name: "First name", email: "Email", interest: "Learning interest", enquiry: "Enquiry", message: "Message", organization: "Organization", partnership_type: "Partnership type", proposal: "Proposal" };
+  const detailLines = Object.entries(submission.data).filter(([key]) => key !== "email").map(([key, value]) => `${labels[key] || key}: ${value}`);
+  const subjectByType = { training_interest: "Academy training interest", newsletter: "Academy newsletter signup", contact: "New Cinematrix contact enquiry", partnership: "Academy partnership enquiry" };
+  const message = [`New ${subjectByType[submission.type] || "Academy submission"}`, `Submission ID: ${submission.id}`, `Email: ${submission.email}`, ...detailLines, `Submitted: ${submission.createdAt}`].join("\n");
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ from: env.MAIL_FROM, to: [env.BOOKING_NOTIFY_EMAIL], reply_to: submission.email, subject: subjectByType[submission.type] || "New Academy submission", text: message }),
+    });
+    if (!response.ok) throw new Error("Email provider rejected the request.");
+    return { status: "sent", updatedAt: new Date().toISOString() };
+  } catch {
+    return { status: "failed", error: "Email delivery failed; check the email provider configuration." };
+  }
+}
+
+async function saveAcademySubmission(env, submission) {
+  await env.DB.prepare("INSERT INTO academy_submissions (id,type,status,email,created_at,updated_at,submission_json) VALUES (?, ?, ?, ?, ?, ?, ?)")
+    .bind(submission.id, submission.type, submission.status, submission.email, submission.createdAt, submission.updatedAt, JSON.stringify(submission)).run();
+}
+
 function constantTimeEqual(left, right) {
   const a = new TextEncoder().encode(left);
   const b = new TextEncoder().encode(right);
@@ -217,6 +279,76 @@ async function changeBookingStatus(env, booking, status, products) {
 
 async function bookingApi(request, env, url) {
   const path = url.pathname;
+  if (request.method === "GET" && path === "/api/admin/academy-submissions") {
+    if (!adminAuthorized(request, env)) return json({ error: "Admin access is not configured or the token is invalid." }, 401);
+    const result = await env.DB.prepare("SELECT submission_json FROM academy_submissions ORDER BY created_at DESC").all();
+    return json({ submissions: (result.results || []).map((row) => JSON.parse(row.submission_json)) });
+  }
+  const academyAdminMatch = path.match(/^\/api\/admin\/academy-submissions\/([A-Fa-f0-9-]+)$/);
+  if (request.method === "POST" && academyAdminMatch) {
+    if (!adminAuthorized(request, env)) return json({ error: "Admin access is not configured or the token is invalid." }, 401);
+    try {
+      const payload = await readJson(request);
+      const row = await env.DB.prepare("SELECT submission_json FROM academy_submissions WHERE id = ?").bind(academyAdminMatch[1]).first();
+      if (!row) return json({ error: "Academy submission not found." }, 404);
+      const submission = JSON.parse(row.submission_json);
+      const validStatuses = submission.type === "newsletter" ? ["subscribed", "unsubscribed"] : ["new", "contacted", "resolved"];
+      if (!validStatuses.includes(payload.status)) throw new Error("Choose a valid submission status.");
+      submission.status = payload.status;
+      submission.updatedAt = new Date().toISOString();
+      await env.DB.prepare("UPDATE academy_submissions SET status = ?, updated_at = ?, submission_json = ? WHERE id = ?")
+        .bind(submission.status, submission.updatedAt, JSON.stringify(submission), submission.id).run();
+      return json({ submission });
+    } catch (error) {
+      if (isDatabaseError(error)) return json({ error: "The Academy submission could not be updated right now. Please try again." }, 503);
+      return json({ error: error.message || "Invalid submission status." }, 400);
+    }
+  }
+  if (request.method === "POST" && path === "/api/academy-submissions") {
+    if (!await allowBookingRequest(request, env)) return json({ error: "Too many requests from this connection. Please try again later." }, 429);
+    try {
+      const payload = await readJson(request);
+      if (typeof payload.website === "string" && payload.website.trim()) return json({ received: true }, 201);
+      const { type, data, email, name } = normalizeAcademySubmission(payload);
+      const now = new Date().toISOString();
+      let existing = null;
+      let submission;
+      if (type === "newsletter") {
+        existing = await env.DB.prepare("SELECT submission_json FROM academy_submissions WHERE type = 'newsletter' AND email = ?").bind(email).first();
+        if (existing) {
+          submission = JSON.parse(existing.submission_json);
+          if (submission.status === "subscribed") return json({ alreadySubscribed: true, submission: { id: submission.id, status: submission.status } });
+        }
+      }
+      submission = {
+        ...(submission || {}),
+        id: submission?.id || crypto.randomUUID().replaceAll("-", "").toUpperCase(),
+        type,
+        status: type === "newsletter" ? "subscribed" : "new",
+        name,
+        email,
+        data,
+        consentAt: now,
+        consentVersion: "2026-10-28.1",
+        createdAt: submission?.createdAt || now,
+        updatedAt: now,
+        notification: { status: "sending" },
+      };
+      if (existing) {
+        await env.DB.prepare("UPDATE academy_submissions SET status = ?, email = ?, updated_at = ?, submission_json = ? WHERE id = ?")
+          .bind(submission.status, submission.email, submission.updatedAt, JSON.stringify(submission), submission.id).run();
+      } else {
+        await saveAcademySubmission(env, submission);
+      }
+      submission.notification = await notifyAcademySubmission(submission, env);
+      await env.DB.prepare("UPDATE academy_submissions SET updated_at = ?, submission_json = ? WHERE id = ?")
+        .bind(submission.updatedAt, JSON.stringify(submission), submission.id).run();
+      return json({ submission: { id: submission.id, status: submission.status } }, 201);
+    } catch (error) {
+      if (isDatabaseError(error)) return json({ error: "We could not save your message right now. Please try again." }, 503);
+      return json({ error: error.message || "Invalid Academy submission." }, 400);
+    }
+  }
   if (request.method === "GET" && path === "/api/admin/sale-enquiries") {
     if (!adminAuthorized(request, env)) return json({ error: "Admin access is not configured or the token is invalid." }, 401);
     const result = await env.DB.prepare("SELECT enquiry_json FROM sale_enquiries ORDER BY created_at DESC").all();
@@ -421,6 +553,7 @@ export default {
     const cutoff = new Date(Date.now() - RETENTION_DAYS * 86_400_000).toISOString();
     ctx.waitUntil(env.DB.prepare("DELETE FROM bookings WHERE updated_at < ?").bind(cutoff).run());
     ctx.waitUntil(env.DB.prepare("DELETE FROM sale_enquiries WHERE updated_at < ?").bind(cutoff).run());
+    ctx.waitUntil(env.DB.prepare("DELETE FROM academy_submissions WHERE updated_at < ?").bind(cutoff).run());
     ctx.waitUntil(env.DB.prepare("DELETE FROM booking_attempts WHERE created_at < ?").bind(Math.floor(Date.now() / 1000) - RATE_WINDOW_SECONDS).run());
   },
 };

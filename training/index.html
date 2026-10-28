@@ -12,14 +12,14 @@
   <meta property="og:description" content="Photography training in Uganda and videography workshops in Kampala, organized when opportunities arise.">
   <meta property="og:url" content="https://learn.cinematrix.store/">
   <link rel="icon" type="image/png" href="/assets/favicon-01.png">
-  <link rel="stylesheet" href="/academy.css">
+  <link rel="stylesheet" href="/academy.css?v=4">
 </head>
 <body>
   <header class="academy-header">
-    <a class="academy-brand" href="https://www.cinematrix.store/" aria-label="Cinematrix home"><img src="/assets/logo-01.png" alt="Cinematrix"><span>Academy</span></a>
+    <a class="academy-brand" href="https://www.cinematrix.store/" aria-label="Cinematrix home"><img src="/assets/logo%20mark-01.png" alt="Cinematrix"><span>Academy</span></a>
     <button class="academy-menu" type="button" aria-expanded="false" aria-controls="academy-navigation" aria-label="Open navigation">☰</button>
     <nav class="academy-nav" id="academy-navigation" aria-label="Main navigation">
-      <a href="https://www.cinematrix.store/">Home</a><a href="/photography-videography/">Photography &amp; Videography</a><a href="/training/" aria-current="page">Training &amp; Academy</a><a href="/gallery/">Gallery</a><a href="/partnerships/">Partnerships</a><a href="/about/">About</a><a href="/contact/">Contact</a>
+      <a href="https://www.cinematrix.store/">Equipment</a><a href="/training/" aria-current="page">Training &amp; Academy</a><a href="/gallery/">Gallery</a><a href="/partnerships/">Partnerships</a><a href="/about/">About</a><a href="/contact/">Contact</a>
     </nav>
     <a class="academy-header-cta" href="#register">Register interest <span aria-hidden="true">↗</span></a>
   </header>
@@ -31,8 +31,20 @@
         <p class="academy-hero-lead">Practical photography training and videography workshops for the people shaping Uganda’s visual stories. Cohorts happen when the right people, partners and opportunities come together.</p>
         <div class="academy-actions"><a class="academy-button academy-button--light" href="#register">Register your interest <span aria-hidden="true">↗</span></a><a class="academy-button academy-button--line" href="/partnerships/">Bring a workshop to life</a></div>
       </div>
-      <div class="academy-hero-photo"><img src="/assets/hero/Sony%20camera%20cgI.jpeg" alt="Sony mirrorless camera ready for a creative shoot"><span class="academy-photo-note">Make the frame. Tell the story.</span></div>
-      <span class="academy-index" aria-hidden="true">01 / 05</span>
+      <div class="academy-hero-photo" data-academy-carousel role="region" aria-roledescription="carousel" aria-label="Cinematrix Academy in practice">
+        <div class="academy-hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3"><img src="/gallery-images/19L3y97IH4H2RMUQwMXSq5h_I1Wq3FcJg.jpg" alt="Learners taking part in a hands-on camera workshop"></div>
+        <div class="academy-hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true"><img src="/gallery-images/1-f1g6COAqQNT3xkYpbEuD9Mpy2FteGbp.jpg" alt="A photography training session with learners gathered around a demonstration"></div>
+        <div class="academy-hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true"><img src="/gallery-images/1IfnOiGXt4JBTSZG11rZxSgozERGF4Eck.jpg" alt="A learner practices lighting during a creative workshop"></div>
+        <span class="academy-photo-note">Make the frame. Tell the story.</span>
+        <div class="academy-carousel-controls" aria-label="Hero image controls">
+          <button class="academy-carousel-toggle" type="button" data-carousel-toggle aria-label="Pause automatic slides">Ⅱ</button>
+          <div class="academy-carousel-dots" role="group" aria-label="Choose a hero image">
+            <button type="button" data-carousel-slide="0" aria-label="Show workshop participants" aria-pressed="true"></button>
+            <button type="button" data-carousel-slide="1" aria-label="Show a training session" aria-pressed="false"></button>
+            <button type="button" data-carousel-slide="2" aria-label="Show a lighting demonstration" aria-pressed="false"></button>
+          </div>
+        </div>
+      </div>
     </section>
     <div class="academy-ticker" aria-label="Academy focus areas"><span>Photography</span><span>Videography</span><span>Production craft</span><span>Creative community</span></div>
 
@@ -53,16 +65,38 @@
       </div>
     </section>
 
+    <section class="academy-content academy-services" id="photography-videography" aria-labelledby="academy-services-title">
+      <div class="academy-content-grid">
+        <div>
+          <p class="academy-eyebrow">Photography, video &amp; production</p>
+          <h2 id="academy-services-title">Learning meets<br><em>real production.</em></h2>
+          <p>Cinematrix also creates photography and video for brands, people, events and ideas across Uganda. From the first brief to the final frame, we bring creative craft and practical production together.</p>
+          <ul class="academy-program-list">
+            <li>Commercial and brand photography</li>
+            <li>Portrait, event and documentary coverage</li>
+            <li>Videography, interviews and short films</li>
+            <li>Production planning and equipment support</li>
+          </ul>
+          <div class="academy-actions">
+            <a class="academy-button" href="/contact/">Discuss a project <span aria-hidden="true">↗</span></a>
+            <a class="academy-button academy-button--line" href="https://www.cinematrix.store/">Explore equipment</a>
+          </div>
+        </div>
+        <figure class="academy-photo-panel"><img src="/assets/hero/Photo%20by%20David%20Liceaga%20on%20Unsplash.jpeg" alt="Sony cinema camera ready for a production" loading="lazy"></figure>
+      </div>
+    </section>
+
     <section class="academy-gallery-invite"><div><p class="academy-eyebrow">A look at the work</p><h2>Frames from<br><em>the community.</em></h2><p>Explore photographs from workshops, masterclasses and creative gatherings with partners across Uganda.</p></div><a class="academy-button academy-button--light" href="/gallery/">Visit the gallery <span aria-hidden="true">↗</span></a></section>
 
     <section class="academy-band"><div class="academy-band-inner"><div><p class="academy-kicker">Good things happen together</p><h2>Bring a new perspective<br>into the <em>room.</em></h2><p>We collaborate with sponsors, universities, churches, media houses, industry organizations and equipment makers to make useful training possible.</p></div><a class="academy-button academy-button--light" href="/partnerships/">Become a partner <span aria-hidden="true">↗</span></a></div></section>
 
     <section class="academy-section academy-signup" id="register" aria-labelledby="interest-title">
-      <div><p class="academy-eyebrow">Keep me in the picture</p><h2 id="interest-title">A seat at the<br><em>next opportunity.</em></h2><p class="academy-signup-copy">Register your interest in future cohorts and workshops. We’ll prepare an email with your details so you can send your request directly to the Cinematrix team.</p><form class="academy-form" data-email-form data-subject="Cinematrix Academy training interest"><label>Your name<input name="name" autocomplete="name" required></label><label>Email address<input type="email" name="email" autocomplete="email" required></label><label>What would you like to learn?<select name="interest" required><option value="" disabled selected>Choose an area</option><option>Photography</option><option>Videography</option><option>Lighting and production</option><option>Private team training</option><option>Open to future programmes</option></select></label><label class="academy-consent"><span><input type="checkbox" name="announcement_consent" value="Yes" required> I agree to email follow-up about Cinematrix Academy training opportunities.</span></label><button class="academy-button" type="submit">Register your interest <span aria-hidden="true">↗</span></button><p class="academy-form-note" data-form-status aria-live="polite">Your email app will open so you can send your details. We don’t subscribe you automatically.</p></form></div>
-      <div id="announcements"><p class="academy-eyebrow">No fixed calendar. Just good news.</p><h2>Hear when a<br><em>cohort takes shape.</em></h2><p class="academy-signup-copy">Get announcements about upcoming photography training in Uganda and videography workshops in Kampala. Share your email and send us a request to be included.</p><form class="academy-form" data-email-form data-subject="Cinematrix Academy announcements"><label>Email address<input type="email" name="email" autocomplete="email" required></label><label>First name <span style="font-weight:400;letter-spacing:0;text-transform:none">(optional)</span><input name="first_name" autocomplete="given-name"></label><label class="academy-consent"><span><input type="checkbox" name="announcement_consent" value="Yes" required> Please email me when training opportunities are announced.</span></label><button class="academy-button" type="submit">Request announcements <span aria-hidden="true">↗</span></button><p class="academy-form-note" data-form-status aria-live="polite">This opens an email draft addressed to Cinematrix. No mailing list is active yet.</p></form></div>
+      <div><p class="academy-eyebrow">Keep me in the picture</p><h2 id="interest-title">A seat at the<br><em>next opportunity.</em></h2><p class="academy-signup-copy">Register your interest in future cohorts and workshops. Your request is saved securely so the Cinematrix team can follow up.</p><form class="academy-form" data-email-form data-submission-type="training_interest"><label>Your name<input name="name" autocomplete="name" required></label><label>Email address<input type="email" name="email" autocomplete="email" required></label><label>What would you like to learn?<select name="interest" required><option value="" disabled selected>Choose an area</option><option>Photography</option><option>Videography</option><option>Lighting and production</option><option>Private team training</option><option>Open to future programmes</option></select></label><label class="academy-consent"><span><input type="checkbox" name="consent" value="yes" required> I agree to email follow-up about Cinematrix Academy training opportunities. <a href="/privacy-policy.html">Privacy notice</a>.</span></label><label class="academy-honeypot" aria-hidden="true">Leave this field blank<input name="website" tabindex="-1" autocomplete="off"></label><button class="academy-button" type="submit">Register your interest <span aria-hidden="true">↗</span></button><p class="academy-form-note" data-form-status aria-live="polite">Your details will be sent securely to the Cinematrix team.</p></form></div>
+      <div id="announcements"><p class="academy-eyebrow">No fixed calendar. Just good news.</p><h2>Hear when a<br><em>cohort takes shape.</em></h2><p class="academy-signup-copy">Subscribe for updates about upcoming photography training in Uganda and videography workshops in Kampala.</p><form class="academy-form" data-email-form data-submission-type="newsletter"><label>Email address<input type="email" name="email" autocomplete="email" required></label><label>First name <span style="font-weight:400;letter-spacing:0;text-transform:none">(optional)</span><input name="first_name" autocomplete="given-name"></label><label class="academy-consent"><span><input type="checkbox" name="consent" value="yes" required> Please email me when training opportunities are announced. I can unsubscribe at any time. <a href="/privacy-policy.html">Privacy notice</a>.</span></label><label class="academy-honeypot" aria-hidden="true">Leave this field blank<input name="website" tabindex="-1" autocomplete="off"></label><button class="academy-button" type="submit">Subscribe <span aria-hidden="true">↗</span></button><p class="academy-form-note" data-form-status aria-live="polite">You’ll be added to the Academy announcement list.</p></form></div>
     </section>
   </main>
-  <footer class="academy-footer"><div class="academy-footer-top"><div class="academy-footer-brand"><img src="/assets/logo-01.png" alt="Cinematrix"><p>Gear, production and creative learning for stories worth telling.</p></div><nav class="academy-footer-links" aria-label="Footer"><a href="https://www.cinematrix.store/">Home</a><a href="/photography-videography/">Photography &amp; Videography</a><a href="/training/">Training &amp; Academy</a><a href="/gallery/">Gallery</a><a href="/partnerships/">Partnerships</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="https://www.cinematrix.store/">Explore Cinematrix</a></nav></div><div class="academy-footer-bottom"><span>© Cinematrix Academy · Kampala, Uganda</span><a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a></div></footer>
-  <script src="/academy.js" defer></script>
+  <footer class="academy-footer"><div class="academy-footer-top"><div class="academy-footer-brand"><img src="/assets/logo%20mark-01.png" alt="Cinematrix"><p>Gear, production and creative learning for stories worth telling.</p></div><nav class="academy-footer-links" aria-label="Footer"><a href="https://www.cinematrix.store/">Equipment</a><a href="/training/">Training &amp; Academy</a><a href="/gallery/">Gallery</a><a href="/partnerships/">Partnerships</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div><div class="academy-footer-bottom"><span>© Cinematrix Academy · Kampala, Uganda</span><a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a></div></footer>
+  <script src="/academy.js?v=2" defer></script>
+<a class="academy-whatsapp-float" href="https://wa.me/256704738156?text=Hello%20Camera%20Matrix%2C%20I%20have%20a%20question%20about%20the%20Academy." target="_blank" rel="noopener noreferrer" aria-label="Chat with Camera Matrix on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.4A12.4 12.4 0 0 0 5.3 22.1L4 28l6-1.3A12.4 12.4 0 1 0 16 3.4Zm0 22.5c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.8.8-3.4-.2-.4A10.1 10.1 0 1 1 16 25.9Zm5.6-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.8.6.8.2 1.5.2 2.1.1.7-.1 1.8-.8 2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.5Z"/></svg></a>
 </body>
 </html>

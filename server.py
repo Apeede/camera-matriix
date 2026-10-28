@@ -25,6 +25,7 @@ from email.message import EmailMessage
 ROOT = Path(__file__).resolve().parent
 BOOKINGS_FILE = ROOT / "data" / "bookings.json"
 SALE_ENQUIRIES_FILE = ROOT / "data" / "sale-enquiries.json"
+ACADEMY_SUBMISSIONS_FILE = ROOT / "data" / "academy-submissions.json"
 
 
 def load_local_env():
@@ -75,7 +76,7 @@ SEO_PAGES = {
 }
 
 POLICY_CONTENT = {
-    "privacy": '''<h1>Privacy Policy</h1><p class="seo-lead">Last updated: 16 October 2026. This notice explains how Camera Matrix handles information when you browse the site, send a rental request, or ask about equipment for sale.</p><h2>Who is responsible</h2><p>Camera Matrix is the business contact for booking and sales enquiry information. Contact us at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156 on WhatsApp</a>. The service area is Kampala and Entebbe, Uganda.</p><h2>Information we collect</h2><ul><li>Your name and phone/WhatsApp number, and optional email address, when you send a sales enquiry; or your name, email address and phone/WhatsApp number when you submit a rental request.</li><li>For a sales enquiry, the products and quantities you selected, the enquiry ID, request status, and estimated product total. For a rental request, your selected equipment and quantities, pickup and return dates, collection option, booking ID, request status, and estimated rental amount.</li><li>Basic server request details used for operation and security, such as IP address, request path, and request time.</li><li>Your saved rental kit or sales enquiry list in your browser’s local storage. It contains product IDs and quantities, not your contact details.</li></ul><h2>How we use it</h2><p>We use your details to respond to your sales enquiry, confirm product stock and package details, or review a rental request and prepare a rental quote. A sales enquiry is not a confirmed purchase, and a rental request is not a confirmed booking. The site does not collect payment.</p><p>We rely on the steps you ask us to take before a possible sale or rental agreement and, where applicable, your consent or a legal obligation. The sales form asks you to agree to follow-up about that enquiry. The rental form asks you to acknowledge this notice and the rental terms before submitting.</p><h2>Who may receive it</h2><p>Authorized Camera Matrix staff can access sales enquiries and booking records in the private admin interface. The site host processes and stores these records. If email or automatic WhatsApp notifications are configured for rental bookings, booking details are sent through the configured providers. If you choose a pre-filled WhatsApp link, you send the details to WhatsApp yourself. The site also loads Google Fonts and some product images from third-party hosts; those hosts may receive technical connection information such as your IP address and browser data.</p><p>We do not sell enquiry or booking details. Some service providers may process information outside Uganda under their own terms and safeguards.</p><h2>Retention</h2><p>We retain enquiry and booking records for up to 12 months after the last update. The site removes expired records from its active files and sanitizes retained booking backups during its daily retention sweep. Records may be kept longer where required for legal, accounting, dispute, or security purposes.</p><h2>Your choices and rights</h2><p>You may ask us to confirm what personal information we hold, correct it, stop or restrict processing where the law allows, or delete it where we are not required to keep it. Contact <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a>. You can clear saved gear lists by clearing this site’s browser storage. You may also contact Uganda’s Personal Data Protection Office about a data protection concern.</p><h2>Security</h2><p>Enquiry and booking files are stored by the site operator and should be accessible only to authorized staff. Use the admin token, restrict access to the server and its data, and use HTTPS for any public deployment. No internet transmission or storage method is completely secure.</p><h2>Changes and contact</h2><p>We may update this notice when our practices change. The latest date appears at the top. For privacy questions, email <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or call/WhatsApp <a href="https://wa.me/256704738156">+256 704 738 156</a>.</p>''',
+    "privacy": '''<h1>Privacy Policy</h1><p class="seo-lead">Last updated: 28 October 2026. This notice explains how Camera Matrix handles information when you browse the site or send a rental request, sales enquiry, Academy registration, contact message, partnership proposal, or newsletter signup.</p><h2>Who is responsible</h2><p>Camera Matrix is the business contact for booking and sales enquiry information. Contact us at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156 on WhatsApp</a>. The service area is Kampala and Entebbe, Uganda.</p><h2>Information we collect</h2><ul><li>Your name and phone/WhatsApp number, and optional email address, when you send a sales enquiry; or your name, email address and phone/WhatsApp number when you submit a rental request.</li><li>Academy training registrations, contact messages, partnership proposals, and newsletter subscriptions, including the details you submit and your consent record.</li><li>For a sales enquiry, the products and quantities you selected, the enquiry ID, request status, and estimated product total. For a rental request, your selected equipment and quantities, pickup and return dates, collection option, booking ID, request status, and estimated rental amount.</li><li>Basic server request details used for operation and security, such as IP address, request path, and request time.</li><li>Your saved rental kit or sales enquiry list in your browser’s local storage. It contains product IDs and quantities, not your contact details.</li></ul><h2>How we use it</h2><p>We use your details to respond to sales enquiries, confirm product stock, review rental requests, reply to Academy contact or partnership messages, and follow up on training interest. Newsletter email addresses are used only for Academy training announcements when you explicitly subscribe. A sales enquiry is not a confirmed purchase, and a rental request is not a confirmed booking. The site does not collect payment.</p><p>We rely on the steps you ask us to take before a possible sale or rental agreement and, where applicable, your consent or a legal obligation. The sales form asks you to agree to follow-up about that enquiry. Academy forms require consent to use your information for the selected request; the newsletter form records an explicit opt-in. You may ask to unsubscribe from training announcements by emailing us. The rental form asks you to acknowledge this notice and the rental terms before submitting.</p><h2>Who may receive it</h2><p>Authorized Camera Matrix staff can access sales enquiries, booking records, and Academy submissions in the private admin interface. The site host processes and stores these records. If email notifications are configured, form details are sent through the configured email provider to the Camera Matrix team. If email or automatic WhatsApp notifications are configured for rental bookings, booking details are sent through the configured providers. If you choose a pre-filled WhatsApp link, you send the details to WhatsApp yourself. The site also loads Google Fonts and some product images from third-party hosts; those hosts may receive technical connection information such as your IP address and browser data.</p><p>We do not sell enquiry or booking details. Some service providers may process information outside Uganda under their own terms and safeguards.</p><h2>Retention</h2><p>We retain enquiry, booking, and Academy submission records for up to 12 months after the last update. The site removes expired records from its active files and sanitizes retained booking backups during its daily retention sweep. Records may be kept longer where required for legal, accounting, dispute, or security purposes.</p><h2>Your choices and rights</h2><p>You may ask us to confirm what personal information we hold, correct it, stop or restrict processing where the law allows, or delete it where we are not required to keep it. Contact <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a>. You can clear saved gear lists by clearing this site’s browser storage. You may also contact Uganda’s Personal Data Protection Office about a data protection concern.</p><h2>Security</h2><p>Enquiry, booking, and Academy submission records are stored by the site operator and should be accessible only to authorized staff. Use the admin token, restrict access to the server and its data, and use HTTPS for any public deployment. No internet transmission or storage method is completely secure.</p><h2>Changes and contact</h2><p>We may update this notice when our practices change. The latest date appears at the top. For privacy questions, email <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or call/WhatsApp <a href="https://wa.me/256704738156">+256 704 738 156</a>.</p>''',
     "cookies": '''<h1>Cookie and Browser Storage Policy</h1><p class="seo-lead">Last updated: 16 October 2026.</p><h2>Cookies</h2><p>The site’s current code does not set cookies and does not use analytics or advertising pixels. A cookie-consent pop-up is therefore not currently shown.</p><h2>Local browser storage</h2><p>The site uses browser local storage to remember rental gear and sale enquiry list quantities between visits. This is a functional feature; it does not store your name, phone number or email. You can remove it by clearing site data in your browser. If we add analytics, advertising, or other non-essential tracking/storage, we will update this policy and provide appropriate choices before enabling it.</p><h2>External content</h2><p>The site loads some fonts and product photographs from third-party services, and links to WhatsApp. When your browser loads or opens those services, they may receive technical information and apply their own policies. See our <a href="/privacy-policy.html">Privacy Policy</a> for more detail.</p><h2>Contact</h2><p>Questions? Email <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or WhatsApp <a href="https://wa.me/256704738156">+256 704 738 156</a>.</p>''',
     "terms": '''<h1>Rental Terms and Conditions</h1><p class="seo-lead">Last updated: 13 October 2026. These draft terms apply to requests made through the Camera Matrix Rentals website.</p><h2>1. A request is not a confirmed booking</h2><p>Submitting the online form sends a request only. It does not reserve equipment or create a confirmed rental. Camera Matrix must confirm availability and send you a written quote/confirmation. Do not travel to collect equipment until you have received confirmation.</p><h2>2. Reviewing your request and price</h2><p>Before submitting, review the equipment, quantities, dates, collection option, and displayed estimate in the booking drawer. You can change them before submission. Catalog rates are daily equipment rates. The written quote will state the full amount, including any applicable taxes, delivery/transport, deposits, other fees, payment method, and due dates before you accept or pay.</p><h2>3. Confirmation and collection</h2><p>A booking becomes confirmed only when Camera Matrix confirms it in writing and you accept the quote. The confirmation will state pickup and return arrangements, rental period, payment terms, any deposit, and the cancellation/refund terms for that booking.</p><h2>4. Use and return of equipment</h2><p>Use the equipment carefully and lawfully, keep it secure, do not lend or sub-rent it without written permission, and return it at the agreed time in the condition received, allowing for ordinary wear. Tell Camera Matrix promptly about loss, damage, malfunction, or a return delay. Any applicable late-return, repair, replacement, or other charge must be explained in the written quote or confirmation before the booking is accepted.</p><h2>5. Payment, cancellation, and refunds</h2><p>The website does not take payment. You may withdraw a request before it is confirmed without an online cancellation charge. For a confirmed booking, the written quote/confirmation will state the applicable deposit, payment schedule, cancellation cutoff, and refund treatment before you accept or pay. See the <a href="/refund-policy.html">Cancellation and Refund Policy</a>. These terms do not remove rights provided by applicable law.</p><h2>6. Contact and governing law</h2><p>Contact Camera Matrix Rentals at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156</a>. These terms are governed by the laws of Uganda, subject to any mandatory consumer rights.</p>''',
     "refunds": '''<h1>Cancellation and Refund Policy</h1><p class="seo-lead">Last updated: 13 October 2026.</p><h2>Online requests</h2><p>Submitting a request through this website does not confirm a rental and does not charge you. You may withdraw an unconfirmed request at no charge by contacting Camera Matrix at <a href="mailto:Cameramatrixrentals@gmail.com">Cameramatrixrentals@gmail.com</a> or <a href="https://wa.me/256704738156">+256 704 738 156</a>. Since the website does not collect payment, there is no website payment to refund at this stage.</p><h2>Confirmed bookings</h2><p>Before you accept or pay for a confirmed booking, Camera Matrix will give you written terms stating any deposit, cancellation deadline, late-cancellation or no-show treatment, refund amount or deductions, and expected refund timing. Those terms form part of the quote/confirmation. No payment should be requested until those terms and the full price have been disclosed.</p><h2>Refund requests</h2><p>Contact Camera Matrix using the email or WhatsApp above and include your booking ID and payment details (do not send card passwords, PINs, or one-time codes). Refunds will be handled through the original payment method where practicable, within the period stated in the applicable confirmation and subject to mandatory law.</p><p>For each confirmed booking, the written quote will state the applicable cancellation deadline, deposit treatment, late-cancellation or no-show rule, and refund timing before payment is requested.</p>''',
@@ -115,11 +116,25 @@ def load_sale_enquiries():
         return []
 
 
+def load_academy_submissions():
+    try:
+        return json.loads(ACADEMY_SUBMISSIONS_FILE.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return []
+
+
 def save_sale_enquiries(enquiries):
     SALE_ENQUIRIES_FILE.parent.mkdir(parents=True, exist_ok=True)
     temporary = SALE_ENQUIRIES_FILE.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(enquiries, indent=2, ensure_ascii=False), encoding="utf-8")
     os.replace(temporary, SALE_ENQUIRIES_FILE)
+
+
+def save_academy_submissions(submissions):
+    ACADEMY_SUBMISSIONS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    temporary = ACADEMY_SUBMISSIONS_FILE.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(submissions, indent=2, ensure_ascii=False), encoding="utf-8")
+    os.replace(temporary, ACADEMY_SUBMISSIONS_FILE)
 
 
 def booking_is_expired(booking, now=None):
@@ -132,6 +147,90 @@ def booking_is_expired(booking, now=None):
         return now - activity >= timedelta(days=BOOKING_RETENTION_DAYS)
     except (AttributeError, TypeError, ValueError):
         return False
+
+
+ACADEMY_SUBMISSION_FIELDS = {
+    "training_interest": ("name", "email", "interest"),
+    "newsletter": ("email", "first_name"),
+    "contact": ("name", "email", "enquiry", "message"),
+    "partnership": ("name", "email", "organization", "partnership_type", "proposal"),
+}
+
+
+def normalize_academy_submission(payload):
+    submission_type = payload.get("type")
+    if submission_type not in ACADEMY_SUBMISSION_FIELDS:
+        raise ValueError("Choose a valid enquiry type.")
+    if payload.get("consent") is not True:
+        raise ValueError("Please agree before sending this form.")
+    fields = payload.get("fields")
+    if not isinstance(fields, dict):
+        raise ValueError("Complete the required form fields.")
+    limits = {"name": 100, "email": 200, "interest": 80, "first_name": 100, "enquiry": 100, "message": 4000, "organization": 160, "partnership_type": 100, "proposal": 4000}
+    data = {}
+    for key in ACADEMY_SUBMISSION_FIELDS[submission_type]:
+        value = fields.get(key)
+        if value is None and key == "first_name":
+            continue
+        if not isinstance(value, str):
+            raise ValueError("Complete the required form fields.")
+        value = value.strip()
+        if len(value) > limits[key]:
+            raise ValueError("One of your answers is too long.")
+        if not value and key != "first_name":
+            raise ValueError("Complete the required form fields.")
+        data[key] = value
+    data["email"] = data["email"].lower()
+    if not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", data["email"]):
+        raise ValueError("Enter a valid email address.")
+    if submission_type != "newsletter" and (not data.get("name") or len(data["name"]) > 100):
+        raise ValueError("Enter your name.")
+    valid_options = {
+        "training_interest": {"interest": {"Photography", "Videography", "Lighting and production", "Private team training", "Open to future programmes"}},
+        "contact": {"enquiry": {"Photography or videography project", "Private training for my team", "Upcoming training opportunities", "Creative partnership", "Other enquiry"}},
+        "partnership": {"partnership_type": {"Sponsorship", "University or institution", "Community or church", "Media house or industry organization", "Equipment, venue or expertise", "Other collaboration"}},
+    }.get(submission_type, {})
+    for key, values in valid_options.items():
+        if data.get(key) not in values:
+            raise ValueError("Choose one of the listed options.")
+    return {"type": submission_type, "data": data, "email": data["email"], "name": data.get("name") or data.get("first_name", "")}
+
+
+def deliver_academy_notification(submission):
+    host = environ.get("SMTP_HOST", "").strip()
+    username = environ.get("SMTP_USERNAME", "").strip()
+    password = environ.get("SMTP_PASSWORD", "")
+    recipient = environ.get("BOOKING_NOTIFY_EMAIL", "Cameramatrixrentals@gmail.com").strip()
+    if not (host and username and password and recipient):
+        return {"status": "not_configured"}
+    type_labels = {"training_interest": "Academy training interest", "newsletter": "Academy newsletter signup", "contact": "Cinematrix contact enquiry", "partnership": "Academy partnership enquiry"}
+    field_labels = {"name": "Name", "first_name": "First name", "email": "Email", "interest": "Learning interest", "enquiry": "Enquiry", "message": "Message", "organization": "Organization", "partnership_type": "Partnership type", "proposal": "Proposal"}
+    lines = [f"New {type_labels.get(submission['type'], 'Academy submission')}", f"Submission ID: {submission['id']}", f"Email: {submission['email']}"]
+    lines.extend(f"{field_labels.get(key, key)}: {value}" for key, value in submission["data"].items() if key != "email")
+    lines.append(f"Submitted: {submission['createdAt']}")
+    try:
+        mail = EmailMessage()
+        mail["Subject"] = type_labels.get(submission["type"], "Academy submission")
+        mail["From"] = environ.get("SMTP_FROM", username)
+        mail["To"] = recipient
+        mail["Reply-To"] = submission["email"]
+        mail.set_content("\n".join(lines))
+        port = int(environ.get("SMTP_PORT", "587"))
+        if environ.get("SMTP_USE_SSL", "").lower() in {"1", "true", "yes"}:
+            with smtplib.SMTP_SSL(host, port, timeout=12, context=ssl.create_default_context()) as smtp:
+                smtp.login(username, password)
+                smtp.send_message(mail)
+        else:
+            with smtplib.SMTP(host, port, timeout=12) as smtp:
+                smtp.ehlo()
+                smtp.starttls(context=ssl.create_default_context())
+                smtp.ehlo()
+                smtp.login(username, password)
+                smtp.send_message(mail)
+        return {"status": "sent", "updatedAt": datetime.now(timezone.utc).isoformat()}
+    except Exception:
+        LOGGER.exception("Academy notification delivery failed for %s", submission["id"])
+        return {"status": "failed", "error": "Email delivery failed; check the server log."}
 
 
 def parse_rental_date(value):
@@ -169,6 +268,10 @@ def run_retention_sweep(force=False):
         retained_enquiries = [enquiry for enquiry in sale_enquiries if not booking_is_expired(enquiry, now)]
         if len(retained_enquiries) != len(sale_enquiries):
             save_sale_enquiries(retained_enquiries)
+        academy_submissions = load_academy_submissions()
+        retained_submissions = [submission for submission in academy_submissions if not booking_is_expired(submission, now)]
+        if len(retained_submissions) != len(academy_submissions):
+            save_academy_submissions(retained_submissions)
         backups = BOOKINGS_FILE.parent / "backups"
         cutoff = now - timedelta(days=30)
         for backup in backups.glob("bookings-*.json") if backups.exists() else ():
@@ -350,7 +453,7 @@ class Handler(SimpleHTTPRequestHandler):
             return False
         return True
 
-    def allow_booking_request(self):
+    def allow_booking_request(self, label="booking"):
         now = datetime.now(timezone.utc).timestamp()
         address = self.client_address[0] if self.client_address else "unknown"
         with BOOKING_RATE_LOCK:
@@ -359,7 +462,7 @@ class Handler(SimpleHTTPRequestHandler):
             BOOKING_ATTEMPTS.update(active)
             attempts = [stamp for stamp in BOOKING_ATTEMPTS.get(address, []) if now - stamp < BOOKING_RATE_WINDOW]
             if len(attempts) >= BOOKING_RATE_LIMIT:
-                self.send_json(429, {"error": "Too many booking requests from this connection. Please try again later."})
+                self.send_json(429, {"error": f"Too many {label} requests from this connection. Please try again later."})
                 return False
             attempts.append(now)
             BOOKING_ATTEMPTS[address] = attempts
@@ -471,6 +574,11 @@ class Handler(SimpleHTTPRequestHandler):
                 return
             with LOCK:
                 return self.send_json(200, {"enquiries": list(reversed(load_sale_enquiries()))})
+        if parsed.path == "/api/admin/academy-submissions":
+            if not self.require_admin():
+                return
+            with LOCK:
+                return self.send_json(200, {"submissions": list(reversed(load_academy_submissions()))})
         if parsed.path == "/api/availability":
             query = parse_qs(parsed.query)
             try:
@@ -496,6 +604,68 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         run_retention_sweep()
+        academy_admin_match = re.fullmatch(r"/api/admin/academy-submissions/([A-Fa-f0-9-]+)", urlparse(self.path).path)
+        if academy_admin_match:
+            if not self.require_admin():
+                return
+            try:
+                payload = self.read_json()
+                submission_id = academy_admin_match.group(1)
+                with LOCK:
+                    submissions = load_academy_submissions()
+                    submission = next((row for row in submissions if row.get("id") == submission_id), None)
+                    if not submission:
+                        return self.send_json(404, {"error": "Academy submission not found."})
+                    statuses = {"subscribed", "unsubscribed"} if submission.get("type") == "newsletter" else {"new", "contacted", "resolved"}
+                    if payload.get("status") not in statuses:
+                        raise ValueError("Choose a valid submission status.")
+                    submission["status"] = payload["status"]
+                    submission["updatedAt"] = datetime.now(timezone.utc).isoformat()
+                    save_academy_submissions(submissions)
+                return self.send_json(200, {"submission": submission})
+            except (ValueError, TypeError, json.JSONDecodeError) as error:
+                return self.send_json(400, {"error": str(error)})
+        if urlparse(self.path).path == "/api/academy-submissions":
+            if not self.allow_booking_request("form"):
+                return
+            try:
+                payload = self.read_json()
+                if isinstance(payload.get("website"), str) and payload["website"].strip():
+                    return self.send_json(201, {"received": True})
+                clean = normalize_academy_submission(payload)
+                now = datetime.now(timezone.utc).isoformat()
+                with LOCK:
+                    submissions = load_academy_submissions()
+                    existing = next((row for row in submissions if clean["type"] == "newsletter" and row.get("type") == "newsletter" and row.get("email") == clean["email"]), None)
+                    if existing and existing.get("status") == "subscribed":
+                        return self.send_json(200, {"alreadySubscribed": True, "submission": {"id": existing["id"], "status": existing["status"]}})
+                    submission = {
+                        **(existing or {}),
+                        "id": (existing or {}).get("id", uuid.uuid4().hex.upper()),
+                        "type": clean["type"],
+                        "status": "subscribed" if clean["type"] == "newsletter" else "new",
+                        "name": clean["name"],
+                        "email": clean["email"],
+                        "data": clean["data"],
+                        "consentAt": now,
+                        "consentVersion": "2026-10-28.1",
+                        "createdAt": (existing or {}).get("createdAt", now),
+                        "updatedAt": now,
+                        "notification": {"status": "sending"},
+                    }
+                    if existing:
+                        submissions = [submission if row.get("id") == existing["id"] else row for row in submissions]
+                    else:
+                        submissions.append(submission)
+                    save_academy_submissions(submissions)
+                submission["notification"] = deliver_academy_notification(submission)
+                with LOCK:
+                    submissions = load_academy_submissions()
+                    submissions = [submission if row.get("id") == submission["id"] else row for row in submissions]
+                    save_academy_submissions(submissions)
+                return self.send_json(201, {"submission": {"id": submission["id"], "status": submission["status"]}})
+            except (ValueError, TypeError, json.JSONDecodeError) as error:
+                return self.send_json(400, {"error": str(error) or "Invalid Academy submission."})
         if urlparse(self.path).path.startswith("/api/admin/sale-enquiries/"):
             if not self.require_admin():
                 return

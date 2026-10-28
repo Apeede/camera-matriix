@@ -3,30 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery Example</title>
+  <title>Camera Matrix Gallery</title>
   <link rel="stylesheet" href="/gallery/gallery-inspo.css">
-  <link rel="stylesheet" href="/gallery/gallery-nav.css">
+  <link rel="stylesheet" href="/gallery/gallery-nav.css?v=6">
 </head>
 <body>
   <header class="site-navigation">
-    <nav aria-label="Academy navigation">
-      <a class="back-to-academy" href="/training/">← Back to Academy</a>
+    <a class="gallery-brand" href="https://www.cinematrix.store/" aria-label="Camera Matrix home">
+      <img src="/assets/logo mark-01.png" alt="Camera Matrix logo mark">
+    </a>
+    <nav class="gallery-navigation" aria-label="Gallery navigation">
+      <a class="back-to-academy" href="/training/">Academy ↗</a>
     </nav>
   </header>
+  <p class="gallery-title">Gallery</p>
   <div class="loading">
     <div class="loading-container">
       <p class="counter"></p>
       <div class="line"></div>
     </div>
   </div>
-  <div class="body-container">
-    <div class="box">
-      <h1>Gallery Example</h1>
-      <p>Pictures from Unsplash</p>
-    </div>
-  </div>
+  <aside class="album-links">
+    <nav class="album-links-list" aria-label="Google Drive albums">
+      <a href="https://drive.google.com/drive/folders/1mvqnn1rZ5NO_3ALGiO4m8b_QCkNae4uG">FX6 Workshop · Cameras</a>
+      <a href="https://drive.google.com/drive/folders/1QtWFt0HYJpruqp9m2I-LeFfH2s780HX2">Sony MCI · Day 1</a>
+      <a href="https://drive.google.com/drive/folders/19NyHrkn9vsrlIKEgasCdDbioUTG-0nRh">Sony MCI · Day 2</a>
+      <a href="https://drive.google.com/drive/folders/1WRtCve-WiHxZ3bnxSmbWvggjI0T5e2tR">Film Culture · Market activation</a>
+      <a href="https://drive.google.com/drive/folders/19e2GQP_f45Dp0Pm1MTuyBLiplbFJtd1M">Sony Workshop · GLBC</a>
+      <a href="https://drive.google.com/drive/folders/1rXRc-Cs2_2c4GTr6_-aaPfpI0MmQuSDD">Sony Film Market · One</a>
+      <a href="https://drive.google.com/drive/folders/1_Ko-BqRklg1RII6OGctENsoUBUcEw_XH">Sony Film Market · Two</a>
+      <a href="https://drive.google.com/drive/folders/117UcDImut5-jwbHMrsYXRPTmtfD0lAh-">Sony Film Culture · Day 3</a>
+      <a href="https://drive.google.com/drive/folders/1rZ4dVNFbnw4_60F9VmNuLxNSqQolrkR-">Sony Film Culture · Day 4</a>
+    </nav>
+  </aside>
   <script src="/gallery/gallery-image-paths.js"></script>
   <script src="/gallery/gallery-inspo.js"></script>
-  <script src="/gallery/gallery-nav.js"></script>
+  <script src="/gallery/gallery-nav.js?v=2"></script>
+<a class="academy-whatsapp-float" href="https://wa.me/256704738156?text=Hello%20Camera%20Matrix%2C%20I%20have%20a%20question%20about%20the%20Academy." target="_blank" rel="noopener noreferrer" aria-label="Chat with Camera Matrix on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.4A12.4 12.4 0 0 0 5.3 22.1L4 28l6-1.3A12.4 12.4 0 1 0 16 3.4Zm0 22.5c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.8.8-3.4-.2-.4A10.1 10.1 0 1 1 16 25.9Zm5.6-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.8.6.8.2 1.5.2 2.1.1.7-.1 1.8-.8 2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.5Z"/></svg></a>
 </body>
 </html>

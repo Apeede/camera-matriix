@@ -15,7 +15,7 @@ Open http://127.0.0.1:8000. Stop the server with Ctrl+C.
 
 ## Free Cloudflare deployment
 
-The production version is designed for Cloudflare Workers static assets and D1. The storefront and SEO pages are built into `public/`; booking APIs run in `worker.js`; booking records and date-level inventory reservations live in D1. Python is used only to render the existing pages during the build and for local development. It is not a production server requirement.
+The production version is designed for Cloudflare Workers static assets and D1. The storefront and SEO pages are built into `public/`; booking, sales enquiry, and Academy form APIs run in `worker.js`; submissions and booking records live in D1. Python is used only to render the existing pages during the build and for local development. It is not a production server requirement.
 
 Cloudflare's free Workers plan currently includes up to 100,000 requests per day, and D1 includes up to 5 GB of storage, 5 million rows read per day, and 100,000 rows written per day. Free D1 databases support point-in-time recovery for seven days. These quotas are suitable to start with modest traffic; requests can fail if a daily quota is exceeded. See [Workers limits](https://developers.cloudflare.com/workers/platform/limits/), [D1 pricing](https://developers.cloudflare.com/d1/platform/pricing/), and [D1 Time Travel](https://developers.cloudflare.com/d1/reference/time-travel/).
 
@@ -29,9 +29,9 @@ Cloudflare's free Workers plan currently includes up to 100,000 requests per day
 6. Deploy with `npm run deploy`. This builds the storefront and SEO pages, then deploys the static files and Worker together. The first deployment gets a temporary `workers.dev` address.
 7. Add `cinematrix.store` to Cloudflare as a DNS zone. Review the imported records and preserve the MX and SPF records if you use Namecheap email forwarding. At Namecheap, set the two Cloudflare nameservers, then wait until Cloudflare marks the zone active. In **Workers & Pages → camera-matrix-rentals → Settings → Domains & Routes**, add both `cinematrix.store` and `www.cinematrix.store` as custom domains.
 
-New booking requests are saved in D1. Email and automatic WhatsApp alerts are optional and are not active until their provider credentials and sender configuration are set as Worker secrets. Without notification credentials, customers receive the existing link to send the booking details to Camera Matrix on WhatsApp, and the team can review requests in `/admin.html`.
+New booking requests, contact messages, Academy registrations, partnership proposals, and newsletter opt-ins are saved in D1. Email and automatic WhatsApp booking alerts are optional. Academy form email notifications use the same optional Resend secrets as booking email. The team can review and update submissions in `/admin.html`; opted-in newsletter addresses can be exported as CSV.
 
-To configure email later, verify a sender domain with an HTTPS email API provider such as Resend, then set `RESEND_API_KEY`, `BOOKING_NOTIFY_EMAIL`, and `MAIL_FROM` as Worker secrets. Do not use SMTP credentials in Cloudflare Workers. Keep secrets out of Git and chat.
+To configure email later, verify a sender domain with an HTTPS email API provider such as Resend, then set `RESEND_API_KEY`, `BOOKING_NOTIFY_EMAIL`, and `MAIL_FROM` as Worker secrets. These settings deliver both booking notifications and Academy form notifications to the team. Do not use SMTP credentials in Cloudflare Workers. Keep secrets out of Git and chat.
 
 ### Updating the deployed site
 
@@ -61,9 +61,9 @@ Deploy only the Academy staging bundle with `npx wrangler deploy --config wrangl
 - The booking drawer validates dates before submitting and shows the selected dates and estimate. The team confirms requested gear and quantities.
 - After saving a request, local development uses SMTP and optionally WhatsApp Cloud API. Cloudflare uses an HTTPS email API and can optionally send WhatsApp Cloud API messages. Without notification credentials, the confirmation gives customers a pre-filled WhatsApp link; the team can review saved requests in the admin booking list.
 
-### Configure booking notifications
+### Configure local booking and Academy email notifications
 
-For local setup, open Terminal and run:
+The local Python server uses the SMTP settings below for both booking and Academy form notifications. For local setup, open Terminal and run:
 
 ```bash
 cd "/Users/joel/Desktop/camera matriix"
@@ -85,9 +85,9 @@ The WhatsApp Cloud API follows Meta's official [WhatsApp Cloud API collection](h
 ## Local Python data and safety
 
 - Start the local server with settings from `.env` loaded.
-- Open `/admin.html`, enter that token, and review requests or change their status. The admin API refuses access when `ADMIN_TOKEN` is unset. Do not expose the app over a public network without HTTPS and a strong token.
-- Local booking data is written atomically to `data/bookings.json`. Before each update, the previous file is copied into `data/backups/`; backups older than 30 days are pruned during later saves. Restrict access to `data/` because it contains customer contact details.
-- Locally, a retention sweep removes booking records and personal details after 365 days without an update, and sanitizes backup copies. Cloudflare runs its database retention sweep daily, and D1 provides seven-day point-in-time recovery on the free plan. Legal, accounting, dispute, or security holds may require keeping specific records longer.
+- Open `/admin.html`, enter that token, and review bookings, sales enquiries, Academy forms, or update submission status. The Academy section includes a CSV download for active newsletter opt-ins. The admin API refuses access when `ADMIN_TOKEN` is unset. Do not expose the app over a public network without HTTPS and a strong token.
+- Local booking data is written atomically to `data/bookings.json`; Academy registrations, messages, proposals, and newsletter opt-ins are saved in `data/academy-submissions.json`. Restrict access to `data/` because it contains customer contact details.
+- Locally, a retention sweep removes booking, sales, and Academy records after 365 days without an update, and sanitizes booking backup copies. Cloudflare runs its database retention sweep daily, and D1 provides seven-day point-in-time recovery on the free plan. Legal, accounting, dispute, or security holds may require keeping specific records longer.
 - The built-in Python server is for local use or a small trusted deployment. The Cloudflare deployment uses a managed D1 database and Cloudflare HTTPS instead.
 - Catalog requests are treated as unlimited quantity. Every booking remains a request until the Camera Matrix team reviews and confirms the dates and gear.
 

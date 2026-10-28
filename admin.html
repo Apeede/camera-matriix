@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
-  <title>Booking management | Camera Matrix</title>
+  <title>Bookings and enquiries | Camera Matrix</title>
   <link rel="stylesheet" href="/styles.css">
   <style>
-    body{background:#f6f5f2;color:#101f33}.admin{width:min(1100px,92%);margin:45px auto 80px}.admin h1{font:500 clamp(36px,6vw,58px)/1.05 Georgia,serif}.admin h2{font:500 32px Georgia,serif;margin:44px 0 12px}.admin-tools{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.admin-tools input{flex:1;min-width:230px;padding:13px;border:1px solid #dfe2e5;background:#fff}.admin-tools button,.status-select{padding:11px 14px;border:1px solid #dfe2e5;background:#fff;color:#101f33}.booking{background:#fff;border:1px solid #e5e6e8;padding:20px;margin:14px 0;display:grid;grid-template-columns:1fr auto;gap:18px}.booking h2{font:600 18px Manrope,sans-serif;margin:0 0 8px}.booking p{margin:5px 0;color:#687487;font-size:13px}.booking-items{font-size:12px}.admin-error{color:#a31f2b}.admin-help{color:#687487;line-height:1.7}@media(max-width:650px){.booking{grid-template-columns:1fr}.status-select{width:100%}}
+    body{background:#f6f5f2;color:#101f33}.admin{width:min(1100px,92%);margin:45px auto 80px}.admin h1{font:500 clamp(36px,6vw,58px)/1.05 Georgia,serif}.admin h2{font:500 32px Georgia,serif;margin:44px 0 12px}.admin-tools{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.admin-tools input{flex:1;min-width:230px;padding:13px;border:1px solid #dfe2e5;background:#fff}.admin-tools button,.status-select{padding:11px 14px;border:1px solid #dfe2e5;background:#fff;color:#101f33}.admin-tools button:disabled{opacity:.5;cursor:not-allowed}.booking{background:#fff;border:1px solid #e5e6e8;padding:20px;margin:14px 0;display:grid;grid-template-columns:1fr auto;gap:18px}.booking h2{font:600 18px Manrope,sans-serif;margin:0 0 8px}.booking p{margin:5px 0;color:#687487;font-size:13px}.booking-items{font-size:12px}.academy-submission-details{white-space:pre-wrap}.admin-error{color:#a31f2b}.admin-help{color:#687487;line-height:1.7}@media(max-width:650px){.booking{grid-template-columns:1fr}.status-select{width:100%}}
   </style>
 </head>
 <body>
@@ -13,14 +13,18 @@
   <main class="admin">
     <p class="eyebrow"><span></span> PRIVATE OPERATIONS</p>
     <h1>Booking requests</h1>
-    <p class="admin-help">Enter the private admin token to load rental bookings and sales enquiries. This page requires HTTPS when accessed remotely.</p>
+    <p class="admin-help">Enter the private admin token to load rental bookings, sales enquiries, and Academy forms. This page requires HTTPS when accessed remotely.</p>
     <form class="admin-tools" id="admin-login"><input id="admin-token" type="password" autocomplete="current-password" placeholder="Admin token" required><button type="submit">Load requests</button></form>
     <p id="admin-message" class="admin-help" aria-live="polite"></p>
     <section id="bookings" aria-live="polite"></section>
     <h2>Gear for sale enquiries</h2>
     <p class="admin-help">New enquiries from the Buy section appear here. Update each status as your team follows up.</p>
     <section id="sale-enquiries" aria-live="polite"></section>
+    <h2>Academy forms and newsletter</h2>
+    <p class="admin-help">Review training registrations, contact messages, partnership proposals, and consented newsletter subscribers. Newsletter exports include subscribed contacts only.</p>
+    <div class="admin-tools"><button id="academy-export" type="button" disabled>Download newsletter subscribers</button></div>
+    <section id="academy-submissions" aria-live="polite"></section>
   </main>
-  <script src="/admin.js"></script>
+  <script src="/admin.js?v=2"></script>
 </body>
 </html>
