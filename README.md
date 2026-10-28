@@ -37,6 +37,12 @@ To configure email later, verify a sender domain with an HTTPS email API provide
 
 After changing the catalog or site files, run `npm run deploy` again. The build script renders the public SEO pages with `PUBLIC_BASE_URL` from the environment, or defaults to `https://www.cinematrix.store`.
 
+### Cinematrix Academy staging
+
+Academy pages are authored in `training/`, `photography-videography/`, `partnerships/`, `about/`, and `contact/`. Run `npm run build` to generate the integrated pages in `public/` and the isolated, non-indexable static Academy bundle in `.academy-staging/`. Preview the integrated page locally at `http://127.0.0.1:8000/training/` after starting `python3 server.py`.
+
+Deploy only the Academy staging bundle with `npx wrangler deploy --config wrangler.staging.jsonc`. The staging Worker has a separate name and does not change the production storefront Worker or its D1 database. Use its `workers.dev` URL for review. After approval, add `learn.cinematrix.store` as a custom domain to the reviewed Academy deployment in Cloudflare. The existing storefront Worker also recognizes that host and serves the Academy home at `/` when routed there.
+
 ## Search visibility
 
 - Public landing pages cover the rental catalog, Kampala camera rentals, lenses, lighting and audio, booking steps, about, and contact.
@@ -86,6 +92,5 @@ The WhatsApp Cloud API follows Meta's official [WhatsApp Cloud API collection](h
 - Catalog requests are treated as unlimited quantity. Every booking remains a request until the Camera Matrix team reviews and confirms the dates and gear.
 
 Product photos are remote product images and depend on the source hosts remaining available. Manufacturer reference URLs are retained in the catalog data. Review the manufacturer links for exact package and model variants before publishing the catalog.
-
 
 Bookings and enquiries: Cameramatrixrentals@gmail.com · WhatsApp: +256 704 738 156.

@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "camera-matrix-academy-staging",
+  "compatibility_date": "2026-10-14",
+  "assets": {
+    "directory": "./.academy-staging",
+    "not_found_handling": "404-page",
+  },
+}

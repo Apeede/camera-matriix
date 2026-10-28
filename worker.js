@@ -383,14 +383,22 @@ async function staticResponse(request, env) {
 
 async function apiFetch(request, env) {
   const url = new URL(request.url);
-  const canonicalOrigin = (env.PUBLIC_BASE_URL || url.origin).replace(/\/+$/, "");
+  const academyHost = url.hostname === "learn.cinematrix.store";
+  const canonicalOrigin = (academyHost ? url.origin : env.PUBLIC_BASE_URL || url.origin).replace(/\/+$/, "");
   if (url.pathname.startsWith("/api/")) return bookingApi(request, env, url);
   if (url.pathname === "/robots.txt") return new Response(`User-agent: Google-Extended\nAllow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${canonicalOrigin}/sitemap.xml\n`, { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
   if (url.pathname === "/sitemap.xml") {
     const products = await productsFor(env);
-    const paths = ["/", "/buy.html", "/faq.html", "/rentals.html", "/camera-rentals-kampala.html", "/lens-rentals-kampala.html", "/lighting-audio-rentals.html", "/how-to-rent.html", "/about.html", "/contact.html", "/privacy-policy.html", "/cookie-policy.html", "/terms.html", "/refund-policy.html", ...products.map((product) => `/gear/${product.id}`)];
+    const academyPaths = ["/", "/photography-videography/", "/training/", "/gallery/", "/partnerships/", "/about/", "/contact/"];
+    const paths = academyHost ? academyPaths : ["/", "/buy.html", "/faq.html", "/rentals.html", "/camera-rentals-kampala.html", "/lens-rentals-kampala.html", "/lighting-audio-rentals.html", "/how-to-rent.html", "/about.html", "/contact.html", "/privacy-policy.html", "/cookie-policy.html", "/terms.html", "/refund-policy.html", "/training/", "/photography-videography/", "/gallery/", "/partnerships/", "/about/", "/contact/", ...products.map((product) => `/gear/${product.id}`)];
     const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((path) => `<url><loc>${escapeXml(canonicalOrigin + path)}</loc></url>`).join("")}</urlset>`;
     return new Response(body, { headers: { "Content-Type": "application/xml; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
+  }
+  if (academyHost && url.pathname === "/") {
+    return env.ASSETS.fetch(new Request(new URL("/training/index.html", url), request));
+  }
+  if (academyHost && url.pathname === "/training/") {
+    return Response.redirect(new URL("/", url), 308);
   }
   if (url.pathname === "/" || url.pathname === "/index.html") {
     const response = await env.ASSETS.fetch(request);

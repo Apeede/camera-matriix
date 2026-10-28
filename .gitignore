@@ -6,3 +6,7 @@ node_modules/
 public/
 .wrangler/
 .dev.vars
+.academy-staging/
+gallery-manifest.json
+.gallery-image-cache/
+gallery-images/

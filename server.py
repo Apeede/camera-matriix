@@ -439,7 +439,7 @@ class Handler(SimpleHTTPRequestHandler):
             self.end_headers()
             return self.wfile.write(data)
         if parsed.path == "/sitemap.xml":
-            pages = ["/", "/buy.html", "/faq.html", *SEO_PAGES.keys(), *(f"/gear/{p['id']}" for p in PRODUCTS)]
+            pages = ["/", "/buy.html", "/faq.html", *SEO_PAGES.keys(), "/training/", "/photography-videography/", "/gallery/", "/partnerships/", "/about/", "/contact/", *(f"/gear/{p['id']}" for p in PRODUCTS)]
             xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{escape(origin + path)}</loc></url>" for path in pages) + "</urlset>"
             data = xml.encode("utf-8")
             self.send_response(200)
