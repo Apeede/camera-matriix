@@ -203,7 +203,7 @@ def deliver_academy_notification(submission):
     recipient = environ.get("BOOKING_NOTIFY_EMAIL", "Cameramatrixrentals@gmail.com").strip()
     if not (host and username and password and recipient):
         return {"status": "not_configured"}
-    type_labels = {"training_interest": "Academy training interest", "newsletter": "Academy newsletter signup", "contact": "Cinematrix contact enquiry", "partnership": "Academy partnership enquiry"}
+    type_labels = {"training_interest": "Academy training interest", "newsletter": "Academy newsletter signup", "contact": "Camera Matrix contact enquiry", "partnership": "Academy partnership enquiry"}
     field_labels = {"name": "Name", "first_name": "First name", "email": "Email", "interest": "Learning interest", "enquiry": "Enquiry", "message": "Message", "organization": "Organization", "partnership_type": "Partnership type", "proposal": "Proposal"}
     lines = [f"New {type_labels.get(submission['type'], 'Academy submission')}", f"Submission ID: {submission['id']}", f"Email: {submission['email']}"]
     lines.extend(f"{field_labels.get(key, key)}: {value}" for key, value in submission["data"].items() if key != "email")

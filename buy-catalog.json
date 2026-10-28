@@ -700,7 +700,7 @@
   {
     "id": "sony-fx6-body",
     "brand": "Sony",
-    "name": "FX6 body",
+    "name": "FX6 full-frame cinema camera (body)",
     "price": 19500000,
     "images": [
       "https://store.sony.com.au/dw/image/v2/ABBC_PRD/on/demandware.static/-/Sites-sony-master-catalog/default/dwefbc1f61/images/ILMEFX6V/ILMEFX6V_2.png",
@@ -1154,5 +1154,109 @@
         "value": "Nikon Z mount"
       }
     ]
+  },
+  {
+    "id": "canon-r8-body",
+    "brand": "Canon",
+    "name": "R8 body",
+    "price": 5500000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "godox-v860-iii-n",
+    "brand": "Godox",
+    "name": "V860 III N",
+    "price": 950000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "godox-v860-iii-c",
+    "brand": "Godox",
+    "name": "V860 IIIC",
+    "price": 950000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "godox-v860-iii-s",
+    "brand": "Godox",
+    "name": "V860 III S",
+    "price": 950000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "sgr-a40-black",
+    "brand": "SGR",
+    "name": "SGR-A40 black",
+    "price": 13000000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "sgr-a12-black",
+    "brand": "SGR",
+    "name": "SGR-A12 BLACK",
+    "price": 11500000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "nikon-z8-body",
+    "brand": "Nikon",
+    "name": "Z8 body",
+    "price": 13000000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "dji-mic-3",
+    "brand": "DJI",
+    "name": "Mic 3",
+    "price": 1500000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "atomos-ninja-raw-5-2-hdmi-recorder",
+    "brand": "Atomos",
+    "name": "Ninja RAW 5.2 HDMI recorder",
+    "price": 3500000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "blackmagic-video-assist-7-12g",
+    "brand": "Blackmagic Design",
+    "name": "Video Assist 7 12G-SDI/HDMI HDR recording monitor",
+    "price": 4500000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "nikon-ftz-ii-adapter",
+    "brand": "Nikon",
+    "name": "FTZ II adapter",
+    "price": 950000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "godox-ad600bm-ii",
+    "brand": "Godox",
+    "name": "AD600BM II",
+    "price": 2600000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
+  },
+  {
+    "id": "godox-ad600bm",
+    "brand": "Godox",
+    "name": "AD600BM",
+    "price": 2000000,
+    "images": [],
+    "description": "Contact Camera Matrix to confirm current availability and package contents."
   }
 ]

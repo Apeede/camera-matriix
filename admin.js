@@ -82,7 +82,7 @@ academyExport.addEventListener("click", () => {
   const csv = ["Email,First name,Subscribed at", ...rows.map((entry) => [entry.email, entry.data?.first_name || "", entry.consentAt].map(quote).join(","))].join("\r\n");
   const link = document.createElement("a");
   link.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
-  link.download = "cinematrix-academy-subscribers.csv";
+  link.download = "camera-matrix-academy-subscribers.csv";
   link.click();
   window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
 });

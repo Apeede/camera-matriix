@@ -200,7 +200,7 @@ async function notifyAcademySubmission(submission, env) {
   if (!env.RESEND_API_KEY || !env.BOOKING_NOTIFY_EMAIL || !env.MAIL_FROM) return { status: "not_configured" };
   const labels = { name: "Name", first_name: "First name", email: "Email", interest: "Learning interest", enquiry: "Enquiry", message: "Message", organization: "Organization", partnership_type: "Partnership type", proposal: "Proposal" };
   const detailLines = Object.entries(submission.data).filter(([key]) => key !== "email").map(([key, value]) => `${labels[key] || key}: ${value}`);
-  const subjectByType = { training_interest: "Academy training interest", newsletter: "Academy newsletter signup", contact: "New Cinematrix contact enquiry", partnership: "Academy partnership enquiry" };
+  const subjectByType = { training_interest: "Academy training interest", newsletter: "Academy newsletter signup", contact: "New Camera Matrix contact enquiry", partnership: "Academy partnership enquiry" };
   const message = [`New ${subjectByType[submission.type] || "Academy submission"}`, `Submission ID: ${submission.id}`, `Email: ${submission.email}`, ...detailLines, `Submitted: ${submission.createdAt}`].join("\n");
   try {
     const response = await fetch("https://api.resend.com/emails", {

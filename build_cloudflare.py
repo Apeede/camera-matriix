@@ -83,7 +83,7 @@ def build_gallery_manifest() -> bytes:
         title, folder = album["title"], album["folder"]
         request = Request(
             f"https://drive.google.com/embeddedfolderview?id={folder}#grid",
-            headers={"User-Agent": "Mozilla/5.0 CinematrixAcademy/1.0"},
+            headers={"User-Agent": "Mozilla/5.0 Camera MatrixAcademy/1.0"},
         )
         with open_drive_url(request, timeout=30) as response:
             source = response.read().decode("utf-8", errors="replace")
@@ -133,7 +133,7 @@ def download_gallery_photo(photo: dict, output_dir: Path) -> None:
     last_error = None
     for attempt in range(4):
         try:
-            request = Request(preview, headers={"User-Agent": "Mozilla/5.0 CinematrixAcademy/1.0"})
+            request = Request(preview, headers={"User-Agent": "Mozilla/5.0 Camera MatrixAcademy/1.0"})
             with open_drive_url(request, timeout=90) as response:
                 content_type = response.headers.get("Content-Type", "")
                 data = response.read()

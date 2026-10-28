@@ -210,7 +210,7 @@ html:has(.orbit-gallery-page),body.orbit-gallery-page{height:100%;min-height:100
 @media(prefers-reduced-motion:reduce){.orbit-progress,.orbit-collection-list button,.orbit-progress-track span{transition:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.academy-hero-copy>*{animation:none!important}.academy-button{transition:none}}
 
-/* Cinematrix Academy: a quiet, image-led glass treatment shared across pages. */
+/* Camera Matrix Academy: a quiet, image-led glass treatment shared across pages. */
 :root {
   --academy-ink: #f2f5fa;
   --academy-green: #080b14;
@@ -691,7 +691,7 @@ body {
   color: rgba(255, 255, 255, .82);
   cursor: pointer;
 }
-.academy-carousel-toggle { width: 25px; height: 25px; font-size: 10px; }
+.academy-carousel-toggle { min-width: 44px; height: 25px; padding: 0 5px !important; font-size: 8px; letter-spacing: .04em; text-transform: uppercase; }
 .academy-carousel-dots { display: flex; align-items: center; gap: 6px; }
 .academy-carousel-dots button {
   width: 6px;
@@ -748,3 +748,5 @@ body {
   .academy-carousel-toggle { display: none !important; }
   .academy-whatsapp-float { animation: none; }
 }
+
+.academy-menu-icon{position:relative;display:block;width:18px;height:14px;margin:auto;border-top:1px solid currentColor;border-bottom:1px solid currentColor}.academy-menu-icon:after{content:"";position:absolute;left:0;right:0;top:6px;border-top:1px solid currentColor}

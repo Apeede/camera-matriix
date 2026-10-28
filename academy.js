@@ -46,7 +46,7 @@ document.querySelectorAll("[data-email-form]").forEach((form) => {
           ? "This email is already subscribed to Academy updates."
           : form.dataset.submissionType === "newsletter"
             ? "You’re subscribed to Academy announcements."
-            : "Thanks — your request is saved for the Cinematrix team.";
+            : "Thanks — your request is saved for the Camera Matrix team.";
         if (!alreadySubscribed) form.reset();
       })
       .catch((error) => {
@@ -98,7 +98,7 @@ if (academyCarousel) {
 
   function syncToggle() {
     if (!toggleButton) return;
-    toggleButton.textContent = paused ? "▶" : "Ⅱ";
+    toggleButton.textContent = paused ? "Play" : "Pause";
     toggleButton.setAttribute("aria-label", paused ? "Resume automatic slides" : "Pause automatic slides");
     toggleButton.setAttribute("aria-pressed", String(paused));
   }

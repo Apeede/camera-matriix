@@ -37,7 +37,7 @@ To configure email later, verify a sender domain with an HTTPS email API provide
 
 After changing the catalog or site files, run `npm run deploy` again. The build script renders the public SEO pages with `PUBLIC_BASE_URL` from the environment, or defaults to `https://www.cinematrix.store`.
 
-### Cinematrix Academy staging
+### Camera Matrix Academy staging
 
 Academy pages are authored in `training/`, `photography-videography/`, `partnerships/`, `about/`, and `contact/`. Run `npm run build` to generate the integrated pages in `public/` and the isolated, non-indexable static Academy bundle in `.academy-staging/`. Preview the integrated page locally at `http://127.0.0.1:8000/training/` after starting `python3 server.py`.
 

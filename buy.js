@@ -38,7 +38,7 @@ function renderSaleItems() {
       ? `<div class="sale-qty" aria-label="${quantity} ${escapeSaleHtml(item.name)} selected"><button type="button" data-sale-qty="${escapeSaleHtml(item.id)}" data-delta="-1" aria-label="Remove one ${escapeSaleHtml(item.name)}">−</button><span>${quantity} selected</span><button type="button" data-sale-qty="${escapeSaleHtml(item.id)}" data-delta="1" aria-label="Add one ${escapeSaleHtml(item.name)}">+</button></div>`
       : `<button class="sale-cta" type="button" data-sale-add="${escapeSaleHtml(item.id)}">Add to enquiry <span aria-hidden="true">+</span></button>`;
     const comparing = compareIds.has(item.id);
-    return `<article class="sale-card"><div class="sale-visual ${photo ? "has-photo" : ""}">${photo}<span class="sale-photo-placeholder">Product photo unavailable</span><span class="sale-brand">${escapeSaleHtml(item.brand)}</span></div><div class="sale-card-body"><p class="sale-type">${escapeSaleHtml(item.brand)} camera</p><h3>${escapeSaleHtml(item.name)}</h3><div class="sale-card-bottom"><strong>${formatSalePrice(item.price)}</strong>${control}</div><a class="sale-learn" href="/buy-item.html?id=${encodeURIComponent(item.id)}">Learn more <span aria-hidden="true">→</span></a><button type="button" class="sale-compare-toggle ${comparing ? "is-selected" : ""}" data-sale-compare="${escapeSaleHtml(item.id)}" aria-pressed="${comparing}">${comparing ? "Remove from compare" : "Compare"}</button></div></article>`;
+    return `<article class="sale-card"><div class="sale-visual ${photo ? "has-photo" : "sale-visual--type"}">${photo}<span class="sale-brand">${escapeSaleHtml(item.brand)}</span>${photo ? "" : `<span class="sale-visual-name">${escapeSaleHtml(item.name)}</span>`}</div><div class="sale-card-body"><p class="sale-type">${escapeSaleHtml(item.brand)} equipment</p><h3>${escapeSaleHtml(item.name)}</h3><div class="sale-card-bottom"><strong>${formatSalePrice(item.price)}</strong>${control}</div><a class="sale-learn" href="/buy-item.html?id=${encodeURIComponent(item.id)}">Learn more <span aria-hidden="true">→</span></a><button type="button" class="sale-compare-toggle ${comparing ? "is-selected" : ""}" data-sale-compare="${escapeSaleHtml(item.id)}" aria-pressed="${comparing}">${comparing ? "Remove from compare" : "Compare"}</button></div></article>`;
   }).join("");
   document.querySelector("#sale-empty").hidden = visible.length > 0;
   document.querySelector("#sale-count").textContent = String(visible.length);
@@ -55,10 +55,10 @@ function showToast(message) {
 function updateCompareBar() {
   const count = compareIds.size;
   document.querySelector("#sale-compare-bar").hidden = count === 0;
-  document.querySelector("#sale-compare-status").textContent = `${count} camera${count === 1 ? "" : "s"} selected`;
+  document.querySelector("#sale-compare-status").textContent = `${count} item${count === 1 ? "" : "s"} selected`;
   const open = document.querySelector("#sale-compare-open");
   open.disabled = count < 2;
-  open.textContent = count < 2 ? "Choose one more" : "Compare cameras";
+  open.textContent = count < 2 ? "Choose one more" : "Compare items";
   renderComparison();
 }
 
@@ -72,11 +72,13 @@ function renderComparison() {
   }
   const labels = [...new Set(chosen.flatMap((item) => (item.specs || []).map((spec) => spec.label)))];
   const rows = [["Price", (item) => formatSalePrice(item.price)], ["About", (item) => item.description || "—"], ...labels.map((label) => [label, (item) => item.specs?.find((spec) => spec.label === label)?.value || "—"])];
-  section.innerHTML = `<div class="sale-compare-heading"><div><p class="eyebrow"><span></span> SIDE-BY-SIDE</p><h2>Compare cameras</h2></div><button type="button" data-compare-close>Close comparison</button></div><div class="sale-compare-scroll"><table><thead><tr><th scope="col">Specification</th>${chosen.map((item) => `<th scope="col"><span>${escapeSaleHtml(item.brand)}</span><strong>${escapeSaleHtml(item.name)}</strong><button type="button" data-compare-remove="${escapeSaleHtml(item.id)}">Remove</button></th>`).join("")}</tr></thead><tbody>${rows.map(([label, value]) => `<tr><th scope="row">${escapeSaleHtml(label)}</th>${chosen.map((item) => `<td>${escapeSaleHtml(value(item))}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  section.innerHTML = `<div class="sale-compare-heading"><div><p class="eyebrow"><span></span> SIDE-BY-SIDE</p><h2>Compare equipment</h2></div><button type="button" data-compare-close>Close comparison</button></div><div class="sale-compare-scroll"><table><thead><tr><th scope="col">Specification</th>${chosen.map((item) => `<th scope="col"><span>${escapeSaleHtml(item.brand)}</span><strong>${escapeSaleHtml(item.name)}</strong><button type="button" data-compare-remove="${escapeSaleHtml(item.id)}">Remove</button></th>`).join("")}</tr></thead><tbody>${rows.map(([label, value]) => `<tr><th scope="row">${escapeSaleHtml(label)}</th>${chosen.map((item) => `<td>${escapeSaleHtml(value(item))}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
   section.hidden = false;
 }
 
-document.querySelectorAll("[data-brand]").forEach((button) => button.addEventListener("click", () => {
+document.querySelector(".sale-controls .filters").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-brand]");
+  if (!button) return;
   const current = document.querySelector(".sale-controls .filter.active");
   current?.classList.remove("active");
   current?.setAttribute("aria-pressed", "false");
@@ -84,7 +86,7 @@ document.querySelectorAll("[data-brand]").forEach((button) => button.addEventLis
   button.setAttribute("aria-pressed", "true");
   activeBrand = button.dataset.brand;
   renderSaleItems();
-}));
+});
 saleSearch.addEventListener("input", renderSaleItems);
 saleSort.addEventListener("change", renderSaleItems);
 saleGrid.addEventListener("click", (event) => {
@@ -92,7 +94,7 @@ saleGrid.addEventListener("click", (event) => {
   if (compare) {
     const id = compare.dataset.saleCompare;
     if (compareIds.has(id)) compareIds.delete(id);
-    else if (compareIds.size >= 3) showToast("Compare up to 3 cameras at a time.");
+    else if (compareIds.size >= 3) showToast("Compare up to 3 items at a time.");
     else compareIds.add(id);
     renderSaleItems();
     return;
@@ -241,6 +243,9 @@ fetch("/buy-catalog.json").then((response) => {
 }).then((items) => {
   if (!Array.isArray(items)) throw new Error("The sale catalog is invalid.");
   saleItems = items;
+  const filters = document.querySelector(".sale-controls .filters");
+  const brands = [...new Set(items.map((item) => item.brand))].sort((a, b) => a.localeCompare(b));
+  filters.insertAdjacentHTML("beforeend", brands.map((brand) => `<button class="filter" data-brand="${escapeSaleHtml(brand)}" aria-pressed="false">${escapeSaleHtml(brand)}</button>`).join(""));
   initBuyHero();
   const validIds = new Set(saleItems.map((item) => item.id));
   enquiry = Object.fromEntries(Object.entries(enquiry).filter(([id]) => validIds.has(id)));
