@@ -67,10 +67,10 @@
     "name": "A7 IV kit",
     "price": 8500000,
     "images": [
-      "https://www.fotokoch.mt/bilddaten/bildgroesser/sony-alpha-7-iv-ilce-7m4kb-sel-28-70mm-oss-fe_64654.jpg"
+      "/assets/catalog/sony-a7-iv-kit.jpg"
     ],
     "imageSources": [
-      "Foto Koch"
+      "PC Factory"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/ilce-7m4",
     "description": "A full-frame hybrid camera suited to photography, interviews and creator video. Kit lens and included accessories should be confirmed before purchase.",
@@ -121,7 +121,7 @@
       }
     ],
     "imageSourceUrls": [
-      "https://www.fotokoch.mt/bilddaten/bildgroesser/sony-alpha-7-iv-ilce-7m4kb-sel-28-70mm-oss-fe_64654.jpg"
+      "https://assets.pcfactory.cl/public/foto/45721/google_1000.jpg"
     ]
   },
   {
@@ -188,12 +188,10 @@
     "name": "ZV-E10 kit",
     "price": 3000000,
     "images": [
-      "https://www.kamera-express.nl/media/9e75a33a-e483-4704-a1f2-f7e4c6d4e459/12376882%20-%20Sony.jpg",
-      "https://cameracommons.ph/cdn/shop/files/SONYZV-E10L202410oct_84ba866a-d843-48f8-8b25-ff73529d8700.jpg?v=1772781386"
+      "/assets/catalog/sony-zv-e10-kit.webp"
     ],
     "imageSources": [
-      "Kamera Express",
-      "Camera Commons"
+      "Joybuy"
     ],
     "productUrl": "https://www.sony.com/electronics/interchangeable-lens-cameras/zv-e10",
     "description": "A compact APS-C mirrorless camera aimed at vlogging and everyday creator work. Confirm the included kit lens and accessories.",
@@ -244,8 +242,7 @@
       }
     ],
     "imageSourceUrls": [
-      "https://www.kamera-express.nl/media/9e75a33a-e483-4704-a1f2-f7e4c6d4e459/12376882%20-%20Sony.jpg",
-      "https://cameracommons.ph/cdn/shop/files/SONYZV-E10L202410oct_84ba866a-d843-48f8-8b25-ff73529d8700.jpg?v=1772781386"
+      "https://images4.joy-sourcing.com/product/jfsintlpro-000-product/t1/4294967296/3080192/101615961315977/928559/690c7056E4de5efdd/42b10752b5083d5e.jpg%21q70.webp"
     ]
   },
   {
@@ -1254,14 +1251,14 @@
     "name": "V860 III N",
     "price": 950000,
     "images": [
-      "https://www.godox.com/static/upload/image/20230807/1691391760155720.jpg"
+      "/assets/catalog/godox-v860-iii-n.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Godox"
+      "Walmart"
     ],
     "imageSourceUrls": [
-      "https://www.godox.com/product-d/V860III.html"
+      "https://i5.walmartimages.com/seo/Godox-V860III-N-Camera-Flash-for-Nikon-Camera-Flash-Speedlight-Speedlite-Light-10-Levels-LED-Modeling-Lamp_574e77b2-d4d8-4582-bf49-71f965179a5f.a941ca2f29447da914089f0eb9ded649.jpeg"
     ],
     "productUrl": "https://www.godox.com/product-d/V860III.html"
   },
@@ -1271,14 +1268,14 @@
     "name": "V860 IIIC",
     "price": 950000,
     "images": [
-      "https://www.godox.com/static/upload/image/20230807/1691391760155720.jpg"
+      "/assets/catalog/godox-v860-iii-c.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Godox"
+      "Amazon"
     ],
     "imageSourceUrls": [
-      "https://www.godox.com/product-d/V860III.html"
+      "https://m.media-amazon.com/images/I/51EWw7rEDHL._AC_.jpg"
     ],
     "productUrl": "https://www.godox.com/product-d/V860III.html"
   },
@@ -1288,14 +1285,14 @@
     "name": "V860 III S",
     "price": 950000,
     "images": [
-      "https://www.godox.com/static/upload/image/20230807/1691391760155720.jpg"
+      "/assets/catalog/godox-v860-iii-s.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "Godox"
+      "Amazon"
     ],
     "imageSourceUrls": [
-      "https://www.godox.com/product-d/V860III.html"
+      "https://m.media-amazon.com/images/I/71eWHIeh3yL._AC_SL1500_.jpg"
     ],
     "productUrl": "https://www.godox.com/product-d/V860III.html"
   },
@@ -1305,14 +1302,14 @@
     "name": "SRG-A40 black",
     "price": 13000000,
     "images": [
-      "https://www.avshop.ca/images/sony/SONYSRGA40_2.jpeg"
+      "/assets/catalog/sony-srg-a40-black.jpg"
     ],
     "description": "Contact Camera Matrix to confirm current availability and package contents.",
     "imageSources": [
-      "AVShop.ca"
+      "Crosstec"
     ],
     "imageSourceUrls": [
-      "https://www.avshop.ca/video-cameras/sony-srg-a40-ptz-auto-framing-cameraai-analytics-30xciz-zoom-black"
+      "https://crosstec.co.jp/rental/image/1_SRGA40.jpg"
     ],
     "productUrl": "https://pro.sony/en_AE/products/ptz-network-cameras/srg-a40"
   },
