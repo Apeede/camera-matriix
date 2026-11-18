@@ -160,6 +160,28 @@ def bundle_gallery_photos(events: list[dict], output_dir: Path) -> bytes:
     return json.dumps(events, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
 
 
+def add_default_social_image() -> None:
+    origin = os.environ.get("PUBLIC_BASE_URL", "https://www.cinematrix.store").strip().rstrip("/")
+    image = f"{origin}/assets/og-camera-matrix.png"
+    tags = (
+        f'<meta property="og:image" content="{html.escape(image, quote=True)}">'
+        '<meta property="og:image:alt" content="Camera Matrix logo">'
+        '<meta property="og:image:type" content="image/png">'
+        '<meta property="og:image:width" content="1200">'
+        '<meta property="og:image:height" content="630">'
+        '<meta name="twitter:card" content="summary_large_image">'
+        f'<meta name="twitter:image" content="{html.escape(image, quote=True)}">'
+    )
+    for page in PUBLIC.rglob("*.html"):
+        if page == PUBLIC / "buy-item.html":
+            continue  # The Worker adds item-specific preview metadata for this query-driven page.
+        content = page.read_text(encoding="utf-8")
+        if 'property="og:image"' in content:
+            continue
+        if "</head>" in content:
+            page.write_text(content.replace("</head>", tags + "</head>", 1), encoding="utf-8")
+
+
 def main() -> int:
     if PUBLIC.exists():
         shutil.rmtree(PUBLIC)
@@ -244,6 +266,8 @@ def main() -> int:
         except subprocess.TimeoutExpired:
             server.kill()
             server.wait()
+
+    add_default_social_image()
 
     print(f"Built {PUBLIC.relative_to(ROOT)} for Cloudflare Workers.")
     return 0

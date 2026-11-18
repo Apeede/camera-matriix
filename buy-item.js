@@ -60,7 +60,7 @@ document.querySelector("#primary-navigation").addEventListener("click", (event) 
 });
 
 selected = getSelection();
-fetch("/buy-catalog.json").then((response) => {
+fetch("/buy-catalog.json", { cache: "no-store" }).then((response) => {
   if (!response.ok) throw new Error("Could not load product information.");
   return response.json();
 }).then((data) => {

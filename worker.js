@@ -504,6 +504,36 @@ async function bookingApi(request, env, url) {
 
 async function staticResponse(request, env) {
   const url = new URL(request.url);
+  if (url.pathname === "/buy-item.html") {
+    const id = url.searchParams.get("id") || "";
+    const products = await saleProductsFor(env);
+    const product = products.find((item) => item.id === id);
+    const response = await env.ASSETS.fetch(new Request(new URL("/buy-item.html", url), request));
+    if (!product || !response.ok) return product ? response : new Response("Product not found.", { status: 404 });
+    const canonicalOrigin = (env.PUBLIC_BASE_URL || url.origin).replace(/\/+$/, "");
+    const canonical = `${canonicalOrigin}/buy-item.html?id=${encodeURIComponent(product.id)}`;
+    const title = `${product.brand} ${product.name} for Sale | Camera Matrix`;
+    const description = `${product.description || "Camera equipment for sale in Kampala."} ${product.brand} ${product.name} · UGX ${new Intl.NumberFormat("en-UG").format(product.price)}.`;
+    const primaryImage = product.images?.[0] || "";
+    const image = primaryImage.startsWith("/") ? `${canonicalOrigin}${primaryImage}` : primaryImage;
+    const metadata = [
+      `<link rel="canonical" href="${escapeXml(canonical)}">`,
+      `<meta property="og:type" content="product">`,
+      `<meta property="og:title" content="${escapeXml(title)}">`,
+      `<meta property="og:description" content="${escapeXml(description)}">`,
+      `<meta property="og:url" content="${escapeXml(canonical)}">`,
+      ...(image ? [`<meta property="og:image" content="${escapeXml(image)}">`, `<meta property="og:image:alt" content="${escapeXml(`${product.brand} ${product.name}`)}">`, `<meta name="twitter:card" content="summary_large_image">`, `<meta name="twitter:image" content="${escapeXml(image)}">`] : [`<meta name="twitter:card" content="summary">`]),
+    ].join("");
+    const html = (await response.text())
+      .replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeXml(title)}</title>`)
+      .replace(/<meta name="description" content="[^"]*"\s*\/>/i, `<meta name="description" content="${escapeXml(description)}" />`)
+      .replace("</head>", `${metadata}</head>`);
+    const headers = new Headers(response.headers);
+    headers.delete("Content-Length");
+    headers.delete("ETag");
+    headers.set("Cache-Control", "public, max-age=3600");
+    return new Response(html, { status: response.status, headers });
+  }
   if (url.pathname.startsWith("/gear/")) {
     const id = decodeURIComponent(url.pathname.slice("/gear/".length).replace(/\/$/, ""));
     const response = await env.ASSETS.fetch(new Request(new URL(`/gear/${encodeURIComponent(id)}/index.html`, url)));

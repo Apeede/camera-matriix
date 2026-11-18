@@ -237,7 +237,9 @@ function initBuyHero() {
   start();
 }
 
-fetch("/buy-catalog.json").then((response) => {
+// Keep the listing in sync with the Worker, which validates item IDs against
+// the same catalog when it serves /buy-item.html.
+fetch("/buy-catalog.json", { cache: "no-store" }).then((response) => {
   if (!response.ok) throw new Error("The sale catalog could not be loaded.");
   return response.json();
 }).then((items) => {
