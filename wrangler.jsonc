@@ -6,7 +6,7 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/robots.txt", "/sitemap.xml", "/buy-item.html", "/", "/index.html"]
+    "run_worker_first": ["/api/*", "/robots.txt", "/sitemap.xml", "/buy-item*", "/sale-item*", "/", "/index.html"]
   },
   "vars": {
     "PUBLIC_BASE_URL": "https://www.cinematrix.store"

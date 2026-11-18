@@ -60,12 +60,16 @@ document.querySelector("#primary-navigation").addEventListener("click", (event) 
 });
 
 selected = getSelection();
-fetch("/buy-catalog.json", { cache: "no-store" }).then((response) => {
+const requestedItemId = new URLSearchParams(location.search).get("id")?.trim();
+if (!requestedItemId) {
+  document.querySelector("#sale-detail").innerHTML = '<section class="sale-detail-missing"><p class="eyebrow"><span></span> EQUIPMENT FOR SALE</p><h1>No item was selected.</h1><a class="sale-detail-add" href="/buy.html">Browse gear for sale <span>→</span></a></section>';
+} else fetch("/buy-catalog.json", { cache: "no-store" }).then((response) => {
   if (!response.ok) throw new Error("Could not load product information.");
   return response.json();
 }).then((data) => {
+  if (!Array.isArray(data)) throw new Error("The sale catalog has an invalid format.");
   products = data;
-  item = products.find((product) => product.id === new URLSearchParams(location.search).get("id"));
+  item = products.find((product) => String(product.id ?? "").trim() === requestedItemId);
   if (!item) {
     document.querySelector("#sale-detail").innerHTML = '<section class="sale-detail-missing"><p class="eyebrow"><span></span> EQUIPMENT FOR SALE</p><h1>We could not find that item.</h1><a class="sale-detail-add" href="/buy.html">Browse gear for sale <span>→</span></a></section>';
     return;
@@ -75,5 +79,5 @@ fetch("/buy-catalog.json", { cache: "no-store" }).then((response) => {
   document.querySelector("#sale-enquiry-count").textContent = String(Object.values(selected).reduce((sum, qty) => sum + qty, 0));
 }).catch((error) => {
   console.error("Could not load sale item", error);
-  document.querySelector("#sale-detail").innerHTML = '<p class="detail-loading">Product details could not load. Please return to the sales catalog.</p>';
+  document.querySelector("#sale-detail").innerHTML = '<section class="sale-detail-missing"><p class="eyebrow"><span></span> EQUIPMENT FOR SALE</p><h1>Product details could not load.</h1><p>Please check your connection and try again.</p><a class="sale-detail-add" href="/buy.html">Return to gear for sale <span>→</span></a></section>';
 });

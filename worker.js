@@ -504,14 +504,14 @@ async function bookingApi(request, env, url) {
 
 async function staticResponse(request, env) {
   const url = new URL(request.url);
-  if (url.pathname === "/buy-item.html") {
-    const id = url.searchParams.get("id") || "";
+  if (url.pathname === "/sale-item" || url.pathname === "/buy-item" || url.pathname === "/buy-item.html") {
+    const id = (url.searchParams.get("id") || "").trim();
     const products = await saleProductsFor(env);
-    const product = products.find((item) => item.id === id);
-    const response = await env.ASSETS.fetch(new Request(new URL("/buy-item.html", url), request));
+    const product = products.find((item) => String(item.id ?? "").trim() === id);
+    const response = await env.ASSETS.fetch(new Request("https://assets/buy-item.html"));
     if (!product || !response.ok) return product ? response : new Response("Product not found.", { status: 404 });
     const canonicalOrigin = (env.PUBLIC_BASE_URL || url.origin).replace(/\/+$/, "");
-    const canonical = `${canonicalOrigin}/buy-item.html?id=${encodeURIComponent(product.id)}`;
+    const canonical = `${canonicalOrigin}/sale-item?id=${encodeURIComponent(String(product.id ?? "").trim())}`;
     const title = `${product.brand} ${product.name} for Sale | Camera Matrix`;
     const description = `${product.description || "Camera equipment for sale in Kampala."} ${product.brand} ${product.name} · UGX ${new Intl.NumberFormat("en-UG").format(product.price)}.`;
     const primaryImage = product.images?.[0] || "";
